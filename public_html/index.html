@@ -1,49 +1,93 @@
 <!DOCTYPE html>
-<html>
+<!--[if lt IE 7 ]> <html class="ie ie6 no-js" lang="en"> <![endif]-->
+<!--[if IE 7 ]>    <html class="ie ie7 no-js" lang="en"> <![endif]-->
+<!--[if IE 8 ]>    <html class="ie ie8 no-js" lang="en"> <![endif]-->
+<!--[if IE 9 ]>    <html class="ie ie9 no-js" lang="en"> <![endif]-->
+<!--[if gt IE 9]><!--><html class="no-js" lang="en"><!--<![endif]-->
     <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
         <title>Pathfinder Character Creator - Home Page</title>
-
-        <link rel="stylesheet" href="css/animations.css">
-        <link rel="stylesheet" href="css/main.css">
         
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+        
+        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="css/animations.css">
     </head>
     <body>
-        <h1>Pathfinder Character Creator</h1>
+        <!-- Content Pages -->
+        <!-- Home Page -->
+        <div id="home" class="content">
+            <h2>Home Page</h2>
+            <p>Welcome to the Pathfinder Character Creator home page!</p>
+        </div>
+        <!-- End of Home Page -->
         
-        <div class="pt-wrapper">
-            
-            <!--All Pages-->
-
-            <div class="pt-page pt-page-1">
-                <h1><strong>Page 1</strong></h1>
-                <div class="pt-trigger-container">
-                    <button class="pt-trigger" data-animation="13" data-goto="-1">Go to next page</button>
-                </div>
+        <!-- Stats Page -->
+        <div id="stats" class="panel">
+            <div class="content">
+                <h2>Statistics Page</h2>
+                <p>This is the stats and dice rolling page.</p>
+                <p>
+                    <a href="#race">Next</a>
+                </p>
             </div>
-            <div class="pt-page pt-page-2">
-                <h1><strong>Page 2</strong></h1>
-                <div class="pt-trigger-container">
-                    <button class="pt-trigger" data-animation="13" data-goto="-1">Go to next page</button>
-                    <button class="pt-trigger" data-animation="14" data-goto="-2">Go to previous page</button>
-                </div>
-            </div>
-                <div class="pt-page pt-page-3">
-                <h1><strong>Page 3</strong></h1>
-                <div class="pt-trigger-container">
-                    <button class="pt-trigger" data-animation="14" data-goto="-2">Go to previous page</button>
-                </div>
-            </div>
-
         </div>
-
-
-
-        <div class="pt-message">
-            <p>Your browser does not support CSS animations.</p>
+        <!-- End of Stats Page -->
+        
+        <!-- Race Page -->
+        <div id="race" class="panel">
+            <div class="content">
+                <h2>Race Page</h2>
+                <p>This is the race selection page.</p>
+                <p>
+                    <a href="#stats">Return to Stats</a>
+                    <a href="#class">Next</a>
+                </p>
+            </div>
         </div>
-
+        <!-- End of Race Page -->
+        
+        <!-- Class Page -->
+        <div id="class" class="panel">
+            <div class="content">
+                <h2>Class Page</h2>
+                <p>This is the class selection page.</p>
+                <p>
+                    <a href="#race">Return to Race Selection</a>
+                    <a href="#bio">Next</a>
+                </p>
+            </div>
+        </div>
+        <!-- End of Class Page -->
+        
+        <!-- Biography Page -->
+        <div id="bio" class="panel">
+            <div class="content">
+                <h2>Biography Page</h2>
+                <p>This is the biography and character description page</p>
+                <p>
+                    <a href="#class">Return to Class Selection</a>
+                    <a href="#results">Create Character</a>
+                </p>
+            </div>
+        </div>
+        <!-- End of Biography Page -->
+        
+        <!-- Navigation Bar -->
+        <div id="header">
+            <h1>Pathfinder Character Creator</h1>
+            <ul id="navigation">
+                <li><a id="link-home" >Home</a></li>
+                <li><a id="link-stats" >Stats</a></li>
+                <li><a id="link-race" >Race</a></li>
+                <li><a id="link-class" >Class</a></li>
+                <li><a id="link-bio" >Biography</a></li>
+            </ul>
+        </div>
+        <!-- End of Navigation Bar -->
+        
         <script src="js/jquery-2.1.3.min.js"></script>
-        <script src="js/transition.js"></script>
 
     </body>
 </html>
