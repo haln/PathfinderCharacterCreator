@@ -13,6 +13,7 @@ DROP TABLE IF EXISTS RANGER;
 DROP TABLE IF EXISTS ROGUE;
 DROP TABLE IF EXISTS SORCERER;
 DROP TABLE IF EXISTS WIZARD;
+DROP TABLE IF EXISTS BONUS_SPELLS;
 
 CREATE TABLE RACE(
 RACE_NAME        CHAR(20) NOT NULL,
@@ -141,6 +142,21 @@ CONSTRAINT wizard_pk
 PRIMARY KEY (WIZA_LVL)
 );
 
+CREATE TABLE BONUS_SPELLS (
+MAIN_STAT_MOD INT NOT NULL,
+LVL_1         INT NOT NULL,
+LVL_2         INT NOT NULL,
+LVL_3         INT NOT NULL,
+LVL_4         INT NOT NULL,
+LVL_5         INT NOT NULL,
+LVL_6         INT NOT NULL,
+LVL_7         INT NOT NULL,
+LVL_8         INT NOT NULL,
+LVL_9         INT NOT NULL,
+CONSTRAINT bonus_pk
+PRIMARY KEY (MAIN_STAT_MOD)
+);
+
 /*Race Table Values*/
 INSERT INTO RACE VALUES (
 'Dwarf', 'M', '20', 'Darkvision', 'Common, Dwarven', 'N', '0', '0', '2', '0', '2', '-2');
@@ -157,6 +173,9 @@ INSERT INTO RACE VALUES (
 INSERT INTO RACE VALUES (
 'Human', 'M', '30', 'Base', 'Common', 'Y', '0', '0', '0', '0', '0', '0');
 
+/* ****************************************************************************
+                                    CLASSES
+**************************************************************************** */
 /*Barbarian Table Values*/
 INSERT INTO BARBARIAN VALUES (
 '1', '1', '2', '0', '0');
@@ -618,3 +637,51 @@ INSERT INTO WIZARD VALUES (
 '19', '0', '0', '0', '0');
 INSERT INTO WIZARD VALUES (
 '20', '1', '0', '0', '1');
+
+/*Bonus Spell Table */
+INSERT INTO BONUS_SPELLS VALUES (
+'-5', '0', '0', '0', '0', '0', '0', '0', '0', '0');
+INSERT INTO BONUS_SPELLS VALUES (
+'-4', '0', '0', '0', '0', '0', '0', '0', '0', '0');
+INSERT INTO BONUS_SPELLS VALUES (
+'-3', '0', '0', '0', '0', '0', '0', '0', '0', '0');
+INSERT INTO BONUS_SPELLS VALUES (
+'-2', '0', '0', '0', '0', '0', '0', '0', '0', '0');
+INSERT INTO BONUS_SPELLS VALUES (
+'-1', '0', '0', '0', '0', '0', '0', '0', '0', '0');
+INSERT INTO BONUS_SPELLS VALUES (
+'0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
+INSERT INTO BONUS_SPELLS VALUES (
+'1', '1', '0', '0', '0', '0', '0', '0', '0', '0');
+INSERT INTO BONUS_SPELLS VALUES (
+'2', '1', '1', '0', '0', '0', '0', '0', '0', '0');
+INSERT INTO BONUS_SPELLS VALUES (
+'3', '1', '1', '1', '0', '0', '0', '0', '0', '0');
+INSERT INTO BONUS_SPELLS VALUES (
+'4', '1', '1', '1', '1', '0', '0', '0', '0', '0');
+INSERT INTO BONUS_SPELLS VALUES (
+'5', '2', '1', '1', '1', '1', '0', '0', '0', '0');
+INSERT INTO BONUS_SPELLS VALUES (
+'6', '2', '2', '1', '1', '1', '1', '0', '0', '0');
+INSERT INTO BONUS_SPELLS VALUES (
+'7', '2', '2', '2', '1', '1', '1', '1', '0', '0');
+INSERT INTO BONUS_SPELLS VALUES (
+'8', '2', '2', '2', '2', '1', '1', '1', '1', '0');
+INSERT INTO BONUS_SPELLS VALUES (
+'9', '3', '2', '2', '2', '2', '1', '1', '1', '1');
+INSERT INTO BONUS_SPELLS VALUES (
+'10', '3', '3', '2', '2', '2', '2', '1', '1', '1');
+INSERT INTO BONUS_SPELLS VALUES (
+'11', '3', '3', '3', '2', '2', '2', '2', '1', '1');
+INSERT INTO BONUS_SPELLS VALUES (
+'12', '3', '3', '3', '3', '2', '2', '2', '2', '1');
+INSERT INTO BONUS_SPELLS VALUES (
+'13', '4', '3', '3', '3', '3', '2', '2', '2', '2');
+INSERT INTO BONUS_SPELLS VALUES (
+'14', '4', '4', '3', '3', '3', '3', '2', '2', '2');
+INSERT INTO BONUS_SPELLS VALUES (
+'15', '4', '4', '4', '3', '3', '3', '3', '2', '2');
+INSERT INTO BONUS_SPELLS VALUES (
+'16', '4', '4', '4', '4', '3', '3', '3', '3', '2');
+INSERT INTO BONUS_SPELLS VALUES (
+'17', '5', '4', '4', '4', '4', '3', '3', '3', '3');
