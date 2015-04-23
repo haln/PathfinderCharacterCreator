@@ -4,7 +4,7 @@ function getStatDescription(stat) {
 }
 
 function getImage(num) {
-    var image = "Images/" + num + ".png";
+    var image = "Images/Dice/" + num + ".png";
     return image;
 }
 
