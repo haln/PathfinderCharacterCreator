@@ -32,6 +32,14 @@ CONSTRAINT race_pk
 PRIMARY KEY(RACE_NAME)
 );
 
+CREATE TABLE CLASSES(
+CLASS_NAME  CHAR(20)  NOT NULL,
+CLASS_HP    INT       NOT NULL,
+CLASS_SKILL INT       NOT NULL,
+CNSTRAINT classes_pk
+PRIMARY KEY (CLASS_NAME)
+);
+
 CREATE TABLE BARBARIAN(
 BARB_LVL  INT NOT NULL,
 BARB_BAB  INT NOT NULL,
@@ -176,6 +184,30 @@ INSERT INTO RACE VALUES (
 /* ****************************************************************************
                                     CLASSES
 **************************************************************************** */
+/*Base Class Table*/
+INSERT INTO CLASSES VALUES (
+'BARBARIAN', '12', '4');
+INSERT INTO CLASSES VALUES (
+'BARD', '8', '6');
+INSERT INTO CLASSES VALUES (
+'CLERIC', '8', '2');
+INSERT INTO CLASSES VALUES (
+'DRUID', '8', '4');
+INSERT INTO CLASSES VALUES (
+'FIGHTER', '10', '2');
+INSERT INTO CLASSES VALUES (
+'MONK', '8', '4');
+INSERT INTO CLASSES VALUES (
+'PALADIN', '10', '2');
+INSERT INTO CLASSES VALUES (
+'RANGER', '10', '6');
+INSERT INTO CLASSES VALUES (
+'ROGUE', '8', '8');
+INSERT INTO CLASSES VALUES (
+'SORCERER', '6', '2');
+INSERT INTO CLASSES VALUES (
+'WIZARD', '6', '2');
+
 /*Barbarian Table Values*/
 INSERT INTO BARBARIAN VALUES (
 '1', '1', '2', '0', '0');
