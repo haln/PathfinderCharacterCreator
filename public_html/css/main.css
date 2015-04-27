@@ -1,13 +1,18 @@
 html, body {
+    
 	height:100%;
 }
 body {
 	width: 100%;
+        
 	background: #b1e583;
 	overflow-x: hidden;
 	overflow-y: auto;
+        
+        
 }
 #header{
+        
 	position: absolute;
 	z-index: 2000;
 	width: 235px;
@@ -23,6 +28,7 @@ body {
 	background: #000;
 }
 #navigation {
+       
 	margin-top: 20px;
 	width: 235px;
 	display:block;
@@ -88,15 +94,17 @@ body {
 	background-color: #b1e583;
 }
 
-#home:target ~ #header #navigation #link-home,
-#stats:target ~ #header #navigation #link-stats,
-#race:target ~ #header #navigation #link-race,
-#class:target ~ #header #navigation #link-class,
-#bio:target ~ #header #navigation #link-bio{
+#results:target ~ nav #header #navigation #link-result,
+#stats:target ~ nav #header #navigation #link-stats,
+#race:target ~ nav #header #navigation #link-race,
+#class:target ~ nav #header #navigation #link-class,
+#bio:target ~ nav #header #navigation #link-bio{
+        
+        background-image:url(Images/pink-circle.png);
+        z-index: 4;
 	background: #000;
-	color: #fff;
-}
-#works {
+	
+}#works {
 	padding: 15px 0px;
 }
 #works li{

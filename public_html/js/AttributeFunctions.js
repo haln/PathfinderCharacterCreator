@@ -28,7 +28,40 @@ function rollStat(){
     return result;
 }
 
+function resetStats(){
+    resetContainer("strCon");
+    resetContainer("dexCon");
+    resetContainer("conCon");
+    resetContainer("intCon");
+    resetContainer("wisCon");
+    resetContainer("chaCon");
+    
+    resetDiceRoll("stat1");
+    resetDiceRoll("stat2");
+    resetDiceRoll("stat3");
+    resetDiceRoll("stat4");
+    resetDiceRoll("stat5");
+    resetDiceRoll("stat6");
+}
+
+function resetContainer(id){
+    document.getElementById(id).setAttribute("src", "Images/Dice/container.png");
+    document.getElementById(id).setAttribute("ondragover", "allowDrop(event)");
+    document.getElementById(id).setAttribute("draggable", "false");
+    document.getElementById(id).setAttribute("ondragstart", "");
+    document.getElementById(id).setAttribute("ondrop", "drop(event)");
+}
+
+function resetDiceRoll(id){
+    document.getElementById(id).setAttribute("ondragover", "");
+    document.getElementById(id).setAttribute("draggable", "true");
+    document.getElementById(id).setAttribute("ondragstart", "drag(event)");
+    document.getElementById(id).setAttribute("ondrop", "");
+}
+
 function rollCharacter() {
+    resetStats();
+    
     var roll1 = document.getElementById("stat1");
     roll1.setAttribute("src", getImage(rollStat()));
     
@@ -46,4 +79,31 @@ function rollCharacter() {
     
     var roll6 = document.getElementById("stat6");
     roll6.setAttribute("src", getImage(rollStat()));
+}
+
+function allowDrop(ev){
+    ev.preventDefault();
+}
+
+function drag(ev){
+    ev.dataTransfer.setData("id", ev.target.id);
+    ev.dataTransfer.setData("image", ev.target.src);
+}
+
+function drop(ev){
+    var data = ev.dataTransfer.getData("image");
+    var droppedItem = document.getElementById(ev.dataTransfer.getData("id"));
+    ev.target.setAttribute("src", data);
+    ev.target.setAttribute("ondragover", "");
+    ev.target.setAttribute("draggable", "true");
+    ev.target.setAttribute("ondragstart", "drag(event)");
+    ev.target.setAttribute("ondrop", "");
+    
+    droppedItem.setAttribute("src", "Images/Dice/container.png");
+    droppedItem.setAttribute("ondragover", "allowDrop(event)");
+    droppedItem.setAttribute("draggable", "false");
+    droppedItem.setAttribute("ondragstart", "");
+    droppedItem.setAttribute("ondrop", "drop(event)");
+    
+    ev.preventDefault();
 }
