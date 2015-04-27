@@ -56,6 +56,12 @@ BARD_BAB  INT NOT NULL,
 BARD_FORT INT NOT NULL,
 BARD_REFL INT NOT NULL,
 BARD_WILL INT NOT NULL,
+SPELL1    INT NOT NULL,
+SPELL2    INT NOT NULL,
+SPELL3    INT NOT NULL,
+SPELL4    INT NOT NULL,
+SPELL5    INT NOT NULL,
+SPELL6    INT NOT NULL,
 CONSTRAINT bard_pk
 PRIMARY KEY (BARD_LVL)
 );
@@ -66,6 +72,16 @@ CLER_BAB  INT NOT NULL,
 CLER_FORT INT NOT NULL,
 CLER_REFL INT NOT NULL,
 CLER_WILL INT NOT NULL,
+SPELL0    INT NOT NULL,
+SPELL1    INT NOT NULL,
+SPELL2    INT NOT NULL,
+SPELL3    INT NOT NULL,
+SPELL4    INT NOT NULL,
+SPELL5    INT NOT NULL,
+SPELL6    INT NOT NULL,
+SPELL7    INT NOT NULL,
+SPELL8    INT NOT NULL,
+SPELL9    INT NOT NULL,
 CONSTRAINT cleric_pk
 PRIMARY KEY (CLER_LVL)
 );
@@ -76,6 +92,16 @@ DRUI_BAB  INT NOT NULL,
 DRUI_FORT INT NOT NULL,
 DRUI_REFL INT NOT NULL,
 DRUI_WILL INT NOT NULL,
+SPELL0    INT NOT NULL,
+SPELL1    INT NOT NULL,
+SPELL2    INT NOT NULL,
+SPELL3    INT NOT NULL,
+SPELL4    INT NOT NULL,
+SPELL5    INT NOT NULL,
+SPELL6    INT NOT NULL,
+SPELL7    INT NOT NULL,
+SPELL8    INT NOT NULL,
+SPELL9    INT NOT NULL,
 CONSTRAINT druid_pk
 PRIMARY KEY (DRUI_LVL)
 );
@@ -106,6 +132,10 @@ PALA_BAB  INT NOT NULL,
 PALA_FORT INT NOT NULL,
 PALA_REFL INT NOT NULL,
 PALA_WILL INT NOT NULL,
+SPELL1    INT NOT NULL,
+SPELL2    INT NOT NULL,
+SPELL3    INT NOT NULL,
+SPELL4    INT NOT NULL,
 CONSTRAINT paladin_pk
 PRIMARY KEY (PALA_LVL)
 );
@@ -116,6 +146,10 @@ RANG_BAB  INT NOT NULL,
 RANG_FORT INT NOT NULL,
 RANG_REFL INT NOT NULL,
 RANG_WILL INT NOT NULL,
+SPELL1    INT NOT NULL,
+SPELL2    INT NOT NULL,
+SPELL3    INT NOT NULL,
+SPELL4    INT NOT NULL,
 CONSTRAINT ranger_pk
 PRIMARY KEY (RANG_LVL)
 );
@@ -136,6 +170,16 @@ SORC_BAB  INT NOT NULL,
 SORC_FORT INT NOT NULL,
 SORC_REFL INT NOT NULL,
 SORC_WILL INT NOT NULL,
+SPELL0    INT NOT NULL,
+SPELL1    INT NOT NULL,
+SPELL2    INT NOT NULL,
+SPELL3    INT NOT NULL,
+SPELL4    INT NOT NULL,
+SPELL5    INT NOT NULL,
+SPELL6    INT NOT NULL,
+SPELL7    INT NOT NULL,
+SPELL8    INT NOT NULL,
+SPELL9    INT NOT NULL,
 CONSTRAINT sorcerer_pk
 PRIMARY KEY (SORC_LVL)
 );
@@ -146,6 +190,16 @@ WIZA_BAB  INT NOT NULL,
 WIZA_FORT INT NOT NULL,
 WIZA_REFL INT NOT NULL,
 WIZA_WILL INT NOT NULL,
+SPELL0    INT NOT NULL,
+SPELL1    INT NOT NULL,
+SPELL2    INT NOT NULL,
+SPELL3    INT NOT NULL,
+SPELL4    INT NOT NULL,
+SPELL5    INT NOT NULL,
+SPELL6    INT NOT NULL,
+SPELL7    INT NOT NULL,
+SPELL8    INT NOT NULL,
+SPELL9    INT NOT NULL,
 CONSTRAINT wizard_pk
 PRIMARY KEY (WIZA_LVL)
 );
@@ -252,129 +306,129 @@ INSERT INTO BARBARIAN VALUES (
 
 /*Bard Table Values*/
 INSERT INTO BARD VALUES (
-'1', '0', '0', '2', '2');
+'1', '0', '0', '2', '2', '1', '0', '0', '0', '0', '0');
 INSERT INTO BARD VALUES (
-'2', '1', '0', '1', '1');
+'2', '1', '0', '1', '1', '1', '0', '0', '0', '0', '0');
 INSERT INTO BARD VALUES (
-'3', '1', '1', '0', '0');
+'3', '1', '1', '0', '0', '1', '0', '0', '0', '0', '0');
 INSERT INTO BARD VALUES (
-'4', '1', '0', '1', '1');
+'4', '1', '0', '1', '1', '0', '1', '0', '0', '0', '0');
 INSERT INTO BARD VALUES (
-'5', '0', '0', '0', '0');
+'5', '0', '0', '0', '0', '1', '1', '0', '0', '0', '0');
 INSERT INTO BARD VALUES (
-'6', '1', '1', '1', '1');
+'6', '1', '1', '1', '1', '0', '1', '0', '0', '0', '0');
 INSERT INTO BARD VALUES (
-'7', '1', '0', '0', '0');
+'7', '1', '0', '0', '0', '0', '0', '1', '0', '0', '0');
 INSERT INTO BARD VALUES (
-'8', '1', '0', '1', '1');
+'8', '1', '0', '1', '1', '0', '1', '1', '0', '0', '0');
 INSERT INTO BARD VALUES (
-'9', '0', '1', '0', '0');
+'9', '0', '1', '0', '0', '1', '0', '1', '0', '0', '0');
 INSERT INTO BARD VALUES (
-'10', '1', '0', '1', '1');
+'10', '1', '0', '1', '1', '0', '0', '0', '1', '0', '0');
 INSERT INTO BARD VALUES (
-'11', '1', '0', '0', '0');
+'11', '1', '0', '0', '0', '0', '0', '1', '1', '0', '0');
 INSERT INTO BARD VALUES (
-'12', '1', '1', '1', '1');
+'12', '1', '1', '1', '1', '0', '1', '0', '1', '0', '0');
 INSERT INTO BARD VALUES (
-'13', '0', '0', '0', '0');
+'13', '0', '0', '0', '0', '0', '0', '0', '0', '1', '0');
 INSERT INTO BARD VALUES (
-'14', '1', '0', '1', '1');
+'14', '1', '0', '1', '1', '0', '0', '0', '1', '1', '0');
 INSERT INTO BARD VALUES (
-'15', '1', '1', '0', '0');
+'15', '1', '1', '0', '0', '0', '0', '1', '0', '1', '0');
 INSERT INTO BARD VALUES (
-'16', '1', '0', '1', '1');
+'16', '1', '0', '1', '1', '0', '0', '0', '0', '0', '1');
 INSERT INTO BARD VALUES (
-'17', '0', '0', '0', '0');
+'17', '0', '0', '0', '0', '0', '0', '0', '0', '1', '1');
 INSERT INTO BARD VALUES (
-'18', '1', '1', '1', '1');
+'18', '1', '1', '1', '1', '0', '0', '0', '1', '0', '1');
 INSERT INTO BARD VALUES (
-'19', '1', '0', '0', '0');
+'19', '1', '0', '0', '0', '0', '0', '0', '0', '1', '1');
 INSERT INTO BARD VALUES (
-'20', '1', '0', '1', '1');
+'20', '1', '0', '1', '1', '0', '0', '0', '0', '0', '1');
 
 /*Cleric Table Values*/
 INSERT INTO CLERIC VALUES (
-'1', '0', '2', '0', '2');
+'1', '0', '2', '0', '2', '3', '1', '0', '0', '0', '0', '0', '0', '0', '0');
 INSERT INTO CLERIC VALUES (
-'2', '1', '1', '0', '1');
+'2', '1', '1', '0', '1', '1', '1', '0', '0', '0', '0', '0', '0', '0', '0');
 INSERT INTO CLERIC VALUES (
-'3', '1', '0', '1', '0');
+'3', '1', '0', '1', '0', '0', '0', '1', '0', '0', '0', '0', '0', '0', '0');
 INSERT INTO CLERIC VALUES (
-'4', '1', '1', '0', '1');
+'4', '1', '1', '0', '1', '0', '1', '1', '0', '0', '0', '0', '0', '0', '0');
 INSERT INTO CLERIC VALUES (
-'5', '0', '0', '0', '0');
+'5', '0', '0', '0', '0', '0', '0', '0', '1', '0', '0', '0', '0', '0', '0');
 INSERT INTO CLERIC VALUES (
-'6', '1', '1', '1', '1');
+'6', '1', '1', '1', '1', '0', '0', '1', '1', '0', '0', '0', '0', '0', '0');
 INSERT INTO CLERIC VALUES (
-'7', '1', '0', '0', '0');
+'7', '1', '0', '0', '0', '0', '1', '0', '0', '1', '0', '0', '0', '0', '0');
 INSERT INTO CLERIC VALUES (
-'8', '1', '1', '0', '1');
+'8', '1', '1', '0', '1', '0', '0', '0', '1', '1', '0', '0', '0', '0', '0');
 INSERT INTO CLERIC VALUES (
-'9', '0', '0', '1', '0');
+'9', '0', '0', '1', '0', '0', '0', '1', '0', '0', '1', '0', '0', '0', '0');
 INSERT INTO CLERIC VALUES (
-'10', '1', '1', '0', '1');
+'10', '1', '1', '0', '1', '0', '0', '0', '0', '1', '1', '0', '0', '0', '0');
 INSERT INTO CLERIC VALUES (
-'11', '1', '0', '0', '0');
+'11', '1', '0', '0', '0', '0', '0', '0', '1', '0', '0', '1', '0', '0', '0');
 INSERT INTO CLERIC VALUES (
-'12', '1', '1', '1', '1');
+'12', '1', '1', '1', '1', '0', '0', '0', '0', '0', '1', '1', '0', '0', '0');
 INSERT INTO CLERIC VALUES (
-'13', '0', '0', '0', '0');
+'13', '0', '0', '0', '0', '0', '0', '0', '0', '1', '0', '0', '1', '0', '0');
 INSERT INTO CLERIC VALUES (
-'14', '1', '1', '0', '1');
+'14', '1', '1', '0', '1', '0', '0', '0', '0', '0', '0', '1', '1', '0', '0');
 INSERT INTO CLERIC VALUES (
-'15', '1', '0', '1', '0');
+'15', '1', '0', '1', '0', '0', '0', '0', '0', '0', '1', '0', '0', '1', '0');
 INSERT INTO CLERIC VALUES (
-'16', '1', '1', '0', '1');
+'16', '1', '1', '0', '1', '0', '0', '0', '0', '0', '0', '0', '1', '1', '0');
 INSERT INTO CLERIC VALUES (
-'17', '0', '0', '0', '0');
+'17', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '1', '0', '0', '1');
 INSERT INTO CLERIC VALUES (
-'18', '1', '1', '1', '1');
+'18', '1', '1', '1', '1', '0', '0', '0', '0', '0', '0', '0', '0', '1', '1');
 INSERT INTO CLERIC VALUES (
-'19', '1', '0', '0', '0');
+'19', '1', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '1', '0', '1');
 INSERT INTO CLERIC VALUES (
-'20', '1', '1', '0', '1');
+'20', '1', '1', '0', '1', '0', '0', '0', '0', '0', '0', '0', '0', '1', '1');
 
 /*Druid Table Values*/
 INSERT INTO DRUID VALUES (
-'1', '0', '2', '0', '2');
+'1', '0', '2', '0', '2', '3', '1', '0', '0', '0', '0', '0', '0', '0', '0');
 INSERT INTO DRUID VALUES (
-'2', '1', '1', '0', '1');
+'2', '1', '1', '0', '1', '1', '1', '0', '0', '0', '0', '0', '0', '0', '0');
 INSERT INTO DRUID VALUES (
-'3', '1', '0', '1', '0');
+'3', '1', '0', '1', '0', '0', '0', '1', '0', '0', '0', '0', '0', '0', '0');
 INSERT INTO DRUID VALUES (
-'4', '1', '1', '0', '1');
+'4', '1', '1', '0', '1', '0', '1', '1', '0', '0', '0', '0', '0', '0', '0');
 INSERT INTO DRUID VALUES (
-'5', '0', '0', '0', '0');
+'5', '0', '0', '0', '0', '0', '0', '0', '1', '0', '0', '0', '0', '0', '0');
 INSERT INTO DRUID VALUES (
-'6', '1', '1', '1', '1');
+'6', '1', '1', '1', '1', '0', '0', '1', '1', '0', '0', '0', '0', '0', '0');
 INSERT INTO DRUID VALUES (
-'7', '1', '0', '0', '0');
+'7', '1', '0', '0', '0', '0', '1', '0', '0', '1', '0', '0', '0', '0', '0');
 INSERT INTO DRUID VALUES (
-'8', '1', '1', '0', '1');
+'8', '1', '1', '0', '1', '0', '0', '0', '1', '1', '0', '0', '0', '0', '0');
 INSERT INTO DRUID VALUES (
-'9', '0', '0', '1', '0');
+'9', '0', '0', '1', '0', '0', '0', '1', '0', '0', '1', '0', '0', '0', '0');
 INSERT INTO DRUID VALUES (
-'10', '1', '1', '0', '1');
+'10', '1', '1', '0', '1', '0', '0', '0', '0', '1', '1', '0', '0', '0', '0');
 INSERT INTO DRUID VALUES (
-'11', '1', '0', '0', '0');
+'11', '1', '0', '0', '0', '0', '0', '0', '1', '0', '0', '1', '0', '0', '0');
 INSERT INTO DRUID VALUES (
-'12', '1', '1', '1', '1');
+'12', '1', '1', '1', '1', '0', '0', '0', '0', '0', '1', '1', '0', '0', '0');
 INSERT INTO DRUID VALUES (
-'13', '0', '0', '0', '0');
+'13', '0', '0', '0', '0', '0', '0', '0', '0', '1', '0', '0', '1', '0', '0');
 INSERT INTO DRUID VALUES (
-'14', '1', '1', '0', '1');
+'14', '1', '1', '0', '1', '0', '0', '0', '0', '0', '0', '1', '1', '0', '0');
 INSERT INTO DRUID VALUES (
-'15', '1', '0', '1', '0');
+'15', '1', '0', '1', '0', '0', '0', '0', '0', '0', '1', '0', '0', '1', '0');
 INSERT INTO DRUID VALUES (
-'16', '1', '1', '0', '1');
+'16', '1', '1', '0', '1', '0', '0', '0', '0', '0', '0', '0', '1', '1', '0');
 INSERT INTO DRUID VALUES (
-'17', '0', '0', '0', '0');
+'17', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '1', '0', '0', '1');
 INSERT INTO DRUID VALUES (
-'18', '1', '1', '1', '1');
+'18', '1', '1', '1', '1', '0', '0', '0', '0', '0', '0', '0', '0', '1', '1');
 INSERT INTO DRUID VALUES (
-'19', '1', '0', '0', '0');
+'19', '1', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '1', '0', '1');
 INSERT INTO DRUID VALUES (
-'20', '1', '1', '0', '1');
+'20', '1', '1', '0', '1', '0', '0', '0', '0', '0', '0', '0', '0', '1', '1');
 
 /*Fighter Table Values*/
 INSERT INTO FIGHTER VALUES (
@@ -462,87 +516,87 @@ INSERT INTO MONK VALUES (
 
 /*Paladin Table Values*/
 INSERT INTO PALADIN VALUES (
-'1', '1', '2', '0', '2');
+'1', '1', '2', '0', '2', '0', '0', '0', '0');
 INSERT INTO PALADIN VALUES (
-'2', '1', '1', '0', '1');
+'2', '1', '1', '0', '1', '0', '0', '0', '0');
 INSERT INTO PALADIN VALUES (
-'3', '1', '0', '1', '0');
+'3', '1', '0', '1', '0', '0', '0', '0', '0');
 INSERT INTO PALADIN VALUES (
-'4', '1', '1', '0', '1');
+'4', '1', '1', '0', '1', '0', '0', '0', '0');
 INSERT INTO PALADIN VALUES (
-'5', '1', '0', '0', '0');
+'5', '1', '0', '0', '0', '1', '0', '0', '0');
 INSERT INTO PALADIN VALUES (
-'6', '1', '1', '1', '1');
+'6', '1', '1', '1', '1', '0', '0', '0', '0');
 INSERT INTO PALADIN VALUES (
-'7', '1', '0', '0', '0');
+'7', '1', '0', '0', '0', '0', '0', '0', '0');
 INSERT INTO PALADIN VALUES (
-'8', '1', '1', '0', '1');
+'8', '1', '1', '0', '1', '0', '1', '0', '0');
 INSERT INTO PALADIN VALUES (
-'9', '1', '0', '1', '0');
+'9', '1', '0', '1', '0', '1', '0', '0', '0');
 INSERT INTO PALADIN VALUES (
-'10', '1', '1', '0', '1');
+'10', '1', '1', '0', '1', '0', '0', '0', '0');
 INSERT INTO PALADIN VALUES (
-'11', '1', '0', '0', '0');
+'11', '1', '0', '0', '0', '0', '0', '1', '0');
 INSERT INTO PALADIN VALUES (
-'12', '1', '1', '1', '1');
+'12', '1', '1', '1', '1', '0', '1', '0', '0');
 INSERT INTO PALADIN VALUES (
-'13', '1', '0', '0', '0');
+'13', '1', '0', '0', '0', '1', '0', '0', '0');
 INSERT INTO PALADIN VALUES (
-'14', '1', '1', '0', '1');
+'14', '1', '1', '0', '1', '0', '0', '0', '1');
 INSERT INTO PALADIN VALUES (
-'15', '1', '0', '1', '0');
+'15', '1', '0', '1', '0', '0', '0', '1', '0');
 INSERT INTO PALADIN VALUES (
-'16', '1', '1', '0', '1');
+'16', '1', '1', '0', '1', '0', '1', '0', '0');
 INSERT INTO PALADIN VALUES (
-'17', '1', '0', '0', '0');
+'17', '1', '0', '0', '0', '1', '0', '0', '0');
 INSERT INTO PALADIN VALUES (
-'18', '1', '1', '1', '1');
+'18', '1', '1', '1', '1', '0', '0', '0', '1');
 INSERT INTO PALADIN VALUES (
-'19', '1', '0', '0', '0');
+'19', '1', '0', '0', '0', '0', '0', '1', '0');
 INSERT INTO PALADIN VALUES (
-'20', '1', '1', '0', '1');
+'20', '1', '1', '0', '1', '0', '1', '0', '1');
 
 /*Ranger Table Values*/
 INSERT INTO RANGER VALUES (
-'1', '1', '2', '2', '0');
+'1', '1', '2', '2', '0', '0', '0', '0', '0');
 INSERT INTO RANGER VALUES (
-'2', '1', '1', '1', '0');
+'2', '1', '1', '1', '0', '0', '0', '0', '0');
 INSERT INTO RANGER VALUES (
-'3', '1', '0', '0', '1');
+'3', '1', '0', '0', '1', '0', '0', '0', '0');
 INSERT INTO RANGER VALUES (
-'4', '1', '1', '1', '0');
+'4', '1', '1', '1', '0', '0', '0', '0', '0');
 INSERT INTO RANGER VALUES (
-'5', '1', '0', '0', '0');
+'5', '1', '0', '0', '0', '1', '0', '0', '0');
 INSERT INTO RANGER VALUES (
-'6', '1', '1', '1', '1');
+'6', '1', '1', '1', '1', '0', '0', '0', '0');
 INSERT INTO RANGER VALUES (
-'7', '1', '0', '0', '0');
+'7', '1', '0', '0', '0', '0', '0', '0', '0');
 INSERT INTO RANGER VALUES (
-'8', '1', '1', '1', '0');
+'8', '1', '1', '1', '0', '0', '1', '0', '0');
 INSERT INTO RANGER VALUES (
-'9', '1', '0', '0', '1');
+'9', '1', '0', '0', '1', '1', '0', '0', '0');
 INSERT INTO RANGER VALUES (
-'10', '1', '1', '1', '0');
+'10', '1', '1', '1', '0', '0', '0', '0', '0');
 INSERT INTO RANGER VALUES (
-'11', '1', '0', '0', '0');
+'11', '1', '0', '0', '0', '0', '0', '1', '0');
 INSERT INTO RANGER VALUES (
-'12', '1', '1', '1', '1');
+'12', '1', '1', '1', '1', '0', '1', '0', '0');
 INSERT INTO RANGER VALUES (
-'13', '1', '0', '0', '0');
+'13', '1', '0', '0', '0', '1', '0', '0', '0');
 INSERT INTO RANGER VALUES (
-'14', '1', '1', '1', '0');
+'14', '1', '1', '1', '0', '0', '0', '0', '1');
 INSERT INTO RANGER VALUES (
-'15', '1', '0', '0', '1');
+'15', '1', '0', '0', '1', '0', '0', '1', '0');
 INSERT INTO RANGER VALUES (
-'16', '1', '1', '1', '0');
+'16', '1', '1', '1', '0', '0', '1', '0', '0');
 INSERT INTO RANGER VALUES (
-'17', '1', '0', '0', '0');
+'17', '1', '0', '0', '0', '1', '0', '0', '0');
 INSERT INTO RANGER VALUES (
-'18', '1', '1', '1', '1');
+'18', '1', '1', '1', '1', '0', '0', '0', '1');
 INSERT INTO RANGER VALUES (
-'19', '1', '0', '0', '0');
+'19', '1', '0', '0', '0', '0', '0', '1', '0');
 INSERT INTO RANGER VALUES (
-'20', '1', '1', '1', '0');
+'20', '1', '1', '1', '0', '0', '1', '0', '1');
 
 /*Rogue Table Values*/
 INSERT INTO ROGUE VALUES (
@@ -588,87 +642,87 @@ INSERT INTO ROGUE VALUES (
 
 /**Sorcerer Table Values*/
 INSERT INTO SORCERER VALUES (
-'1', '0', '0', '0', '2');
+'1', '0', '0', '0', '2', '4', '2', '0', '0', '0', '0', '0', '0', '0', '0');
 INSERT INTO SORCERER VALUES (
-'2', '1', '0', '0', '1');
+'2', '1', '0', '0', '1', '1', '0', '0', '0', '0', '0', '0', '0', '0', '0');
 INSERT INTO SORCERER VALUES (
-'3', '0', '1', '1', '0');
+'3', '0', '1', '1', '0', '0', '1', '0', '0', '0', '0', '0', '0', '0', '0');
 INSERT INTO SORCERER VALUES (
-'4', '1', '0', '0', '1');
+'4', '1', '0', '0', '1', '1', '0', '1', '0', '0', '0', '0', '0', '0', '0');
 INSERT INTO SORCERER VALUES (
-'5', '0', '0', '0', '0');
+'5', '0', '0', '0', '0', '0', '1', '1', '0', '0', '0', '0', '0', '0', '0');
 INSERT INTO SORCERER VALUES (
-'6', '1', '1', '1', '1');
+'6', '1', '1', '1', '1', '1', '0', '0', '1', '0', '0', '0', '0', '0', '0');
 INSERT INTO SORCERER VALUES (
-'7', '0', '0', '0', '0');
+'7', '0', '0', '0', '0', '0', '1', '1', '1', '0', '0', '0', '0', '0', '0');
 INSERT INTO SORCERER VALUES (
-'8', '1', '0', '0', '1');
+'8', '1', '0', '0', '1', '1', '0', '0', '0', '1', '0', '0', '0', '0', '0');
 INSERT INTO SORCERER VALUES (
-'9', '0', '1', '1', '0');
+'9', '0', '1', '1', '0', '0', '0', '1', '1', '1', '0', '0', '0', '0', '0');
 INSERT INTO SORCERER VALUES (
-'10', '1', '0', '0', '1');
+'10', '1', '0', '0', '1', '1', '0', '0', '0', '0', '1', '0', '0', '0', '0');
 INSERT INTO SORCERER VALUES (
-'11', '0', '0', '0', '0');
+'11', '0', '0', '0', '0', '0', '0', '1', '1', '1', '1', '0', '0', '0', '0');
 INSERT INTO SORCERER VALUES (
-'12', '1', '1', '1', '1');
+'12', '1', '1', '1', '1', '0', '0', '0', '0', '0', '0', '1', '0', '0', '0');
 INSERT INTO SORCERER VALUES (
-'13', '0', '0', '0', '0');
+'13', '0', '0', '0', '0', '0', '0', '0', '0', '1', '1', '1', '0', '0', '0');
 INSERT INTO SORCERER VALUES (
-'14', '1', '0', '0', '1');
+'14', '1', '0', '0', '1', '0', '0', '0', '0', '0', '0', '0', '1', '0', '0');
 INSERT INTO SORCERER VALUES (
-'15', '0', '1', '1', '0');
+'15', '0', '1', '1', '0', '0', '0', '0', '0', '0', '1', '1', '1', '0', '0');
 INSERT INTO SORCERER VALUES (
-'16', '1', '0', '0', '1');
+'16', '1', '0', '0', '1', '0', '0', '0', '0', '0', '0', '0', '0', '1', '0');
 INSERT INTO SORCERER VALUES (
-'17', '0', '0', '0', '0');
+'17', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '1', '1', '0');
 INSERT INTO SORCERER VALUES (
-'18', '1', '1', '1', '1');
+'18', '1', '1', '1', '1', '0', '0', '0', '0', '0', '0', '0', '0', '0', '1');
 INSERT INTO SORCERER VALUES (
-'19', '0', '0', '0', '0');
+'19', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '1', '1');
 INSERT INTO SORCERER VALUES (
-'20', '1', '0', '0', '1');
+'20', '1', '0', '0', '1', '0', '0', '0', '0', '0', '0', '0', '0', '0', '1');
 
 /*Wizard Table Values*/
 INSERT INTO WIZARD VALUES (
-'1', '0', '0', '0', '2');
+'1', '0', '0', '0', '2', '3', '1', '0', '0', '0', '0', '0', '0', '0', '0');
 INSERT INTO WIZARD VALUES (
-'2', '1', '0', '0', '1');
+'2', '1', '0', '0', '1', '1', '1', '0', '0', '0', '0', '0', '0', '0', '0');
 INSERT INTO WIZARD VALUES (
-'3', '0', '1', '1', '0');
+'3', '0', '1', '1', '0', '0', '0', '1', '0', '0', '0', '0', '0', '0', '0');
 INSERT INTO WIZARD VALUES (
-'4', '1', '0', '0', '1');
+'4', '1', '0', '0', '1', '0', '1', '1', '0', '0', '0', '0', '0', '0', '0');
 INSERT INTO WIZARD VALUES (
-'5', '0', '0', '0', '0');
+'5', '0', '0', '0', '0', '0', '0', '0', '1', '0', '0', '0', '0', '0', '0');
 INSERT INTO WIZARD VALUES (
-'6', '1', '1', '1', '1');
+'6', '1', '1', '1', '1', '0', '0', '1', '1', '0', '0', '0', '0', '0', '0');
 INSERT INTO WIZARD VALUES (
-'7', '0', '0', '0', '0');
+'7', '0', '0', '0', '0', '0', '1', '0', '0', '1', '0', '0', '0', '0', '0');
 INSERT INTO WIZARD VALUES (
-'8', '1', '0', '0', '1');
+'8', '1', '0', '0', '1', '0', '0', '0', '1', '1', '0', '0', '0', '0', '0');
 INSERT INTO WIZARD VALUES (
-'9', '0', '1', '1', '0');
+'9', '0', '1', '1', '0', '0', '0', '1', '0', '0', '1', '0', '0', '0', '0');
 INSERT INTO WIZARD VALUES (
-'10', '1', '0', '0', '1');
+'10', '1', '0', '0', '1', '0', '0', '0', '0', '1', '1', '0', '0', '0', '0');
 INSERT INTO WIZARD VALUES (
-'11', '0', '0', '0', '0');
+'11', '0', '0', '0', '0', '0', '0', '0', '1', '0', '0', '1', '0', '0', '0');
 INSERT INTO WIZARD VALUES (
-'12', '1', '1', '1', '1');
+'12', '1', '1', '1', '1', '0', '0', '0', '0', '0', '1', '1', '0', '0', '0');
 INSERT INTO WIZARD VALUES (
-'13', '0', '0', '0', '0');
+'13', '0', '0', '0', '0', '0', '0', '0', '0', '1', '0', '0', '1', '0', '0');
 INSERT INTO WIZARD VALUES (
-'14', '1', '0', '0', '1');
+'14', '1', '0', '0', '1', '0', '0', '0', '0', '0', '0', '1', '1', '0', '0');
 INSERT INTO WIZARD VALUES (
-'15', '0', '1', '1', '0');
+'15', '0', '1', '1', '0', '0', '0', '0', '0', '0', '1', '0', '0', '1', '0');
 INSERT INTO WIZARD VALUES (
-'16', '1', '0', '0', '1');
+'16', '1', '0', '0', '1', '0', '0', '0', '0', '0', '0', '0', '1', '1', '0');
 INSERT INTO WIZARD VALUES (
-'17', '0', '0', '0', '0');
+'17', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '1', '0', '0', '1');
 INSERT INTO WIZARD VALUES (
-'18', '1', '1', '1', '1');
+'18', '1', '1', '1', '1', '0', '0', '0', '0', '0', '0', '0', '0', '1', '1');
 INSERT INTO WIZARD VALUES (
-'19', '0', '0', '0', '0');
+'19', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '1', '0', '1');
 INSERT INTO WIZARD VALUES (
-'20', '1', '0', '0', '1');
+'20', '1', '0', '0', '1', '0', '0', '0', '0', '0', '0', '0', '0', '1', '1');
 
 /*Bonus Spell Table */
 INSERT INTO BONUS_SPELLS VALUES (
