@@ -14,6 +14,8 @@ DROP TABLE IF EXISTS ROGUE;
 DROP TABLE IF EXISTS SORCERER;
 DROP TABLE IF EXISTS WIZARD;
 DROP TABLE IF EXISTS BONUS_SPELLS;
+DROP TABLE IF EXISTS CLASSES;
+DROP TABLE IF EXISTS SKILLS;
 
 CREATE TABLE RACE(
 RACE_NAME        CHAR(20) NOT NULL,
@@ -217,6 +219,25 @@ LVL_8         INT NOT NULL,
 LVL_9         INT NOT NULL,
 CONSTRAINT bonus_pk
 PRIMARY KEY (MAIN_STAT_MOD)
+);
+
+CREATE TABLE SKILLS(
+SKILL_NAME CHAR(30) NOT NULL,
+CSK_BARB   CHAR(1)  NOT NULL,
+CSK_BARD   CHAR(1)  NOT NULL,
+CSK_CLER   CHAR(1)  NOT NULL,
+CSK_DRUI   CHAR(1)  NOT NULL,
+CSK_FIGH   CHAR(1)  NOT NULL,
+CSK_MONK   CHAR(1)  NOT NULL,
+CSK_PALA   CHAR(1)  NOT NULL,
+CSK_RANG   CHAR(1)  NOT NULL,
+CSK_ROGU   CHAR(1)  NOT NULL,
+CSK_SORC   CHAR(1)  NOT NULL,
+CSK_WIZA   CHAR(1)  NOT NULL,
+UNTRAINED  CHAR(1)  NOT NULL,
+SKILL_STAT CHAR(3)  NOT NULL,
+CONSTRAINT skills_pk
+PRIMARY KEY (SKILL_NAME)
 );
 
 /*Race Table Values*/
@@ -771,3 +792,79 @@ INSERT INTO BONUS_SPELLS VALUES (
 '16', '4', '4', '4', '4', '3', '3', '3', '3', '2');
 INSERT INTO BONUS_SPELLS VALUES (
 '17', '5', '4', '4', '4', '4', '3', '3', '3', '3');
+
+/* ****************************************************************************
+                                    SKILLS
+**************************************************************************** */
+
+/*Skill Table*/
+INSERT INTO SKILLS VALUES (
+'Acrobatics', 'Y', 'Y', 'N', 'N', 'N', 'Y', 'N', 'N', 'Y', 'N', 'N', 'Y', 'DEX');
+INSERT INTO SKILLS VALUES (
+'Appraise', 'N', 'Y', 'Y', 'N', 'N', 'N', 'N', 'N', 'Y', 'Y', 'Y', 'Y', 'INT');
+INSERT INTO SKILLS VALUES (
+'Bluff', 'N', 'Y', 'N', 'N', 'N', 'N', 'N', 'N', 'Y', 'Y', 'N', 'Y', 'CHA');
+INSERT INTO SKILLS VALUES (
+'Climb', 'Y', 'Y', 'N', 'Y', 'Y', 'Y', 'N', 'Y', 'Y', 'N', 'N', 'Y', 'STR');
+INSERT INTO SKILLS VALUES (
+'Craft', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'INT');
+INSERT INTO SKILLS VALUES (
+'Diplomacy', 'N', 'Y', 'Y', 'N', 'N', 'N', 'Y', 'N', 'Y', 'N', 'N', 'Y', 'CHA');
+INSERT INTO SKILLS VALUES (
+'Disable Device', 'N', 'N', 'N', 'N', 'N', 'N', 'N', 'N', 'Y', 'N', 'N', 'N', 'DEX');
+INSERT INTO SKILLS VALUES (
+'Disguise', 'N', 'Y', 'N', 'N', 'N', 'N', 'N', 'N', 'Y', 'N', 'N', 'Y', 'CHA');
+INSERT INTO SKILLS VALUES (
+'Escape Artist', 'N', 'Y', 'N', 'N', 'N', 'Y', 'N', 'N', 'Y', 'N', 'N', 'Y', 'DEX');
+INSERT INTO SKILLS VALUES (
+'Fly', 'N', 'N', 'N', 'Y', 'N', 'N', 'N', 'N', 'N', 'Y', 'Y', 'Y', 'DEX');
+INSERT INTO SKILLS VALUES (
+'Handle Animal', 'Y', 'N', 'N', 'Y', 'Y', 'N', 'Y', 'Y', 'N', 'N', 'N', 'N', 'CHA');
+INSERT INTO SKILLS VALUES (
+'Heal', 'N', 'N', 'Y', 'Y', 'N', 'N', 'Y', 'Y', 'N', 'N', 'N', 'Y', 'WIS');
+INSERT INTO SKILLS VALUES (
+'Intimidate', 'Y', 'Y', 'N', 'N', 'Y', 'Y', 'N', 'Y', 'Y', 'Y', 'N', 'Y', 'CHA');
+INSERT INTO SKILLS VALUES (
+'Knowledge(Arcana)', 'N', 'Y', 'Y', 'N', 'N', 'N', 'N', 'N', 'N', 'Y', 'Y', 'N', 'INT');
+INSERT INTO SKILLS VALUES (
+'Knowledge(Dungeoneering)', 'N', 'Y', 'N', 'N', 'Y', 'N', 'N', 'Y', 'Y', 'N', 'Y', 'N', 'INT');
+INSERT INTO SKILLS VALUES (
+'Knowledge(Engineering)', 'N', 'Y', 'N', 'N', 'Y', 'N', 'N', 'N', 'N', 'N', 'Y', 'N', 'INT');
+INSERT INTO SKILLS VALUES (
+'Knowledge(Geography)', 'N', 'Y', 'N', 'Y', 'N', 'N', 'N', 'Y', 'N', 'N', 'Y', 'N', 'INT');
+INSERT INTO SKILLS VALUES (
+'Knowledge(History)', 'N', 'Y', 'Y', 'N', 'N', 'Y', 'N', 'N', 'N', 'N', 'Y', 'N', 'INT');
+INSERT INTO SKILLS VALUES (
+'Knowledge(Local)', 'N', 'Y', 'N', 'N', 'N', 'N', 'N', 'N', 'Y', 'N', 'Y', 'N', 'INT');
+INSERT INTO SKILLS VALUES (
+'Knowledge(Nature)', 'Y', 'Y', 'N', 'Y', 'N', 'N', 'N', 'Y', 'N', 'N', 'Y', 'N', 'INT');
+INSERT INTO SKILLS VALUES (
+'Knowledge(Nobility)', 'N', 'Y', 'Y', 'N', 'N', 'N', 'Y', 'N', 'N', 'N', 'Y', 'N', 'INT');
+INSERT INTO SKILLS VALUES (
+'Knowledge(Planes)', 'N', 'Y', 'Y', 'N', 'N', 'N', 'N', 'N', 'N', 'N', 'Y', 'N', 'INT');
+INSERT INTO SKILLS VALUES (
+'Knowledge(Relgion)', 'N', 'Y', 'Y', 'N', 'N', 'Y', 'Y', 'N', 'N', 'N', 'Y', 'N', 'INT');
+INSERT INTO SKILLS VALUES (
+'Linguistics', 'N', 'Y', 'Y', 'N', 'N', 'Y', 'Y', 'N', 'N', 'N', 'Y', 'N', 'INT');
+INSERT INTO SKILLS VALUES (
+'Perception', 'Y', 'Y', 'N', 'Y', 'N', 'Y', 'N', 'Y', 'Y', 'N', 'N', 'Y', 'WIS');
+INSERT INTO SKILLS VALUES (
+'Perform', 'N', 'Y', 'N', 'N', 'N', 'Y', 'N', 'N', 'Y', 'N', 'N', 'Y', 'CHA');
+INSERT INTO SKILLS VALUES (
+'Profession', 'N', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'N', 'WIS');
+INSERT INTO SKILLS VALUES (
+'Ride', 'Y', 'N', 'N', 'Y', 'Y', 'Y', 'Y', 'Y', 'N', 'N', 'N', 'Y', 'DEX');
+INSERT INTO SKILLS VALUES (
+'Sense Motive', 'N', 'Y', 'Y', 'N', 'N', 'Y', 'Y', 'N', 'Y', 'N', 'N', 'Y', 'WIS');
+INSERT INTO SKILLS VALUES (
+'Sleight of Hand', 'N', 'Y', 'N', 'N', 'N', 'N', 'N', 'N', 'Y', 'N', 'N', 'N', 'DEX');
+INSERT INTO SKILLS VALUES (
+'Spellcraft', 'N', 'Y', 'Y', 'Y', 'N', 'N', 'Y', 'Y', 'N', 'Y', 'Y', 'N', 'INT');
+INSERT INTO SKILLS VALUES (
+'Stealth', 'N', 'Y', 'N', 'N', 'N', 'Y', 'N', 'Y', 'Y', 'N', 'N', 'Y', 'DEX');
+INSERT INTO SKILLS VALUES (
+'Survival', 'Y', 'N', 'N', 'Y', 'Y', 'N', 'N', 'Y', 'N', 'N', 'N', 'Y', 'WIS');
+INSERT INTO SKILLS VALUES (
+'Swim', 'Y', 'N', 'N', 'Y', 'Y', 'Y', 'N', 'Y', 'Y', 'N', 'N', 'Y', 'STR');
+INSERT INTO SKILLS VALUES (
+'Use Magic Device', 'N', 'Y', 'N', 'N', 'N', 'N', 'N', 'N', 'Y', 'Y', 'N', 'N', 'CHA');
