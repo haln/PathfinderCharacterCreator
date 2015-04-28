@@ -94,15 +94,15 @@ body {
 	background-color: #b1e583;
 }
 
-#results:target ~ nav #header #navigation #link-result,
-#stats:target ~ nav #header #navigation #link-stats,
-#race:target ~ nav #header #navigation #link-race,
-#class:target ~ nav #header #navigation #link-class,
-#bio:target ~ nav #header #navigation #link-bio{
-        
-        background-image:url(Images/pink-circle.png);
-        z-index: 4;
-	background: #000;
+index.html:target ~ nav #header #navigation #link-home,
+characterWizard.html:target ~ nav #header #navigation #link-wizard,
+#signup:target ~ nav #header #navigation #link-signup,
+#stats:target ~ #progress #link-stats,
+#race:target ~ #progress #link-race,
+#class:target ~ #progress #link-class,
+#bio:target ~ #progress #link-bio{
+
+    background: #000;
 	
 }#works {
 	padding: 15px 0px;
