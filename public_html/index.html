@@ -5,162 +5,35 @@
 <!--[if IE 9 ]>    <html class="ie ie9 no-js" lang="en"> <![endif]-->
 <!--[if gt IE 9]><!--><html class="no-js" lang="en"><!--<![endif]-->
     <head>
-        <meta charset="UTF-8" />
+        <title>Pathfinder Character Creator - Home</title>
+        <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
-        <title>Pathfinder Character Creator - Home Page</title>
-        
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-        
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="css/main.css">
         <link rel="stylesheet" href="css/animations.css">
     </head>
     <body>
-        <!-- Content Pages -->
-        
-        
-        <!-- Stats Page -->
-        <div id="stats" class="content">
-                <h2>Statistics Page</h2>
-                <p>Roll the dice and get started</p>
-                <div id="dice">
-                    <input id="rollDice" type="button" value="Roll the dice" onclick="rollCharacter()">
-                    <img src="Images/Dice/container.png" id="stat1" ondragstart="drag(event)" draggable="true" alt="" ondragover="" ondrop=""/>
-                    <img src="Images/Dice/container.png" id="stat2" ondragstart="drag(event)" draggable="true" alt="" ondragover="" ondrop=""/>
-                    <img src="Images/Dice/container.png" id="stat3" ondragstart="drag(event)" draggable="true" alt="" ondragover="" ondrop=""/>
-                    <img src="Images/Dice/container.png" id="stat4" ondragstart="drag(event)" draggable="true" alt="" ondragover="" ondrop=""/>
-                    <img src="Images/Dice/container.png" id="stat5" ondragstart="drag(event)" draggable="true" alt="" ondragover="" ondrop=""/>
-                    <img src="Images/Dice/container.png" id="stat6" ondragstart="drag(event)" draggable="true" alt="" ondragover="" ondrop=""/>
-                </div>
-               
-                <div id="stats-button">
-
-                    <input id="strenthbtn" class="statsbutton" type="button" value="Strength" onclick="setToInnerHTML(getXML('str_desc'), 'txt_description')">                  
-                    <img src="Images/Dice/container.png" id="strCon" class="container" ondragover="allowDrop(event)" ondrop="drop(event)" draggable="false" alt="" ondragstart=""/>
-                    <input id="dexteritybtn" class="statsbutton" type="button" value="Dexterity" onclick="setToInnerHTML(getXML('dex_desc'), 'txt_description')">
-                    <img src="Images/Dice/container.png" id="dexCon" class="container" ondragover="allowDrop(event)" ondrop="drop(event)" draggable="false" alt="" ondragstart=""/>
-                    <input id="constitutionbtn" class="statsbutton" type="button" value="Constitution" onclick="setToInnerHTML(getXML('con_desc'), 'txt_description')">
-                    <img src="Images/Dice/container.png" id="conCon" class="container" ondragover="allowDrop(event)" ondrop="drop(event)" draggable="false" alt="" ondragstart=""/>
-                    <input id="intelligencebtn" class="statsbutton" type="button" value="Intelligence" onclick="setToInnerHTML(getXML('int_desc'), 'txt_description')">
-                    <img src="Images/Dice/container.png" id="intCon" class="container" ondragover="allowDrop(event)" ondrop="drop(event)" draggable="false" alt="" ondragstart=""/>
-                    <input id="wisdombtn" class="statsbutton" type="button" value="Wisdom" onclick="setToInnerHTML(getXML('wis_desc'), 'txt_description')">
-                    <img src="Images/Dice/container.png" id="wisCon" class="container" ondragover="allowDrop(event)" ondrop="drop(event)" draggable="false" alt="" ondragstart=""/>
-                    <input id="charismabtn" class="statsbutton" type="button" value="Charisma" onclick="setToInnerHTML(getXML('cha_desc'), 'txt_description')"> 
-                    <img src="Images/Dice/container.png" id="chaCon" class="container" ondragover="allowDrop(event)" ondrop="drop(event)" draggable="false" alt="" ondragstart=""/>
-
-                    <br />
-                </div>   
-                <div id="stats-description">
-                    <label id="txt_description">Click on 'Roll the dice' to get your attribute values, and then drag the results to the desired stat. Click on a stat to get a description of what it does.</label>
-                </div>
-                
-                
-                <p>
-                    <a href="#race">Next</a>
-                </p>
-            </div>
-        <!-- End of Stats Page -->
-        
-        <!-- Race Page -->
-        <div id="race" class="panel">
-            <div class="content">
-                <h2>Race Page</h2>
-                <p>This is the race selection page.</p>
-                <p>
-                    <a href="#stats">Return to Stats</a>
-                    <a href="#class">Next</a>
-                </p>
-            </div>
-        </div>
-        <!-- End of Race Page -->
-        
-        <!-- Class Page -->
-        <div id="class" class="panel">
-            <div class="content">
-                <h2>Class Page</h2>
-                <p>This is the class selection page.</p>
-                <br />
-                <input id='btn_Barbarian' type='button' value='Barbarian' onclick='displayClass("Barbarian")'>
-                <input id='btn_Bard' type='button' value='Bard' onclick='displayClass("Bard")'>
-                <input id='btn_Cleric' type='button' value='Cleric' onclick='displayClass("Cleric")'>
-                <input id='btn_Druid' type='button' value='Druid' onclick='displayClass("Druid")'>
-                <input id='btn_Fighter' type='button' value='Fighter' onclick='displayClass("Fighter")'>
-                <input id='btn_Monk' type='button' value='Monk' onclick='displayClass("Monk")'>
-                <input id='btn_Paladin' type='button' value='Paladin' onclick='displayClass("Paladin")'>
-                <input id='btn_Ranger' type='button' value='Ranger' onclick='displayClass("Ranger")'>
-                <input id='btn_Rogue' type='button' value='Rogue' onclick='displayClass("Rogue")'>
-                <input id='btn_Sorcerer' type='button' value='Sorcerer' onclick='displayClass("Sorcerer")'>
-                <input id='btn_Wizard' type='button' value='Wizard' onclick='displayClass("Wizard")'>
-                <br />
-                <div id='classPicture'>
-                    <img id='classImage' src='Images/Class/Barbarian.jpg'>
-                </div>
-                <div id='classDescription'>
-                    <label id='lbl_class_desc'>For some, there is only rage. In the ways of their people, in the fury of their passion, in the howl of battle, conflict is all these brutal souls know. Savages, hired muscle, masters of vicious martial techniques, they are not soldiers or professional warriors—they are the battle possessed, creatures of slaughter and spirits of war. Known as barbarians, these warmongers know little of training, preparation, or the rules of warfare; for them, only the moment exists, with the foes that stand before them and the knowledge that the next moment might hold their death. They possess a sixth sense in regard to danger and the endurance to weather all that might entail. These brutal warriors might rise from all walks of life, both civilized and savage, though whole societies embracing such philosophies roam the wild places of the world. Within barbarians storms the primal spirit of battle, and woe to those who face their rage.</label>
-                    <br /><br />
-                    Hit Points: d<label id='lbl_class_hp'>12</label>
-                    <br /><br />
-                    Alignment: <label id='lbl_class_align'>Cannot be lawful</label>
-                    <br /><br />
-                    Skill Points: <label id='lbl_class_skillPoints'>4</label> + int modifier per level.
-                    <br /><br />
-                    Class Skills: <label id='lbl_class_skills'>Acrobatics (Dex), Climb (Str), Craft (Int), Handle Animal (Cha), Intimidate (Cha), Knowledge (nature) (Int), Perception (Wis), Ride (Dex), Survival (Wis), and Swim (Str)</label>
-                </div>
-                <p>
-                    <a href="#race">Return to Race Selection</a>
-                    <a href="#bio">Next</a>
-                </p>
-            </div>
-        </div>
-        <!-- End of Class Page -->
-        
-        <!-- Biography Page -->
-        <div id="bio" class="panel">
-            <div class="content">
-                <h2>Biography Page</h2>
-                <p>This is the biography and character description page</p>
-                <p>
-                    <a href="#class">Return to Class Selection</a>
-                    <a href="#results">Create Character</a>
-                </p>
-            </div>
-        </div>
-        <!-- End of Biography Page -->
-        
-        <!-- Result Page -->
-        <div id="results" class="panel">
-            <div class="content">
-                <h2>Result Page</h2>
-                <p>This is the result page</p>
-                
-                <p>
-                    <a href="#bio">Return to biography Selection</a>
-                    <!--<a href="">Create Character</a>-->
-                </p>
-            </div>
-        </div>
-        <!-- End of Biography Page -->
-        
-        <!-- Navigation Bar -->
+        <!-- Top Bar Menu -->
+        <form id="signin" action="">
+            <input type="text" placeholder="Username">
+            <input type="password" placeholder="Password">
+        </form>
+        <a href='profile.html'>My Profile</a>
+        <!-- The Navigation Menu -->
         <nav>
             <div id="header">
                 <h1>Pathfinder Character Creator</h1>
-                <ul id="navigation">                  
-                    <li><img id="link-stats" src="Images/grey-circle.png" alt=""/></li>
-                    <li><img id="link-race" src="Images/grey-circle.png" alt=""/></li>
-                    <li><img id="link-class" src="Images/grey-circle.png" alt=""/></li>
-                    <li><img id="link-bio" src="Images/grey-circle.png" alt=""/></li>
-                    <li><img id="link-result" src="Images/grey-circle.png" alt=""/></li>
-                
+                <ul id="navigation">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="characterWizard.html">Character Wizard</a></li>
+                    <li><a href="signup.html">Account Signup</a></li>
                 </ul>
             </div>
         </nav>
-        <!-- End of Navigation Bar -->
-        
-        <script src="js/jquery-2.1.3.min.js"></script>
-        <script src="js/AttributeFunctions.js"></script>
-        <script src="js/Dice.js"></script>
-        <script src='js/main.js'></script>
-        <script src='js/ClassFunctions.js'></script>
-
+        <!-- The Homepage Content -->
+        <div id="homepage" class="content">
+            <h2>Home</h2>
+            <p>Wwwelcome to the Pathfinder Character Creator.</p>
+        </div>
     </body>
 </html>
