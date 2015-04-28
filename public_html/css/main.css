@@ -140,22 +140,25 @@ characterWizard.html:target ~ nav #header #navigation #link-wizard,
 }
 
 .statsbutton{
-color: rgb(255, 255, 255);
-width:195px;
-height: 80px;
-margin-right: 38px;
-margin-bottom: 38px;
-font-size: 20px;
-padding: 20px;
-text-shadow: 0px -1px 0px rgba(140, 140, 140, 0.39);
--webkit-border-radius: 7px;
--moz-border-radius: 7px;
-border-radius: 7px;
-background: rgb(52, 152, 219);
--webkit-box-shadow: 0px 5px 1px rgba(20, 105, 162, 0.75);
--moz-box-shadow:    0px 5px 1px rgba(20, 105, 162, 0.75);
-box-shadow:         0px 5px 1px rgba(20, 105, 162, 0.75);
-float: left;
+    color: rgb(255, 255, 255);
+    width:195px;
+    height: 80px;
+    margin-right: 38px;
+    margin-bottom: 38px;
+    font-size: 20px;
+
+    letter-spacing:2px;
+    padding: 20px;
+    text-shadow: 0px -1px 0px rgba(140, 140, 140, 0.39);
+    
+    -webkit-border-radius: 7px;
+    -moz-border-radius: 7px;
+    border-radius: 7px;
+    background: rgb(52, 152, 219);
+    -webkit-box-shadow: 0px 5px 1px rgba(20, 105, 162, 0.75);
+    -moz-box-shadow:    0px 5px 1px rgba(20, 105, 162, 0.75);
+    box-shadow:         0px 5px 1px rgba(20, 105, 162, 0.75);
+    float: left;
 }
 
 
