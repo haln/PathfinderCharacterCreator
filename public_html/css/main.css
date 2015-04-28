@@ -157,9 +157,17 @@ background: rgb(52, 152, 219);
 box-shadow:         0px 5px 1px rgba(20, 105, 162, 0.75);
 float: left;
 }
+
+
 #stats-button{
     width:800px;
     height: 292px;
+    margin-right: 80px;
+}
+#stats-description{
+    width:323px;
+    height: 292px;
+    float: left;
 }
 .container{
     float: left;
