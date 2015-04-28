@@ -34,24 +34,23 @@
                
                 <div id="stats-button">
 
-                    <input id="strenthbtn" class="statsbutton" type="button" value="Strength" onclick="setToValue(getXML('str_desc'), 'txt_description')">                  
+                    <input id="strenthbtn" class="statsbutton" type="button" value="Strength" onclick="setToInnerHTML(getXML('str_desc'), 'txt_description')">                  
                     <img src="Images/Dice/container.png" id="strCon" class="container" ondragover="allowDrop(event)" ondrop="drop(event)" draggable="false" alt="" ondragstart=""/>
-                    <input id="dexteritybtn" class="statsbutton" type="button" value="dexterity" onclick="setToValue(getXML('dex_desc'), 'txt_description')">
+                    <input id="dexteritybtn" class="statsbutton" type="button" value="Dexterity" onclick="setToInnerHTML(getXML('dex_desc'), 'txt_description')">
                     <img src="Images/Dice/container.png" id="dexCon" class="container" ondragover="allowDrop(event)" ondrop="drop(event)" draggable="false" alt="" ondragstart=""/>
-                    <input id="constitutionbtn" class="statsbutton" type="button" value="constitution" onclick="setToValue(getXML('con_desc'), 'txt_description')">
+                    <input id="constitutionbtn" class="statsbutton" type="button" value="Constitution" onclick="setToInnerHTML(getXML('con_desc'), 'txt_description')">
                     <img src="Images/Dice/container.png" id="conCon" class="container" ondragover="allowDrop(event)" ondrop="drop(event)" draggable="false" alt="" ondragstart=""/>
-                    <input id="intelligencebtn" class="statsbutton" type="button" value="intelligence" onclick="setToValue(getXML('int_desc'), 'txt_description')">
+                    <input id="intelligencebtn" class="statsbutton" type="button" value="Intelligence" onclick="setToInnerHTML(getXML('int_desc'), 'txt_description')">
                     <img src="Images/Dice/container.png" id="intCon" class="container" ondragover="allowDrop(event)" ondrop="drop(event)" draggable="false" alt="" ondragstart=""/>
-                    <input id="wisdombtn" class="statsbutton" type="button" value="wisdom" onclick="setToValue(getXML('wis_desc'), 'txt_description')">
+                    <input id="wisdombtn" class="statsbutton" type="button" value="Wisdom" onclick="setToInnerHTML(getXML('wis_desc'), 'txt_description')">
                     <img src="Images/Dice/container.png" id="wisCon" class="container" ondragover="allowDrop(event)" ondrop="drop(event)" draggable="false" alt="" ondragstart=""/>
-                    <input id="charismabtn" class="statsbutton" type="button" value="charisma" onclick="setToValue(getXML('cha_desc'), 'txt_description')"> 
+                    <input id="charismabtn" class="statsbutton" type="button" value="Charisma" onclick="setToInnerHTML(getXML('cha_desc'), 'txt_description')"> 
                     <img src="Images/Dice/container.png" id="chaCon" class="container" ondragover="allowDrop(event)" ondrop="drop(event)" draggable="false" alt="" ondragstart=""/>
 
                     <br />
                 </div>   
                 <div id="stats-description">
                     <label id="txt_description"></label>
-                    
                 </div>
                 
                 
