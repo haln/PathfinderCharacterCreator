@@ -4,56 +4,89 @@ function displayClass(name){
             document.getElementById('classImage').setAttribute("src", "Images/Class/Barbarian.jpg");
             setToInnerHTML(getXML('barb_desc'), 'lbl_class_desc');
             setToInnerHTML(getXML('barb_skills'), 'lbl_class_skills');
+            setToInnerHTML(getXML('barb_align'), 'lbl_class_align');
+            setToInnerHTML('12', 'lbl_class_hp');
+            setToInnerHTML('4', 'lbl_class_skillPoints');
             break;
         case "Bard" :
             document.getElementById('classImage').setAttribute("src", "Images/Class/Bard.jpg");
             setToInnerHTML(getXML('bard_desc'), 'lbl_class_desc');
             setToInnerHTML(getXML('bard_skills'), 'lbl_class_skills');
+            setToInnerHTML(getXML('bard_align'), 'lbl_class_align');
+            setToInnerHTML('8', 'lbl_class_hp');
+            setToInnerHTML('6', 'lbl_class_skillPoints');
             break;
         case "Cleric" :
             document.getElementById('classImage').setAttribute("src", "Images/Class/Cleric.jpg");
             setToInnerHTML(getXML('cler_desc'), 'lbl_class_desc');
             setToInnerHTML(getXML('cler_skills'), 'lbl_class_skills');
+            setToInnerHTML(getXML('cler_align'), 'lbl_class_align');
+            setToInnerHTML('8', 'lbl_class_hp');
+            setToInnerHTML('2', 'lbl_class_skillPoints');
             break;
         case "Druid" :
             document.getElementById('classImage').setAttribute("src", "Images/Class/Druid.jpg");
             setToInnerHTML(getXML('drui_desc'), 'lbl_class_desc');
             setToInnerHTML(getXML('drui_skills'), 'lbl_class_skills');
+            setToInnerHTML(getXML('drui_align'), 'lbl_class_align');
+            setToInnerHTML('8', 'lbl_class_hp');
+            setToInnerHTML('4', 'lbl_class_skillPoints');
             break;
         case "Fighter" :
             document.getElementById('classImage').setAttribute("src", "Images/Class/Fighter.jpg");
             setToInnerHTML(getXML('figh_desc'), 'lbl_class_desc');
             setToInnerHTML(getXML('figh_skills'), 'lbl_class_skills');
+            setToInnerHTML(getXML('figh_align'), 'lbl_class_align');
+            setToInnerHTML('10', 'lbl_class_hp');
+            setToInnerHTML('2', 'lbl_class_skillPoints');
             break;
         case "Monk" :
             document.getElementById('classImage').setAttribute("src", "Images/Class/Monk.jpg");
             setToInnerHTML(getXML('monk_desc'), 'lbl_class_desc');
             setToInnerHTML(getXML('monk_skills'), 'lbl_class_skills');
+            setToInnerHTML(getXML('monk_align'), 'lbl_class_align');
+            setToInnerHTML('8', 'lbl_class_hp');
+            setToInnerHTML('4', 'lbl_class_skillPoints');
             break;
         case "Paladin" :
             document.getElementById('classImage').setAttribute("src", "Images/Class/Paladin.jpg");
             setToInnerHTML(getXML('pala_desc'), 'lbl_class_desc');
             setToInnerHTML(getXML('pala_skills'), 'lbl_class_skills');
+            setToInnerHTML(getXML('pala_align'), 'lbl_class_align');
+            setToInnerHTML('10', 'lbl_class_hp');
+            setToInnerHTML('2', 'lbl_class_skillPoints');
             break;
         case "Ranger" :
             document.getElementById('classImage').setAttribute("src", "Images/Class/Ranger.jpg");
             setToInnerHTML(getXML('rang_desc'), 'lbl_class_desc');
             setToInnerHTML(getXML('rang_skills'), 'lbl_class_skills');
+            setToInnerHTML(getXML('rang_align'), 'lbl_class_align');
+            setToInnerHTML('10', 'lbl_class_hp');
+            setToInnerHTML('6', 'lbl_class_skillPoints');
             break;
         case "Rogue" :
             document.getElementById('classImage').setAttribute("src", "Images/Class/Rogue.jpg");
             setToInnerHTML(getXML('rogu_desc'), 'lbl_class_desc');
             setToInnerHTML(getXML('rogu_skills'), 'lbl_class_skills');
+            setToInnerHTML(getXML('rogu_align'), 'lbl_class_align');
+            setToInnerHTML('8', 'lbl_class_hp');
+            setToInnerHTML('8', 'lbl_class_skillPoints');
             break;
         case "Sorcerer" :
             document.getElementById('classImage').setAttribute("src", "Images/Class/Sorcerer.jpg");
             setToInnerHTML(getXML('sorc_desc'), 'lbl_class_desc');
             setToInnerHTML(getXML('sorc_skills'), 'lbl_class_skills');
+            setToInnerHTML(getXML('sorc_align'), 'lbl_class_align');
+            setToInnerHTML('6', 'lbl_class_hp');
+            setToInnerHTML('2', 'lbl_class_skillPoints');
             break;
         case "Wizard" :
             document.getElementById('classImage').setAttribute("src", "Images/Class/Wizard.jpg");
             setToInnerHTML(getXML('wiza_desc'), 'lbl_class_desc');
             setToInnerHTML(getXML('wiza_skills'), 'lbl_class_skills');
+            setToInnerHTML(getXML('wiza_align'), 'lbl_class_align');
+            setToInnerHTML('6', 'lbl_class_hp');
+            setToInnerHTML('2', 'lbl_class_skillPoints');
             break;
     }
 }
