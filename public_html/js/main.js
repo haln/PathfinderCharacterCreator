@@ -12,9 +12,8 @@ function setToValue(description, target){
 }
 
 function setToInnerHTML(description, target){
-    document.getElementById(target).innerHtml = description;
+    document.getElementById(target).innerHTML = description;
 }
-
 function getParameterByName(name) {
             name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
             var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
