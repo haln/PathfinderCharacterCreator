@@ -1,8 +1,3 @@
-function getStatDescription(stat) {
-    var textbox = document.getElementById("txt_description");
-    textbox.value = "";
-}
-
 function getImage(num) {
     var image = "Images/Dice/" + num + ".png";
     return image;
@@ -107,13 +102,3 @@ function drop(ev) {
 
     ev.preventDefault();
 }
-
-function getXML(type) {
-        xmlhttp = new XMLHttpRequest();
-        xmlhttp.open("GET", "XML/pathfinderXML.xml", false);
-        xmlhttp.send();
-        xmlDoc = xmlhttp.responseXML;
-        console.log(xmlDoc);
-        var description = xmlDoc.getElementsByTagName(type)[0].childNodes[0].nodeValue;
-        document.getElementById("txt_description").setAttribute("value", description);
-    }

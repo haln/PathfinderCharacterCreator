@@ -33,17 +33,17 @@
                 </div>
                
                 <div id="stats-button">
-                    <input id="strenthbtn" type="button" value="Strength" onclick="getXML('str_desc')">                  
+                    <input id="strenthbtn" type="button" value="Strength" onclick="setToValue(getXML('str_desc'), 'txt_description')">                  
                     <img src="Images/Dice/container.png" id="strCon" ondragover="allowDrop(event)" ondrop="drop(event)" draggable="false" alt="" ondragstart=""/>
-                    <input id="dexteritybtn" type="button" value="dexterity" onclick="getXML('dex_desc')">
+                    <input id="dexteritybtn" type="button" value="dexterity" onclick="setToValue(getXML('dex_desc'), 'txt_description')">
                     <img src="Images/Dice/container.png" id="dexCon" ondragover="allowDrop(event)" ondrop="drop(event)" draggable="false" alt="" ondragstart=""/>
-                    <input id="constitutionbtn" type="button" value="constitution" onclick="getXML('con_desc')">
+                    <input id="constitutionbtn" type="button" value="constitution" onclick="setToValue(getXML('con_desc'), 'txt_description')">
                     <img src="Images/Dice/container.png" id="conCon" ondragover="allowDrop(event)" ondrop="drop(event)" draggable="false" alt="" ondragstart=""/>
-                    <input id="intelligencebtn" type="button" value="intelligence" onclick="getXML('int_desc')">
+                    <input id="intelligencebtn" type="button" value="intelligence" onclick="setToValue(getXML('int_desc'), 'txt_description')">
                     <img src="Images/Dice/container.png" id="intCon" ondragover="allowDrop(event)" ondrop="drop(event)" draggable="false" alt="" ondragstart=""/>
-                    <input id="wisdombtn" type="button" value="wisdom" onclick="getXML('wis_desc')">
+                    <input id="wisdombtn" type="button" value="wisdom" onclick="setToValue(getXML('wis_desc'), 'txt_description')">
                     <img src="Images/Dice/container.png" id="wisCon" ondragover="allowDrop(event)" ondrop="drop(event)" draggable="false" alt="" ondragstart=""/>
-                    <input id="charismabtn" type="button" value="charisma" onclick="getXML('cha_desc')"> 
+                    <input id="charismabtn" type="button" value="charisma" onclick="setToValue(getXML('cha_desc'), 'txt_description')"> 
                     <img src="Images/Dice/container.png" id="chaCon" ondragover="allowDrop(event)" ondrop="drop(event)" draggable="false" alt="" ondragstart=""/>
                     <br />
                     <input type="text" id="txt_description" value="">
@@ -74,6 +74,33 @@
             <div class="content">
                 <h2>Class Page</h2>
                 <p>This is the class selection page.</p>
+                <br />
+                <input id='btn_Barbarian' type='button' value='Barbarian' onclick='displayClass("Barbarian")'>
+                <input id='btn_Bard' type='button' value='Bard' onclick='displayClass("Bard")'>
+                <input id='btn_Cleric' type='button' value='Cleric' onclick='displayClass("Cleric")'>
+                <input id='btn_Druid' type='button' value='Druid' onclick='displayClass("Druid")'>
+                <input id='btn_Fighter' type='button' value='Fighter' onclick='displayClass("Fighter")'>
+                <input id='btn_Monk' type='button' value='Monk' onclick='displayClass("Monk")'>
+                <input id='btn_Paladin' type='button' value='Paladin' onclick='displayClass("Paladin")'>
+                <input id='btn_Ranger' type='button' value='Ranger' onclick='displayClass("Ranger")'>
+                <input id='btn_Rogue' type='button' value='Rogue' onclick='displayClass("Rogue")'>
+                <input id='btn_Sorcerer' type='button' value='Sorcerer' onclick='displayClass("Sorcerer")'>
+                <input id='btn_Wizard' type='button' value='Wizard' onclick='displayClass("Wizard")'>
+                <br />
+                <div id='classPicture'>
+                    <img id='classImage' src='Images/Class/Barbarian.jpg'>
+                </div>
+                <div id='classDescription'>
+                    <label id='lbl_class_desc'>For some, there is only rage. In the ways of their people, in the fury of their passion, in the howl of battle, conflict is all these brutal souls know. Savages, hired muscle, masters of vicious martial techniques, they are not soldiers or professional warriors—they are the battle possessed, creatures of slaughter and spirits of war. Known as barbarians, these warmongers know little of training, preparation, or the rules of warfare; for them, only the moment exists, with the foes that stand before them and the knowledge that the next moment might hold their death. They possess a sixth sense in regard to danger and the endurance to weather all that might entail. These brutal warriors might rise from all walks of life, both civilized and savage, though whole societies embracing such philosophies roam the wild places of the world. Within barbarians storms the primal spirit of battle, and woe to those who face their rage.</label>
+                    <br /><br />
+                    Hit Points: d<label id='class_hp'>12</label>
+                    <br /><br />
+                    Alignment: <label id='class_align'>Cannot be lawful</label>
+                    <br /><br />
+                    Skill Points: <label id='class_skillPoints'>4</label> + int modifier per level.
+                    <br /><br />
+                    Class Skills: <label id='class_skills'>Acrobatics (Dex), Climb (Str), Craft (Int), Handle Animal (Cha), Intimidate (Cha), Knowledge (nature) (Int), Perception (Wis), Ride (Dex), Survival (Wis), and Swim (Str)</label>
+                </div>
                 <p>
                     <a href="#race">Return to Race Selection</a>
                     <a href="#bio">Next</a>
@@ -128,6 +155,7 @@
         <script src="js/jquery-2.1.3.min.js"></script>
         <script src="js/AttributeFunctions.js"></script>
         <script src="js/Dice.js"></script>
+        <script src='js/main.js'></script>
 
     </body>
 </html>
