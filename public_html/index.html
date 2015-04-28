@@ -21,7 +21,7 @@
         <!-- Stats Page -->
         <div id="stats" class="content">
                 <h2>Statistics Page</h2>
-                <p>This is the stats and dice rolling page.</p>
+                <p>Roll the dice and get started</p>
                 <div id="dice">
                     <input id="rollDice" type="button" value="Roll the dice" onclick="rollCharacter()">
                     <img src="Images/Dice/container.png" id="stat1" ondragstart="drag(event)" draggable="true" alt="" ondragover="" ondrop=""/>
@@ -33,20 +33,25 @@
                 </div>
                
                 <div id="stats-button">
-                    <input id="strenthbtn" type="button" value="Strength" onclick="getXML('str_desc')">                  
-                    <img src="Images/Dice/container.png" id="strCon" ondragover="allowDrop(event)" ondrop="drop(event)" draggable="false" alt="" ondragstart=""/>
-                    <input id="dexteritybtn" type="button" value="dexterity" onclick="getXML('dex_desc')">
-                    <img src="Images/Dice/container.png" id="dexCon" ondragover="allowDrop(event)" ondrop="drop(event)" draggable="false" alt="" ondragstart=""/>
-                    <input id="constitutionbtn" type="button" value="constitution" onclick="getXML('con_desc')">
-                    <img src="Images/Dice/container.png" id="conCon" ondragover="allowDrop(event)" ondrop="drop(event)" draggable="false" alt="" ondragstart=""/>
-                    <input id="intelligencebtn" type="button" value="intelligence" onclick="getXML('int_desc')">
-                    <img src="Images/Dice/container.png" id="intCon" ondragover="allowDrop(event)" ondrop="drop(event)" draggable="false" alt="" ondragstart=""/>
-                    <input id="wisdombtn" type="button" value="wisdom" onclick="getXML('wis_desc')">
-                    <img src="Images/Dice/container.png" id="wisCon" ondragover="allowDrop(event)" ondrop="drop(event)" draggable="false" alt="" ondragstart=""/>
-                    <input id="charismabtn" type="button" value="charisma" onclick="getXML('cha_desc')"> 
-                    <img src="Images/Dice/container.png" id="chaCon" ondragover="allowDrop(event)" ondrop="drop(event)" draggable="false" alt="" ondragstart=""/>
+                    <input id="strenthbtn" class="statsbutton" type="button" value="Strength" onclick="getXML('str_desc')">                  
+                    <img src="Images/Dice/container.png" id="strCon" class="container" ondragover="allowDrop(event)" ondrop="drop(event)" draggable="false" alt="" ondragstart=""/>
+                    <input id="dexteritybtn" class="statsbutton" type="button" value="Dexterity" onclick="getXML('dex_desc')">
+                    <img src="Images/Dice/container.png" id="dexCon" class="container" ondragover="allowDrop(event)" ondrop="drop(event)" draggable="false" alt="" ondragstart=""/>
                     <br />
-                    <input type="text" id="txt_description" value="">
+                    <input id="constitutionbtn" class="statsbutton" type="button" value="Constitution" onclick="getXML('con_desc')">
+                    <img src="Images/Dice/container.png" id="conCon" class="container" ondragover="allowDrop(event)" ondrop="drop(event)" draggable="false" alt="" ondragstart=""/>
+                    <input id="intelligencebtn" class="statsbutton" type="button" value="Intelligence" onclick="getXML('int_desc')">
+                    <img src="Images/Dice/container.png" id="intCon" class="container" ondragover="allowDrop(event)" ondrop="drop(event)" draggable="false" alt="" ondragstart=""/>
+                    <br />
+                    <input id="wisdombtn" class="statsbutton" type="button" value="Wisdom" onclick="getXML('wis_desc')">
+                    <img src="Images/Dice/container.png" id="wisCon" class="container" ondragover="allowDrop(event)" ondrop="drop(event)" draggable="false" alt="" ondragstart=""/>
+                    <input id="charismabtn" class="statsbutton" type="button" value="Charisma" onclick="getXML('cha_desc')"> 
+                    <img src="Images/Dice/container.png" id="chaCon" class="container" ondragover="allowDrop(event)" ondrop="drop(event)" draggable="false" alt="" ondragstart=""/>
+                    <br />
+                </div>   
+                <div id="stats-description">
+                    <label id="txt_description"></label>
+                    
                 </div>
                 
                 
