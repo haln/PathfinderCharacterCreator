@@ -14,3 +14,10 @@ function setToValue(description, target){
 function setToInnerHTML(description, target){
     document.getElementById(target).innerHtml = description;
 }
+
+function getParameterByName(name) {
+            name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+            var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+                results = regex.exec(location.search);
+            return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+            }
