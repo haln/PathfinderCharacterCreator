@@ -99,6 +99,37 @@
                 </div>
                 <!-- End of Progress Bar -->
                 <p>This is the race selection page.</p>
+                <div id="race_buttons">
+                    <input id="btn_dwarf" type="button" class="racebutton" value="Dwarf" onclick="displayRace('Dwarf')">
+                    <input id="btn_elf" type="button" class="racebutton" value="Elf" onclick="displayRace('Elf')">
+                    <input id="btn_gnome" type="button" class="racebutton" value="Gnome" onclick="displayRace('Gnome')">
+                    <input id="btn_helf" type="button" class="racebutton" value="Half-Elf" onclick="displayRace('Half-Elf')">
+                    <input id="btn_horc" type="button" class="racebutton" value="Half-Orc" onclick="displayRace('Half-Orc')">
+                    <input id="btn_halfling" type="button" class="racebutton" value="Halfling" onclick="displayRace('Halfling')">
+                    <input id="btn_human" type="button" class="racebutton" value="Human" onclick="displayRace('Human')">
+                </div>
+                <br /><br />
+                <div id="race_picture">
+                    <img id='raceImage' src='Images/Race/races.jpg'>
+                </div>
+                <div id="race_text">
+                    <label id="lbl_race_desc">Dwarves are a stoic but stern race, ensconced in cities carved from the hearts of mountains and fiercely determined to repel the depredations of savage races like orcs and goblins. More than any other race, the dwarves have acquired a reputation as dour and humorless craftsmen of the earth. It could be said that dwarven history shapes the dark disposition of many dwarves, for they reside in high mountains and dangerous realms below the earth, constantly at war with giants, goblins, and other such horrors.</label>
+                    <br /><br />
+                    <label id="lbl_race_abil">
+                        +2 Constitution, +2 Wisdom, –2 Charisma: Dwarves are both tough and wise, but also a bit gruff.<br /><br />
+                        Medium: Dwarves are Medium creatures and have no bonuses or penalties due to their size.<br /><br />
+                        Slow and Steady: Dwarves have a base speed of 20 feet, but their speed is never modified by armor or encumbrance.<br /><br />
+                        Darkvision: Dwarves can see in the dark up to 60 feet.<br /><br />
+                        Defensive Training: Dwarves get a +4 dodge bonus to AC against monsters of the giant subtype. <br /><br />
+                        Greed: Dwarves receive a +2 racial bonus on Appraise skill checks made to determine the price of nonmagical goods that contain precious metals or gemstones.<br /><br />
+                        Hatred: Dwarves receive a +1 bonus on attack rolls against humanoid creatures of the orc and goblinoid subtypes due to special training against these hated foes.<br /><br />
+                        Hardy: Dwarves receive a +2 racial bonus on saving throws against poison, spells, and spell-like abilities.<br /><br />
+                        Stability: Dwarves receive a +4 racial bonus to their Combat Maneuver Defense when resisting a bull rush or trip attempt while standing on the ground.<br /><br />
+                        Stonecunning: Dwarves receive a +2 bonus on Perception checks to potentially notice unusual stonework, such as traps and hidden doors located in stone walls or floors. They receive a check to notice such features whenever they pass within 10 feet of them, whether or not they are actively looking. <br /><br />
+                        Weapon Familiarity: Dwarves are proficient with battleaxes, heavy picks, and warhammers, and treat any weapon with the word dwarven in its name as a martial weapon.<br /><br />
+                        Languages: Dwarves begin play speaking Common and Dwarven. Dwarves with high Intelligence scores can choose from the following: Giant, Gnome, Goblin, Orc, Terran, and Undercommon.<br /><br />
+                    </label>
+                </div>
                 <p>
                     <a href="#stats">Return to Stats</a>
                     <a href="#class">Next</a>
@@ -206,6 +237,7 @@
         <script src="js/Dice.js"></script>
         <script src='js/main.js'></script>
         <script src='js/ClassFunctions.js'></script>
+        <script src="js/RaceFunctions.js"></script>
 
     </body>
 </html>
