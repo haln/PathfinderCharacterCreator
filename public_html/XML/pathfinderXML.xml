@@ -139,6 +139,7 @@
         Weapon Familiarity: Halflings are proficient with slings and treat any weapon with the word halfling in its name as a martial weapon.&lt;br /&gt;&lt;br /&gt;
         Languages: Halflings begin play speaking Common and Halfling. Halflings with high Intelligence scores can choose from the following: Dwarven, Elven, Gnome, and Goblin.&lt;br /&gt;&lt;br /&gt;
     </half_abil>
+    
     <huma_desc>Humans possess exceptional drive and a great capacity to endure and expand, and as such are currently the dominant race in the world. Their empires and nations are vast, sprawling things, and the citizens of these societies carve names for themselves with the strength of their sword arms and the power of their spells. Humanity is best characterized by its tumultuousness and diversity, and human cultures run the gamut from savage but honorable tribes to decadent, devil-worshiping noble families in the most cosmopolitan cities. Human curiosity and ambition often triumph over their predilection for a sedentary lifestyle, and many leave their homes to explore the innumerable forgotten corners of the world or lead mighty armies to conquer their neighbors, simply because they can.</huma_desc>
     <huma_abil>
         +2 to One Ability Score: Human characters get a +2 bonus to one ability score of their choice at creation to represent their varied nature.&lt;br /&gt;&lt;br /&gt;

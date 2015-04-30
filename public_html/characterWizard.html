@@ -3,7 +3,8 @@
 <!--[if IE 7 ]>    <html class="ie ie7 no-js" lang="en"> <![endif]-->
 <!--[if IE 8 ]>    <html class="ie ie8 no-js" lang="en"> <![endif]-->
 <!--[if IE 9 ]>    <html class="ie ie9 no-js" lang="en"> <![endif]-->
-<!--[if gt IE 9]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<!--[if gt IE 9]><!-->
+<html class="no-js" lang="en"><!--<![endif]-->
     <head>
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
@@ -108,6 +109,7 @@
                     <input id="btn_halfling" type="button" class="racebutton" value="Halfling" onclick="displayRace('Halfling')">
                     <input id="btn_human" type="button" class="racebutton" value="Human" onclick="displayRace('Human')">
                 </div>
+                <input type="hidden" id="selected_race" value="Dwarf">
                 <br /><br />
                 <div id="race_picture">
                     <img id='raceImage' src='Images/Race/races.jpg'>
@@ -153,17 +155,20 @@
                 <!-- End of Progress Bar -->
                 <p>This is the class selection page.</p>
                 <br />
-                <input id='btn_Barbarian' type='button' class="classbutton" value='Barbarian' onclick='displayClass("Barbarian")'>
-                <input id='btn_Bard' type='button' class="classbutton" value='Bard' onclick='displayClass("Bard")'>
-                <input id='btn_Cleric' type='button' class="classbutton" value='Cleric' onclick='displayClass("Cleric")'>
-                <input id='btn_Druid' type='button' class="classbutton" value='Druid' onclick='displayClass("Druid")'>
-                <input id='btn_Fighter' type='button' class="classbutton" value='Fighter' onclick='displayClass("Fighter")'>
-                <input id='btn_Monk' type='button' class="classbutton" value='Monk' onclick='displayClass("Monk")'>
-                <input id='btn_Paladin' type='button' class="classbutton" value='Paladin' onclick='displayClass("Paladin")'>
-                <input id='btn_Ranger' type='button' class="classbutton" value='Ranger' onclick='displayClass("Ranger")'>
-                <input id='btn_Rogue' type='button' class="classbutton" value='Rogue' onclick='displayClass("Rogue")'>
-                <input id='btn_Sorcerer' type='button' class="classbutton" value='Sorcerer' onclick='displayClass("Sorcerer")'>
-                <input id='btn_Wizard' type='button' class="classbutton" value='Wizard' onclick='displayClass("Wizard")'>
+                <div id="class_buttons">
+                    <input id='btn_Barbarian' type='button' class="classbutton" value='Barbarian' onclick='displayClass("Barbarian")'>
+                    <input id='btn_Bard' type='button' class="classbutton" value='Bard' onclick='displayClass("Bard")'>
+                    <input id='btn_Cleric' type='button' class="classbutton" value='Cleric' onclick='displayClass("Cleric")'>
+                    <input id='btn_Druid' type='button' class="classbutton" value='Druid' onclick='displayClass("Druid")'>
+                    <input id='btn_Fighter' type='button' class="classbutton" value='Fighter' onclick='displayClass("Fighter")'>
+                    <input id='btn_Monk' type='button' class="classbutton" value='Monk' onclick='displayClass("Monk")'>
+                    <input id='btn_Paladin' type='button' class="classbutton" value='Paladin' onclick='displayClass("Paladin")'>
+                    <input id='btn_Ranger' type='button' class="classbutton" value='Ranger' onclick='displayClass("Ranger")'>
+                    <input id='btn_Rogue' type='button' class="classbutton" value='Rogue' onclick='displayClass("Rogue")'>
+                    <input id='btn_Sorcerer' type='button' class="classbutton" value='Sorcerer' onclick='displayClass("Sorcerer")'>
+                    <input id='btn_Wizard' type='button' class="classbutton" value='Wizard' onclick='displayClass("Wizard")'>
+                </div>
+                <input type="hidden" id="selected_class" value="Barbarian">
                 <br />
                 <div id='classPicture'>
                     <img id='classImage' src='Images/Class/Barbarian.jpg'>
@@ -201,6 +206,44 @@
                 </div>
                 <!-- End of Progress Bar -->
                 <p>This is the biography and character description page</p>
+                <br /><br />
+                <div id="bio_image">
+                    <img src="" id="bio_char_image">
+                    <select>
+                        <option value="Nothing Here">Nothing Here</option>
+                    </select>
+                </div>
+                <div id="bio_info">
+                    Name: <input type="text">
+                    <br />
+                    Gender: 
+                    <select>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                    </select>
+                    <br />
+                    Alignment: 
+                    <select>
+                        <option>Super Cool Guy</option>
+                    </select>
+                    <br />
+                    Favored Class: 
+                    <select>
+                        <option value="Barbarian">Barbarian</option>
+                        <option value="Bard">Bard</option>
+                        <option value="Cleric">Cleric</option>
+                        <option value="Druid">Druid</option>
+                        <option value="Fighter">Fighter</option>
+                        <option value="Monk">Monk</option>
+                        <option value="Paladin">Paladin</option>
+                        <option value="Ranger">Ranger</option>
+                        <option value="Rogue">Rogue</option>
+                        <option value="Sorcerer">Sorcerer</option>
+                        <option value="Wizard">Wizard</option>
+                    </select>
+                    <br />
+                    Description: <input type="text">
+                </div>
                 <p>
                     <a href="#class">Return to Class Selection</a>
                     <a href="#results">Create Character</a>
