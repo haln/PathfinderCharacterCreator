@@ -101,3 +101,13 @@ function displayClass(name){
             break;
     }
 }
+
+function getBio() {
+    if ((document.getElementById('selected_race').getAttribute("value")) == "Half-Elf") {
+        document.getElementById('favored_class2').removeAttribute("hidden");
+    } else {
+        document.getElementById('favored_class2').setAttribute("hidden", "hidden");
+    }
+    
+    
+}
