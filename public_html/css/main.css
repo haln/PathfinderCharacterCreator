@@ -160,7 +160,10 @@ characterWizard.html:target ~ nav #header #navigation #link-wizard,
     box-shadow:         0px 5px 1px rgba(20, 105, 162, 0.75);
     float: left;
 }
-
+#classImage{
+    height:400px;
+    width:250px;
+}
 .classbutton{
     color: rgb(255, 255, 255);
     width:120px;
