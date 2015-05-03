@@ -160,9 +160,18 @@ characterWizard.html:target ~ nav #header #navigation #link-wizard,
     box-shadow:         0px 5px 1px rgba(20, 105, 162, 0.75);
     float: left;
 }
+#classPicture{
+    width:40%;
+    float: left;
+}
 #classImage{
     height:400px;
     width:250px;
+}
+#classDescription{
+    width: 50%;
+    float: left;
+
 }
 .classbutton{
     color: rgb(255, 255, 255);
@@ -183,6 +192,28 @@ characterWizard.html:target ~ nav #header #navigation #link-wizard,
     -webkit-box-shadow: 0px 5px 1px rgba(203, 153, 14, 0.75);
     -moz-box-shadow:    0px 5px 1px rgba(203, 153, 14, 0.75);
     box-shadow:         0px 5px 1px rgba(203, 153, 14, 0.75);
+    float: left;
+}
+
+.racebutton{
+    color: rgb(255, 255, 255);
+    width:110px;
+    height: 60px;
+    margin-right: 38px;
+    margin-bottom: 38px;
+    font-size: 15px;
+
+    letter-spacing:2px;
+    padding: 20px;
+    text-shadow: 0px -1px 0px rgba(140, 140, 140, 0.39);
+    
+    -webkit-border-radius: 7px;
+    -moz-border-radius: 7px;
+    border-radius: 7px;
+    background: rgb(26, 188, 156);
+    -webkit-box-shadow: 0px 5px 1px rgba(14, 140, 115, 0.75);
+    -moz-box-shadow:    0px 5px 1px rgba(14, 140, 115, 0.75);
+    box-shadow:         0px 5px 1px rgba(14, 140, 115, 0.75);
     float: left;
 }
 
