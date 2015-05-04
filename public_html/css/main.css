@@ -3,21 +3,100 @@ html, body {
 	height:100%;
 }
 body {
-	width: 100%;
-        
+	width: 100%;       
 	background: #b1e583;
 	overflow-x: hidden;
 	overflow-y: auto;
+        margin: 0px;
+        padding:0px;
+        
         
         
 }
 #header{
-        
-	position: absolute;
+        background: #6fa93c;
+        height:30px;
+        overflow: hidden;
+        padding: 5px;
+	position: relative;
 	z-index: 2000;
-	width: 235px;
-	top: 50px;
+
+
 }
+.link-home{
+    color: #fff;
+    display: inline-block;
+    font-weight: 700;
+    height: 15px;
+    margin: 0 5px 5px 0;
+    padding:8px;
+    text-decoration: none;
+    text-transform: uppercase;
+    cursor: auto;
+}
+
+.link-wizard{
+    
+    color: #fff;
+    display: inline-block;
+    font-weight: 700;
+    height: 15px;
+    margin: 0 5px 5px 0;
+    padding:8px;
+    text-decoration: none;
+    text-transform: uppercase;
+    cursor: auto;
+}
+
+
+
+.pathfinderLogo{
+    bottom:0;
+    display: block;
+    height: 30px;
+    left: 50%;
+    margin-left:-40px;
+    position:absolute;
+    z-index: 2001;  
+}
+#menu-nav{
+    float: left;
+}
+#user-nav{
+    position:absolute;
+    right: 0px;
+}
+.link-login{
+    background-color: rgb(240, 180, 12);
+    padding:0 12px;
+    color: #fff;
+    display: inline-block;
+    font-weight: 700;
+    height: 15px;
+    margin: 0 5px 5px 0;
+    padding:8px;
+    text-decoration: none;
+    text-transform: uppercase;
+    cursor: auto;
+    
+}
+
+.link-signup{
+    background-color: rgb(240, 180, 12);
+    padding:0 12px;
+    color: #fff;
+    display: inline-block;
+    font-weight: 700;
+    height: 15px;
+    margin: 0 5px 5px 0;
+    padding:8px;
+    text-decoration: none;
+    text-transform: uppercase;
+    cursor: auto;
+}
+
+
+/*
 #header h1{
 	font-size: 30px;
 	font-weight: 400;
@@ -49,11 +128,10 @@ body {
 }
 #navigation a:hover {
 	background: #ddd;
-}
+}*/
 .content{
-	right: 40px;
-	left: 280px;
-	top: 0px;
+	left: 100px;
+	top: 20px;
 	position: absolute;
 	padding-bottom: 30px;
 }
@@ -94,9 +172,10 @@ body {
 	background-color: #b1e583;
 }
 
-index.html:target ~ nav #header #navigation #link-home,
-characterWizard.html:target ~ nav #header #navigation #link-wizard,
-#signup:target ~ nav #header #navigation #link-signup,
+index.html:target ~  #header #menu-nav #link-home,
+characterWizard.html:target ~  #header #menu-nav #link-wizard,
+#signup:target ~ #header #user-nav #link-signup,
+#login:target ~ #header #user-nav #link-login,
 #stats:target ~ #progress #link-stats,
 #race:target ~ #progress #link-race,
 #class:target ~ #progress #link-class,
@@ -160,8 +239,9 @@ characterWizard.html:target ~ nav #header #navigation #link-wizard,
     box-shadow:         0px 5px 1px rgba(20, 105, 162, 0.75);
     float: left;
 }
+
 .progress img{
-    margin-right:20px;
+    margin-right:40px;
 }
 
 #classPicture{
