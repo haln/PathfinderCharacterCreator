@@ -160,6 +160,10 @@ characterWizard.html:target ~ nav #header #navigation #link-wizard,
     box-shadow:         0px 5px 1px rgba(20, 105, 162, 0.75);
     float: left;
 }
+.progress img{
+    margin-right:20px;
+}
+
 #classPicture{
     width:40%;
     float: left;
@@ -194,7 +198,6 @@ characterWizard.html:target ~ nav #header #navigation #link-wizard,
     box-shadow:         0px 5px 1px rgba(203, 153, 14, 0.75);
     float: left;
 }
-
 .racebutton{
     color: rgb(255, 255, 255);
     width:110px;
