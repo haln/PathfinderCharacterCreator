@@ -4,13 +4,13 @@ function getBio() {
     } else {
         document.getElementById('favored_class2').setAttribute("hidden", "hidden");
     }
-    getAlignments(document.getElementById(selected_class).getAttribute("value"));
+    getAlignments(document.getElementById("selected_class").getAttribute("value"));
 }
 
 function getAlignments(classType){
     switch(classType){
         case "Barbarian" :
-            document.getElementById(alignSelect).innerHTML =
+            document.getElementById("alignSelect").innerHTML =
                 "<option>Neutral Good</option>\n\
                  <option>Chaotic Good</option>\n\
                  <option>True Neutral</option>\n\
@@ -20,11 +20,8 @@ function getAlignments(classType){
                 ";
             break;
             
-        case "Cleric" :
-            break;
-            
         case "Druid" :
-            document.getElementById(alignSelect).innerHTML =
+            document.getElementById("alignSelect").innerHTML =
                 "<option>Neutral Good</option>\n\
                  <option>Lawful Neutral</option>\n\
                  <option>True Neutral</option>\n\
@@ -34,7 +31,7 @@ function getAlignments(classType){
             break;
             
         case "Monk" :
-            document.getElementById(alignSelect).innerHTML =
+            document.getElementById("alignSelect").innerHTML =
                 "<option>Lawful Good</option>\n\
                  <option>Lawful Neutral</option>\n\
                  <option>Lawful Evil</option>\n\
@@ -42,13 +39,13 @@ function getAlignments(classType){
             break;
             
         case "Paladin" :
-            document.getElementById(alignSelect).innerHTML =
+            document.getElementById("alignSelect").innerHTML =
                 "<option>Lawful Good</option>\n\
                 ";
             break;
             
         default :
-            document.getElementById(alignSelect).innerHTML =
+            document.getElementById("alignSelect").innerHTML =
                 "<option>Lawful Good</option>\n\
                  <option>Neutral Good</option>\n\
                  <option>Chaotic Good</option>\n\

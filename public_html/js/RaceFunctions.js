@@ -1,4 +1,5 @@
 function displayRace(name){
+    selectAttribute(name);
     switch(name){
         case "Dwarf" :
             document.getElementById('raceImage').setAttribute("src", "Images/Race/Dwarf.png");
@@ -48,5 +49,13 @@ function displayRace(name){
             setToInnerHTML(getXML('huma_desc'), 'lbl_race_desc');
             setToInnerHTML(getXML('huma_abil'), 'lbl_race_abil');
             break;
+    }
+}
+
+function selectAttribute(race){
+    if (race == "Half-Elf" || race == "Human" || race == "Half-Orc") {
+        document.getElementById("selectAttr").removeAttribute("hidden");
+    } else {
+        document.getElementById("selectAttr").setAttribute("hidden", "hidden");
     }
 }

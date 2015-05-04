@@ -110,7 +110,7 @@
         Elf Blood: Half-elves count as both elves and humans for any effect related to race.&lt;br /&gt;&lt;br /&gt;
         Elven Immunities: Half-elves are immune to magic sleep effects and get a +2 racial saving throw bonus against enchantment spells and effects.&lt;br /&gt;&lt;br /&gt;
         Keen Senses: Half-elves receive a +2 racial bonus on Perception skill checks.&lt;br /&gt;&lt;br /&gt;
-        Multitalented: Half-elves choose two favored classes at first level and gain +1 hit point or +1 skill point whenever they take a level in either one of those classes. See Classes for more information about favored classes. &lt;br /&gt;&lt;br /&gt;
+        Multitalented: Half-elves choose two favored classes at first level and gain +1 hit point or +1 skill point whenever they take a level in either one of those classes.&lt;br /&gt;&lt;br /&gt;
         Languages: Half-elves begin play speaking Common and Elven. Half-elves with high Intelligence scores can choose any languages they want (except secret languages, such as Druidic).&lt;br /&gt;&lt;br /&gt;
     </helf_abil>
     
@@ -122,7 +122,7 @@
         Darkvision: Half-orcs can see in the dark up to 60 feet.&lt;br /&gt;&lt;br /&gt;
         Intimidating: Half-orcs receive a +2 racial bonus on Intimidate skill checks due to their fearsome nature. &lt;br /&gt;&lt;br /&gt;
         Orc Blood: Half-orcs count as both humans and orcs for any effect related to race.&lt;br /&gt;&lt;br /&gt;
-        Orc Ferocity: Once per day, when a half-orc is brought below 0 hit points but not killed, he can fight on for one more round as if disabled. At the end of his next turn, unless brou&lt;br /&gt;&lt;br /&gt;
+        Orc Ferocity: Once per day, when a half-orc is brought below 0 hit points but not killed, he can fight on for one more round as if disabled. At the end of his next turn, unless brought to above 0 hit points, he immediately falls unconscious and begins dying.&lt;br /&gt;&lt;br /&gt;
         Weapon Familiarity: Half-orcs are proficient with greataxes and falchions and treat any weapon with the word orc in its name as a martial weapon.&lt;br /&gt;&lt;br /&gt;
         Languages: Half-orcs begin play speaking Common and Orc. Half-orcs with high Intelligence scores can choose from the following: Abyssal, Draconic, Giant, Gnoll, and Goblin.&lt;br /&gt;&lt;br /&gt;
     </horc_abil>
