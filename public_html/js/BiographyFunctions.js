@@ -59,4 +59,3 @@ function getAlignments(classType){
             break;
     }
 }
-
