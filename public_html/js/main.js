@@ -15,6 +15,7 @@ function setToInnerHTML(description, target) {
     document.getElementById(target).innerHTML = description;
 }
 
+//A javascript method of getting url query strings and parsing it into an array
 function getParameterByName(name) {
     name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
     var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
