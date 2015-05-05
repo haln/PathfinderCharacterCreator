@@ -122,7 +122,6 @@ function drop(ev) {
 }
 
 function assignStats(){
-    getHref();
     var strength = document.getElementById("strCon").getAttribute("alt");
     var dexterity = document.getElementById("dexCon").getAttribute("alt");
     var constitution = document.getElementById("conCon").getAttribute("alt");
@@ -131,7 +130,7 @@ function assignStats(){
     var charisma = document.getElementById("chaCon").getAttribute("alt");
 }
 
-function getHref(){
+function getHref(condition){
     if (document.getElementById("strCon").getAttribute("alt") != "container" &&
         document.getElementById("dexCon").getAttribute("alt") != "container" &&
         document.getElementById("conCon").getAttribute("alt") != "container" &&
@@ -139,7 +138,13 @@ function getHref(){
         document.getElementById("wisCon").getAttribute("alt") != "container" &&
         document.getElementById("chaCon").getAttribute("alt") != "container") {
         document.getElementById("statNext").setAttribute("href", "#race");
+        nextCondition(condition);
     } else {
         document.getElementById("statNext").setAttribute("href", "#");
     }
+}
+
+function goToRace(Id) {
+    getHref(Id);
+    assignStats();
 }
