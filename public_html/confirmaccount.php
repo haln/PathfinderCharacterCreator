@@ -42,7 +42,7 @@
                 //Check if the account fields have something
                 if(isset($_POST["username"]) &&
                         isset($_POST["password"])){
-                    $acc_user = $_POST["username"];
+                    $acc_user = strtolower($_POST["username"]);
                     $acc_pass = $_POST["password"];
                     //Don't allow an empty string to be passed
                     if(empty($_POST["email"])){
@@ -59,12 +59,12 @@
                         echo "<script>console.log('Connected successfully')</script>"; 
 
                         $rowStatement = $conn->query('SELECT COUNT(*) FROM USERS');
-                        $rowCount = $rowStatement->fetchColumn();
+                        $rowCount = $rowStatement->rowCount();
 
                         error_log("rowCount = " . $rowCount);
                         echo "<script>console.log('rowCount = " . $rowCount . "')</script>";
 
-                        $checkStatement = $conn->prepare('SELECT username, email FROM USERS WHERE username = :username OR email = :email');
+                        $checkStatement = $conn->prepare('SELECT USER_NAME, USER_EMAIL FROM USERS WHERE USER_NAME = :username OR USER_EMAIL = :email');
                         $checkStatement->execute(array(
                             ':username' => $acc_user,
                             ':email' => $acc_email
@@ -88,7 +88,7 @@
                             echo "The username or email is already registered with this site.";
                         }
                         
-                        
+                        $conn = null;
                     } catch (PDOException $e) {
                         echo "Account has not been created, an error has occured. ";
                         error_log($e->getMessage());
