@@ -242,7 +242,7 @@
                 </div>
                 <p>
                     <a href="#race">Return to Race Selection</a>
-                    <a id="classNext" href="#bio" onclick="getBio(),nextCondition(this)">Next</a>
+                    <a id="classNext" href="#bio" onclick="checkRace(),nextCondition(this)">Next</a>
                 </p>
             </div>
         </div>
@@ -304,10 +304,10 @@
                     </select>
                 </div>
                 <div id="bio_info">
-                    Name: <input type="text">
+                    Name: <input type="text" id="bio_name">
                     <br />
                     Gender: 
-                    <select>
+                    <select id="bio_gender">
                         <option value="Male">Male</option>
                         <option value="Female">Female</option>
                     </select>
@@ -348,7 +348,7 @@
                 </div>
                 <p>
                     <a href="#class">Return to Class Selection</a>
-                    <a href="#results" id="basicsNext" onclick="nextCondition(this)">Create Character</a>
+                    <a href="#results" id="basicsNext" onclick="getBio(), nextCondition(this)">Create Character</a>
                 </p>
             </div>
         </div>
@@ -367,10 +367,67 @@
                     <img src="Images/pink-circle.png" alt=""/>
                 </div>
                 <!-- End of Progress Bar -->
-                <p>This is the result page</p>               
+                <p>This is the result page</p>
                 
-                    <a href="#bio">Return to biography Selection</a>
-                    <a href="" id="resultNext" onclick="nextCondition(this)">Create Character</a>
+                <image id="result_image" src="">
+                
+                <div id="result_bio">
+                    <label>Name: </label>
+                    <label id="result_name"></label><br />
+                    <label>Race: </label>
+                    <label id="result_race"></label><br />
+                    <label>Gender: </label>
+                    <label id="result_gender"></label><br />
+                    <label>Alignment: </label>
+                    <label id="result_alignment"></label><br />
+                    <label>Level: </label>
+                    <label id="result_lvl">1</label><br />
+                    <label>Class: </label>
+                    <label id="result_class"></label><br />
+                </div>
+                
+                <div id="result_attributes">
+                    <table>
+                        <tr>
+                            <td></td>
+                            <td>Attribute Value</td>
+                            <td>Ability Modifier</td>
+                        </tr>
+                        <tr>
+                            <td>Strength: </td>
+                            <td id="result_str"></td>
+                            <td id="result_str_mod"></td>
+                        </tr>
+                        <tr>
+                            <td>Dexterity: </td>
+                            <td id="result_dex"></td>
+                            <td id="result_dex_mod"></td>
+                        </tr>
+                        <tr>
+                            <td>Constitution: </td>
+                            <td id="result_con"></td>
+                            <td id="result_con_mod"></td>
+                        </tr>
+                        <tr>
+                            <td>Intelligence: </td>
+                            <td id="result_int"></td>
+                            <td id="result_int_mod"></td>
+                        </tr>
+                        <tr>
+                            <td>Wisdom: </td>
+                            <td id="result_wis"></td>
+                            <td id="result_wis_mod"></td>
+                        </tr>
+                        <tr>
+                            <td>Charisma: </td>
+                            <td id="result_cha"></td>
+                            <td id="result_cha_mod"></td>
+                        </tr>
+                    </table>
+                </div>
+                
+                <a href="#bio">Return to biography Selection</a>
+                <a href="" id="resultNext" onclick="nextCondition(this)">Create Character</a>
                 
             </div>
         </div>
@@ -383,6 +440,6 @@
         <script src='js/ClassFunctions.js'></script>
         <script src="js/RaceFunctions.js"></script>
         <script src="js/BiographyFunctions.js"></script>
-
+        <script src="js/CharacterFunctions.js"></script>
     </body>
 </html>

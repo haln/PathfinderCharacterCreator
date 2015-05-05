@@ -1,4 +1,4 @@
-function getBio() {
+function checkRace() {
     if ((document.getElementById('selected_race').getAttribute("value")) == "Half-Elf") {
         document.getElementById('favored_class2').removeAttribute("hidden");
     } else {
