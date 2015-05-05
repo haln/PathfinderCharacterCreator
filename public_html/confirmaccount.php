@@ -36,45 +36,64 @@
                 <!-- Connect to the database and insert a user account -->
                 <?php
                 $dsn = "mysql:host=p3nlmysql61plsk.secureserver.net;port=3306;dbname=pathfinder";
-                $servername = "p3nlmysql61plsk.secureserver.net";
-                $portnumber = "3306";
-                $dbname = "pathfinder";
                 $username = "pathfinder";
                 $password = "project2015";
 
-                
-                $acc_user = $_POST["username"];
-                $acc_pass = $_POST["password"];
-                $acc_email = $_POST["email"];
-                
-                /*
-                $acc_user = filter_input(INPUT_POST, "username");
-                $acc_pass = filter_input(INPUT_POST, "password");
-                $acc_email = filter_input(INPUT_POST, "email", FILTER_VALIDATE_EMAIL);
-                */
-                
-                try{
-                    $conn = new PDO($dsn, $username, $password);
-                    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-                    echo "<script>console.log('Connected successfully')</script>"; 
+                //Check if the account fields have something
+                if(isset($_POST["username"]) &&
+                        isset($_POST["password"])){
+                    $acc_user = $_POST["username"];
+                    $acc_pass = $_POST["password"];
+                    //Don't allow an empty string to be passed
+                    if(empty($_POST["email"])){
+                        $acc_email = "no-email";
+                    }
+                    else{
+                        $acc_email = $_POST["email"];
+                    }
                     
-                    $rowStatement = $conn->query('SELECT COUNT(*) FROM USERS');
-                    $rowCount = $rowStatement->fetchColumn();
-                    
-                    echo "<script>console.log('rowCount = " . $rowCount . "')</script>";
-                    
-                    $statement = $conn->prepare('INSERT INTO USERS VALUES (:userid,:username, :password, :email)');
-                    $statement->execute(array(
-                        ':userid' => $rowCount,
-                        ':username' => $acc_user,
-                        ':password' => $acc_pass,
-                        ':email' => $acc_email
-                    ));
-                    echo "Your Pathfinder Character Creator account has been created.<br/>";
-                    echo "Please enjoy your time on the site!";
-                } catch (PDOException $e) {
-                    echo "Account has not been created, an error has occured. ";
-                    echo "<script>console.log('" . $e->getMessage() . "')</script>";
+                    //Attempt a PDO connection to the database and insert a new account
+                    try{
+                        $conn = new PDO($dsn, $username, $password);
+                        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                        echo "<script>console.log('Connected successfully')</script>"; 
+
+                        $rowStatement = $conn->query('SELECT COUNT(*) FROM USERS');
+                        $rowCount = $rowStatement->fetchColumn();
+
+                        error_log("rowCount = " . $rowCount);
+                        echo "<script>console.log('rowCount = " . $rowCount . "')</script>";
+
+                        $checkStatement = $conn->prepare('SELECT username, email FROM USERS WHERE username = :username OR email = :email');
+                        $checkStatement->execute(array(
+                            ':username' => $acc_user,
+                            ':email' => $acc_email
+                        ));
+                        $checkName = $checkStatement->fetchColumn(0);
+                        $checkEmail = $checkStatement->fetchColumn(1);
+                        
+                        //If the username and the email are not already in use, insert a new account
+                        if($checkName != null && $checkName != "" && $checkEmail != null && $checkEmail != ""){
+                            $statement = $conn->prepare('INSERT INTO USERS VALUES (:userid,:username, :password, :email)');
+                            $statement->execute(array(
+                                ':userid' => $rowCount,
+                                ':username' => $acc_user,
+                                ':password' => $acc_pass,
+                                ':email' => $acc_email
+                            ));
+                            echo "Your Pathfinder Character Creator account has been created.<br/>";
+                            echo "Please enjoy your time on the site!";
+                        }
+                        else{
+                            echo "The username or email is already registered with this site.";
+                        }
+                        
+                        
+                    } catch (PDOException $e) {
+                        echo "Account has not been created, an error has occured. ";
+                        error_log($e->getMessage());
+                        echo "<script>console.log('" . $e->getMessage() . "')</script>";
+                    }
                 }
                 ?>
             </p>
