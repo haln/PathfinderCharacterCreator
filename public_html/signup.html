@@ -34,17 +34,23 @@
         <!-- The Account Signup Page Content -->
         <div class="content">
             <h2>Account Signup</h2>
-            <form id="signup" action="confirmaccount.php" method="post">
+            <form id="signup" name="signup" action="confirmaccount.php" method="post">
                 <fieldset name="signupFieldset">
                     <legend>Sign-up</legend>
                     <label for="username" id="usernameLabel">Username</label>
-                    <input type="text" id="username" name="username">
+                    <input type="text" id="username" name="username" required="required">
+                    
                     <br/>
                     <label for="password" id="passwordLabel">Password</label>
-                    <input type="password" id="password" name="password">
+                    <input title="Your password must contain at least 6 characters that include UPPERCASE letters, lowercase letters and digits" 
+                           type="password" id="password" name="password" 
+                           required="required" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" 
+                           onchange="signup.confirmPassword.pattern = this.value;">
                     <br/>
                     <label for="confirmPassword" id="confirmPasswordLabel">Confirm Password</label>
-                    <input type="password" id="confirmPassword" name="confirmpassword">
+                    <input title="Passwords do not match" 
+                           type="password" id="confirmPassword" name="confirmpassword" 
+                           required="required" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}">
                     <br/>
                     <label for="email" id="emailLabel">Email</label>
                     <input type="email" id="email" name="email">
@@ -53,5 +59,8 @@
                 </fieldset>
             </form>
         </div>
+        <script type="text/javascript">
+        </script>
+            
     </body>
 </html>

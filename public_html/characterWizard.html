@@ -91,15 +91,18 @@
                 <!-- End of Progress Bar -->
                 <p>Roll the dice and get started</p>
                 <div id="dice">
-                    <input id="rollDice" type="button" value="Roll the dice" onclick="rollCharacter()">
+                    <div id="diceBtn">
+                    <img src="Images/Dice/dice.png" onclick="rollCharacter()" draggable="false" alt="Roll the dice"/>
+                    </div>
+                    <div id="dieBtn">
                     <img src="Images/Dice/container.png" id="stat1" ondragstart="drag(event)" draggable="true" alt="" ondragover="" ondrop=""/>
                     <img src="Images/Dice/container.png" id="stat2" ondragstart="drag(event)" draggable="true" alt="" ondragover="" ondrop=""/>
                     <img src="Images/Dice/container.png" id="stat3" ondragstart="drag(event)" draggable="true" alt="" ondragover="" ondrop=""/>
                     <img src="Images/Dice/container.png" id="stat4" ondragstart="drag(event)" draggable="true" alt="" ondragover="" ondrop=""/>
                     <img src="Images/Dice/container.png" id="stat5" ondragstart="drag(event)" draggable="true" alt="" ondragover="" ondrop=""/>
-                    <img src="Images/Dice/container.png" id="stat6" ondragstart="drag(event)" draggable="true" alt="" ondragover="" ondrop=""/>
+                    <img src="Images/Dice/container.png" id="stat6" ondragstart="drag(event)" draggable="true" alt="" ondragover="" ondrop=""/>              
+                    </div>
                 </div>
-               
                 <div id="stats-button">
 
                     <input id="strenthbtn" class="statsbutton" type="button" value="Strength" onclick="setToInnerHTML(getXML('str_desc'), 'txt_description')">                  
@@ -118,30 +121,21 @@
                     <br />
                 </div>   
                 <div id="stats-description">
-                    <label id="txt_description">Click on 'Roll the dice' to get your attribute values, and then drag the results to the desired stat. Click on a stat to get a description of what it does.</label>
+                    <p><label id="txt_description">Click on 'Roll the dice' to get your attribute values, and then drag the results to the desired stat. Click on a stat to get a description of what it does.</label></p>
                 </div>
                 
                 
-                <p>
+               
                     <a id="statNext" href="#race" onclick="goToRace(this)">Next</a>
-                </p>
+                
             </div>
         <!-- End of Stats Page -->
         
         <!-- Race Page -->
         <div id="race" class="panel">
             <div class="content">
+      
                 
-                <!-- Progress Bar -->
-                <!--<div class="progress">                  
-                    <img src="Images/pink-circle.png" alt=""/>
-                    <img src="Images/pink-circle.png" alt=""/>
-                    <img src="Images/grey-circle.png" alt=""/>
-                    <img src="Images/grey-circle.png" alt=""/>
-                    <img src="Images/grey-circle.png" alt=""/>
-                </div>
-                <!-- End of Progress Bar -->
-                <p>This is the race selection page.</p>
                 <div id="race_buttons">
                     <input id="btn_dwarf" type="button" class="racebutton" value="Dwarf" onclick="displayRace('Dwarf')">
                     <input id="btn_halfling" type="button" class="racebutton" value="Halfling" onclick="displayRace('Halfling')">
@@ -157,7 +151,7 @@
                     <img id='raceImage' src='Images/Race/Dwarf.png'>
                 </div>
                 <div id="race_text">
-                    <label id="lbl_race_abil">
+                    <p><label id="lbl_race_abil">
                         +2 Constitution, +2 Wisdom, –2 Charisma: Dwarves are both tough and wise, but also a bit gruff.<br /><br />
                         Medium: Dwarves are Medium creatures and have no bonuses or penalties due to their size.<br /><br />
                         Slow and Steady: Dwarves have a base speed of 20 feet, but their speed is never modified by armor or encumbrance.<br /><br />
@@ -170,7 +164,7 @@
                         Stonecunning: Dwarves receive a +2 bonus on Perception checks to potentially notice unusual stonework, such as traps and hidden doors located in stone walls or floors. They receive a check to notice such features whenever they pass within 10 feet of them, whether or not they are actively looking. <br /><br />
                         Weapon Familiarity: Dwarves are proficient with battleaxes, heavy picks, and warhammers, and treat any weapon with the word dwarven in its name as a martial weapon.<br /><br />
                         Languages: Dwarves begin play speaking Common and Dwarven. Dwarves with high Intelligence scores can choose from the following: Giant, Gnome, Goblin, Orc, Terran, and Undercommon.<br /><br />
-                    </label>
+                    </label></p>
                     <br /><br />
                     <select id='selectAttr' hidden="hidden">
                         <option>Strength</option>
@@ -188,28 +182,18 @@
                         they reside in high mountains and dangerous realms below the earth, constantly at war with giants, 
                         goblins, and other such horrors.</label></p>
                 </div>
-                <p>
+                
                     <a id="raceBack" href="#stats">Return to Stats</a>
                     <a id="raceNext" href="#class" onclick="nextCondition(this)">Next</a>
-                </p>
+               
             </div>
         </div>
         <!-- End of Race Page -->
         
         <!-- Class Page -->
         <div id="class" class="panel">
-            <div class="content">
-                
-                <!-- Progress Bar -->
-                <!--<div class="progress">                  
-                    <img src="Images/pink-circle.png" alt=""/>
-                    <img src="Images/pink-circle.png" alt=""/>
-                    <img src="Images/pink-circle.png" alt=""/>
-                    <img src="Images/grey-circle.png" alt=""/>
-                    <img src="Images/grey-circle.png" alt=""/>
-                </div>
-                <!-- End of Progress Bar -->
-                <p>This is the class selection page.</p>
+            <div class="content">                             
+                <!--<p>This is the class selection page.</p>-->
                 <br />
                 <div id="class_buttons">
                     <input id='btn_Barbarian' type='button' class="classbutton" value='Barbarian' onclick='displayClass("Barbarian")'>
@@ -230,7 +214,7 @@
                     <img id="classImage" src='Images/Class/Barbarian.jpg'>
                 </div>
                 <div id="classDescription">
-                    <label id="lbl_class_desc">For some, there is only rage. In the ways of their people, in the fury of their passion, in the howl of battle, conflict is all these brutal souls know. Savages, hired muscle, masters of vicious martial techniques, they are not soldiers or professional warriors—they are the battle possessed, creatures of slaughter and spirits of war. Known as barbarians, these warmongers know little of training, preparation, or the rules of warfare; for them, only the moment exists, with the foes that stand before them and the knowledge that the next moment might hold their death. They possess a sixth sense in regard to danger and the endurance to weather all that might entail. These brutal warriors might rise from all walks of life, both civilized and savage, though whole societies embracing such philosophies roam the wild places of the world. Within barbarians storms the primal spirit of battle, and woe to those who face their rage.</label>
+                    <p><label id="lbl_class_desc">For some, there is only rage. In the ways of their people, in the fury of their passion, in the howl of battle, conflict is all these brutal souls know. Savages, hired muscle, masters of vicious martial techniques, they are not soldiers or professional warriors—they are the battle possessed, creatures of slaughter and spirits of war. Known as barbarians, these warmongers know little of training, preparation, or the rules of warfare; for them, only the moment exists, with the foes that stand before them and the knowledge that the next moment might hold their death. They possess a sixth sense in regard to danger and the endurance to weather all that might entail. These brutal warriors might rise from all walks of life, both civilized and savage, though whole societies embracing such philosophies roam the wild places of the world. Within barbarians storms the primal spirit of battle, and woe to those who face their rage.</label>
                     <br /><br />
                     Hit Points: d<label id='lbl_class_hp'>12</label>
                     <br /><br />
@@ -238,12 +222,12 @@
                     <br /><br />
                     Skill Points: <label id='lbl_class_skillPoints'>4</label> + int modifier per level.
                     <br /><br />
-                    Class Skills: <label id='lbl_class_skills'>Acrobatics (Dex), Climb (Str), Craft (Int), Handle Animal (Cha), Intimidate (Cha), Knowledge (nature) (Int), Perception (Wis), Ride (Dex), Survival (Wis), and Swim (Str)</label>
+                    Class Skills: <label id='lbl_class_skills'>Acrobatics (Dex), Climb (Str), Craft (Int), Handle Animal (Cha), Intimidate (Cha), Knowledge (nature) (Int), Perception (Wis), Ride (Dex), Survival (Wis), and Swim (Str)</label></p>
                 </div>
-                <p>
+                
                     <a href="#race">Return to Race Selection</a>
-                    <a id="classNext" href="#bio" onclick="getBio(),nextCondition(this)">Next</a>
-                </p>
+                    <a id="classNext" href="#bio" onclick="checkRace(),nextCondition(this)">Next</a>
+
             </div>
         </div>
         <!-- End of Class Page -->
@@ -251,21 +235,10 @@
         <!-- Biography Page -->
         <div id="bio" class="panel">
             <div class="content">
-                
-                <!-- Progress Bar -->
-                <!--<div class="progress">                  
-                    <img src="Images/pink-circle.png" alt=""/>
-                    <img src="Images/pink-circle.png" alt=""/>
-                    <img src="Images/pink-circle.png" alt=""/>
-                    <img src="Images/pink-circle.png" alt=""/>
-                    <img src="Images/grey-circle.png" alt=""/>
-                </div>
-                <!-- End of Progress Bar -->
-                <p>This is the biography and character description page</p>
-                <br /><br />
+
                 <div id="bio_image">
-                    <img src="Images/Profile/Dwarf1.jpg" id="bio_char_image">
-                    <select>
+                    <img src="Images/Profile/Dwarf1.jpg" id="bio_char_image" >
+                    <select onchange="document.getElementById('bio_char_image').src = this.value">
                         <option value="Images/Profile/Dwarf1.jpg">Dwarf 1</option>
                         <option value="Images/Profile/Dwarf2.jpg">Dwarf 2</option>
                         <option value="Images/Profile/Dwarf3.jpg">Dwarf 3</option>
@@ -304,10 +277,10 @@
                     </select>
                 </div>
                 <div id="bio_info">
-                    Name: <input type="text">
+                    Name: <input type="text" id="bio_name">
                     <br />
                     Gender: 
-                    <select>
+                    <select id="bio_gender">
                         <option value="Male">Male</option>
                         <option value="Female">Female</option>
                     </select>
@@ -346,10 +319,10 @@
                     <br />
                     Description: <input type="text">
                 </div>
-                <p>
+                
                     <a href="#class">Return to Class Selection</a>
-                    <a href="#results" id="basicsNext" onclick="nextCondition(this)">Create Character</a>
-                </p>
+                    <a href="#results" id="basicsNext" onclick="getBio(), nextCondition(this)">Create Character</a>
+
             </div>
         </div>
         <!-- End of Biography Page -->
@@ -358,6 +331,11 @@
         <div id="results" class="panel">
             <div class="content">
                 <h2>Character sheet</h2>
+
+  
+                    <a href="#bio">Return to biography Selection</a>
+                    <a href="" id="resultNext" onclick="nextCondition(this)">Create Character</a>
+
                 <!-- Progress Bar -->
                 <!--<div class="progress">                  
                     <img src="Images/pink-circle.png" alt=""/>
@@ -367,10 +345,67 @@
                     <img src="Images/pink-circle.png" alt=""/>
                 </div>
                 <!-- End of Progress Bar -->
-                <p>This is the result page</p>               
+                <p>This is the result page</p>
                 
-                    <a href="#bio">Return to biography Selection</a>
-                    <a href="" id="resultNext" onclick="nextCondition(this)">Create Character</a>
+                <image id="result_image" src="">
+                
+                <div id="result_bio">
+                    <label>Name: </label>
+                    <label id="result_name"></label><br />
+                    <label>Race: </label>
+                    <label id="result_race"></label><br />
+                    <label>Gender: </label>
+                    <label id="result_gender"></label><br />
+                    <label>Alignment: </label>
+                    <label id="result_alignment"></label><br />
+                    <label>Level: </label>
+                    <label id="result_lvl">1</label><br />
+                    <label>Class: </label>
+                    <label id="result_class"></label><br />
+                </div>
+                
+                <div id="result_attributes">
+                    <table>
+                        <tr>
+                            <td></td>
+                            <td>Attribute Value</td>
+                            <td>Ability Modifier</td>
+                        </tr>
+                        <tr>
+                            <td>Strength: </td>
+                            <td id="result_str"></td>
+                            <td id="result_str_mod"></td>
+                        </tr>
+                        <tr>
+                            <td>Dexterity: </td>
+                            <td id="result_dex"></td>
+                            <td id="result_dex_mod"></td>
+                        </tr>
+                        <tr>
+                            <td>Constitution: </td>
+                            <td id="result_con"></td>
+                            <td id="result_con_mod"></td>
+                        </tr>
+                        <tr>
+                            <td>Intelligence: </td>
+                            <td id="result_int"></td>
+                            <td id="result_int_mod"></td>
+                        </tr>
+                        <tr>
+                            <td>Wisdom: </td>
+                            <td id="result_wis"></td>
+                            <td id="result_wis_mod"></td>
+                        </tr>
+                        <tr>
+                            <td>Charisma: </td>
+                            <td id="result_cha"></td>
+                            <td id="result_cha_mod"></td>
+                        </tr>
+                    </table>
+                </div>
+                
+                <a href="#bio">Return to biography Selection</a>
+                <a href="" id="resultNext" onclick="nextCondition(this)">Create Character</a>
                 
             </div>
         </div>
@@ -383,6 +418,6 @@
         <script src='js/ClassFunctions.js'></script>
         <script src="js/RaceFunctions.js"></script>
         <script src="js/BiographyFunctions.js"></script>
-
+        <script src="js/CharacterFunctions.js"></script>
     </body>
 </html>
