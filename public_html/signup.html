@@ -38,8 +38,10 @@
                 <fieldset name="signupFieldset">
                     <legend>Sign-up</legend>
                     <label for="username" id="usernameLabel">Username</label>
-                    <input type="text" id="username" name="username" required="required">
-                    
+                    <input title="Your username must be at least 4 characters long"
+                        type="text" id="username" name="username" required="required" 
+                        pattern="(?=.*\d)(?=.*[A-Za-z]).{4,}">
+                    <span id="usernameError"></span>
                     <br/>
                     <label for="password" id="passwordLabel">Password</label>
                     <input title="Your password must contain at least 6 characters that include UPPERCASE letters, lowercase letters and digits" 
@@ -59,7 +61,25 @@
                 </fieldset>
             </form>
         </div>
+        <script src="js/jquery-2.1.3.min.js"></script>
         <script type="text/javascript">
+            $(document).ready(function(){
+                $("#username").keyup(function(e) {
+                    var user_name = $(this).val();
+                    console.log(user_name);
+                    if(user_name.length < 4){
+                        $("#usernameError").html('');
+                        return;
+                    }
+                    if(user_name.length >= 4){
+                        $("#usernameError").html('Checking if username available...');
+                        $.post("check_username.php", {username: user_name}).done(function(data){
+                            console.log(data);
+                            $("#usernameError").html(data);
+                        });
+                    }
+                });
+            });
         </script>
             
     </body>
