@@ -90,6 +90,7 @@
                 </div>
                 <!-- End of Progress Bar -->
                 <p>Roll the dice and get started</p>
+                <input id="statusBar" hidden="hidden" value="1">
                 <div id="dice">
                     <div id="diceBtn">
                     <img src="Images/Dice/dice.png" onclick="rollCharacter()" draggable="false" alt="Roll the dice"/>
@@ -126,7 +127,7 @@
                 
                 
                
-                    <a id="statNext" href="#race" onclick="goToRace(this)">Next</a>
+                    <a id="statNext" class="next" href="#race" onclick="goToRace(this)">Next</a>
                 
             </div>
         <!-- End of Stats Page -->
@@ -183,8 +184,8 @@
                         goblins, and other such horrors.</label></p>
                 </div>
                 
-                    <a id="raceBack" href="#stats">Return to Stats</a>
-                    <a id="raceNext" href="#class" onclick="nextCondition(this)">Next</a>
+                    <a id="raceBack" href="#stats" onclick="nextCondition(this)">Return to Stats</a>
+                    <a id="raceNext" class="next" href="#class" onclick="nextCondition(this)">Next</a>
                
             </div>
         </div>
@@ -225,8 +226,8 @@
                     Class Skills: <label id='lbl_class_skills'>Acrobatics (Dex), Climb (Str), Craft (Int), Handle Animal (Cha), Intimidate (Cha), Knowledge (nature) (Int), Perception (Wis), Ride (Dex), Survival (Wis), and Swim (Str)</label></p>
                 </div>
                 
-                    <a href="#race">Return to Race Selection</a>
-                    <a id="classNext" href="#bio" onclick="checkRace(),nextCondition(this)">Next</a>
+                    <a id="classBack" href="#race" onclick="nextCondition(this)">Return to Race Selection</a>
+                    <a id="classNext" class="next" href="#bio" onclick="checkRace(),nextCondition(this)">Next</a>
 
             </div>
         </div>
@@ -320,9 +321,9 @@
                     Description: <input type="text">
                 </div>
                 
-                    <a href="#class">Return to Class Selection</a>
+                    <a href="#class" id ="basicsBack" onclick="nextCondition(this)">Return to Class Selection</a>
 
-                    <a href="#results" id="basicsNext" onclick="getBio(), getAttributeResults(), nextCondition(this)">Create Character</a>
+                    <a href="#results" id="basicsNext" class="next" onclick="getBio(), getAttributeResults(), nextCondition(this)">Create Character</a>
 
             </div>
         </div>
@@ -391,8 +392,8 @@
                 </div>
                 
                 
-                <a href="#bio">Return to biography Selection</a>
-                <a href="" id="resultNext" onclick="nextCondition(this)">Create Character</a>
+                <a href="#bio" id="resultBack" onclick="nextCondition(this)">Return to biography Selection</a>
+                <a href="" id="resultNext" class="next" onclick="nextCondition(this)">Create Character</a>
                 
             </div>
         </div>

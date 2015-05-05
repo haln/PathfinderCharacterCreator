@@ -30,40 +30,34 @@ $('.progress .circle').removeClass().addClass('circle');
 $('.progress .bar').removeClass().addClass('bar');
 $('.progress .circle:nth-of-type(' + 1 + ')').addClass('active');
 
-function nextCondition(obj) {
-
-    var id = $(obj).attr("ID");
-    switch (id) {
-        case "statNext":
-            var i = 2;
-            changeConditionClass(i);
-            break;
-        case "raceNext":
-            var i = 3;           
-            changeConditionClass(i);          
-            break;
-        case "classNext":
-            var i = 4;
-            changeConditionClass(i);
-            break;
-        case "basicsNext":
-            var i = 5;
-            changeConditionClass(i);
-            break;
-        case "resultNext":
-            var i = 6;
-            changeConditionClass(i);
-            alert("The character is saved in 'my profile'! ");
-            break;
-        default:
-            break;
+function nextCondition(obj){
+    var id = $(obj).attr("class");
+    if (id == "next"){
+        var pageNum = parseInt(document.getElementById("statusBar").value);
+        pageNum++;
+        document.getElementById("statusBar").setAttribute("value", pageNum);
+        changeConditionClass(pageNum, "Next");
+    } else {
+        var pageNum = parseInt(document.getElementById("statusBar").value);
+        pageNum--;
+        document.getElementById("statusBar").setAttribute("value", pageNum);
+        changeConditionClass(pageNum, "Back");
     }
 }
-function changeConditionClass(i){
+
+function changeConditionClass(i, direction){
     var i = i;
     $('.progress .circle:nth-of-type(' + i + ')').addClass('active');
     $('.progress .circle:nth-of-type(' + (i - 1) + ')').removeClass('active').addClass('done');
     $('.progress .circle:nth-of-type(' + (i - 1) + ') .label').html('&#10003;');
     $('.progress .bar:nth-of-type(' + (i - 1) + ')').addClass('active');
     $('.progress .bar:nth-of-type(' + (i - 2) + ')').removeClass('active').addClass('done');
+    
+    if (direction == "Back"){
+        $('.progress .circle:nth-of-type(' + (i + 1) + ')').removeClass('active');
+        $('.progress .circle:nth-of-type(' + (i) + ')').removeClass('done').addClass('active');
+        $('.progress .bar:nth-of-type(' + (i) + ')').removeClass('active');
+        $('.progress .bar:nth-of-type(' + (i - 1) + ')').removeClass('done').addClass('active');
+        $('.progress .circle:nth-of-type(' + (i) + ') .label').html(i);
+    }
 }
