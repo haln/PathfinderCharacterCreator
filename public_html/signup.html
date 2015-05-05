@@ -40,7 +40,7 @@
                     <label for="username" id="usernameLabel">Username</label>
                     <input title="Your username must be at least 4 characters long"
                         type="text" id="username" name="username" required="required" 
-                        pattern="(?=.*\d)(?=.*[A-Za-z]).{4,}">
+                        pattern="(?=.*[A-Za-z\d]).{4,}">
                     <span id="usernameError"></span>
                     <br/>
                     <label for="password" id="passwordLabel">Password</label>

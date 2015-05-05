@@ -28,7 +28,7 @@ if(isset($_POST["username"])){
         
     } catch (PDOException $e) {
         error_log($e->getMessage());
-        die('Had an exception');
+        die('');
     }
     
 }
