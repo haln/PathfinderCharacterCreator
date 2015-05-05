@@ -23,28 +23,51 @@ function getBio(){
     var a = document.getElementById('alignSelect');
     var alignment = a.options[a.selectedIndex].value;
     document.getElementById('result_alignment').innerHTML = alignment;
+
+}
+
+function getAttributeResults() {
+    var str = parseInt(document.getElementById("strCon").getAttribute("alt")) + 
+              parseInt(getAttributeAdjust(document.getElementById('selected_race').value, "Strength"));
+    var dex = parseInt(document.getElementById("dexCon").getAttribute("alt")) + 
+              parseInt(getAttributeAdjust(document.getElementById('selected_race').value, "Dexterity"));
+    var con = parseInt(document.getElementById("conCon").getAttribute("alt")) + 
+              parseInt(getAttributeAdjust(document.getElementById('selected_race').value, "Constitution"));
+    var int = parseInt(document.getElementById("intCon").getAttribute("alt")) + 
+              parseInt(getAttributeAdjust(document.getElementById('selected_race').value, "Intelligence"));
+    var wis = parseInt(document.getElementById("wisCon").getAttribute("alt")) + 
+              parseInt(getAttributeAdjust(document.getElementById('selected_race').value, "Wisdom"));
+    var cha = parseInt(document.getElementById("chaCon").getAttribute("alt")) + 
+              parseInt(getAttributeAdjust(document.getElementById('selected_race').value, "Charisma"));
     
-    var str = document.getElementById("strCon").getAttribute("alt");
     document.getElementById('result_str').innerHTML = str;
-    document.getElementById('result_str_mod').innerHTML = getStatModifier(str);
-    
-    var dex = document.getElementById("dexCon").getAttribute("alt");
     document.getElementById('result_dex').innerHTML = dex;
-    document.getElementById('result_dex_mod').innerHTML = getStatModifier(dex);
-    
-    var con = document.getElementById("conCon").getAttribute("alt");
     document.getElementById('result_con').innerHTML = con;
-    document.getElementById('result_con_mod').innerHTML = getStatModifier(con);
-    
-    var int = document.getElementById("intCon").getAttribute("alt");
     document.getElementById('result_int').innerHTML = int;
-    document.getElementById('result_int_mod').innerHTML = getStatModifier(int);
-    
-    var wis = document.getElementById("wisCon").getAttribute("alt");
     document.getElementById('result_wis').innerHTML = wis;
-    document.getElementById('result_wis_mod').innerHTML = getStatModifier(wis);
-    
-    var cha = document.getElementById("chaCon").getAttribute("alt");
     document.getElementById('result_cha').innerHTML = cha;
+    
+    document.getElementById('result_str_mod').innerHTML = getStatModifier(str);
+    document.getElementById('result_dex_mod').innerHTML = getStatModifier(dex);
+    document.getElementById('result_con_mod').innerHTML = getStatModifier(con);
+    document.getElementById('result_int_mod').innerHTML = getStatModifier(int);
+    document.getElementById('result_wis_mod').innerHTML = getStatModifier(wis);
     document.getElementById('result_cha_mod').innerHTML = getStatModifier(cha);
+}
+
+function getAttributeAdjust(race, attribute){
+    if (race == "Human" || race == "Half-Elf" || race == "Half-Orc") {
+        
+        var a = document.getElementById('selectAttr');
+        var typeSelected = a.options[a.selectedIndex].value;
+        
+        if (attribute == typeSelected){
+            return 2;
+        } else {
+            return 0;
+        }
+    } else {
+        return 0;
+    }
+
 }
