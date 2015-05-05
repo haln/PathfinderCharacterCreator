@@ -44,12 +44,44 @@
                 </div>
             </div>
         
+        <!-- Progress bar -->
+        
+        <div class="progress">
+          <div id="statsCon" class="circle">
+            <span class="label">1</span>
+            <span class="title">Stats</span>
+          </div>
+
+          <span class="bar"></span>
+          <div id="raceCon" class="circle">
+            <span class="label">2</span>
+            <span class="title">Race</span>
+          </div>
+
+          <span class="bar"></span>
+          <div id="classCon" class="circle">
+            <span class="label">3</span>
+            <span class="title">Class</span>
+          </div>
+
+          <span class="bar"></span>
+          <div id="basicsCon" class="circle">
+            <span class="label">4</span>
+            <span class="title">Basics</span>
+          </div>
+
+          <span class="bar"></span>
+          <div id="finishCon" class="circle">
+            <span class="label">5</span>
+            <span class="title">Finish</span>
+          </div>
+        </div>
         
         <!-- Stats Page -->
-        <div id="stats" class="content">
+        <div id="stats" class="statscontent">
                 
                 <!-- Progress Bar -->
-                <div class="progress">                  
+                <!--<div class="progress">                  
                     <img src="Images/pink-circle.png" alt=""/>
                     <img src="Images/grey-circle.png" alt=""/>
                     <img src="Images/grey-circle.png" alt=""/>
@@ -91,7 +123,7 @@
                 
                 
                 <p>
-                    <a id="statNext" href="#race" onclick="assignStats()">Next</a>
+                    <a id="statNext" href="#race" onclick="assignStats(),nextCondition(this)">Next</a>
                 </p>
             </div>
         <!-- End of Stats Page -->
@@ -101,7 +133,7 @@
             <div class="content">
                 
                 <!-- Progress Bar -->
-                <div class="progress">                  
+                <!--<div class="progress">                  
                     <img src="Images/pink-circle.png" alt=""/>
                     <img src="Images/pink-circle.png" alt=""/>
                     <img src="Images/grey-circle.png" alt=""/>
@@ -151,8 +183,8 @@
                     </label>
                 </div>
                 <p>
-                    <a href="#stats">Return to Stats</a>
-                    <a href="#class">Next</a>
+                    <a id="raceBack" href="#stats">Return to Stats</a>
+                    <a id="raceNext" href="#class" onclick="nextCondition(this)">Next</a>
                 </p>
             </div>
         </div>
@@ -163,7 +195,7 @@
             <div class="content">
                 
                 <!-- Progress Bar -->
-                <div class="progress">                  
+                <!--<div class="progress">                  
                     <img src="Images/pink-circle.png" alt=""/>
                     <img src="Images/pink-circle.png" alt=""/>
                     <img src="Images/pink-circle.png" alt=""/>
@@ -204,7 +236,7 @@
                 </div>
                 <p>
                     <a href="#race">Return to Race Selection</a>
-                    <a href="#bio" onclick="getBio()">Next</a>
+                    <a id="classNext" href="#bio" onclick="getBio(),nextCondition(this)">Next</a>
                 </p>
             </div>
         </div>
@@ -215,7 +247,7 @@
             <div class="content">
                 
                 <!-- Progress Bar -->
-                <div class="progress">                  
+                <!--<div class="progress">                  
                     <img src="Images/pink-circle.png" alt=""/>
                     <img src="Images/pink-circle.png" alt=""/>
                     <img src="Images/pink-circle.png" alt=""/>
@@ -276,7 +308,7 @@
                 </div>
                 <p>
                     <a href="#class">Return to Class Selection</a>
-                    <a href="#results">Create Character</a>
+                    <a href="#results" id="basicsNext" onclick="nextCondition(this)">Create Character</a>
                 </p>
             </div>
         </div>
@@ -287,7 +319,7 @@
             <div class="content">
                 <h2>Character sheet</h2>
                 <!-- Progress Bar -->
-                <div class="progress">                  
+                <!--<div class="progress">                  
                     <img src="Images/pink-circle.png" alt=""/>
                     <img src="Images/pink-circle.png" alt=""/>
                     <img src="Images/pink-circle.png" alt=""/>
@@ -295,12 +327,11 @@
                     <img src="Images/pink-circle.png" alt=""/>
                 </div>
                 <!-- End of Progress Bar -->
-                <p>This is the result page</p>
+                <p>This is the result page</p>               
                 
-                <p>
                     <a href="#bio">Return to biography Selection</a>
-                    <!--<a href="">Create Character</a>-->
-                </p>
+                    <a href="" id="resultNext" onclick="nextCondition(this)">Create Character</a>
+                
             </div>
         </div>
         <!-- End of Biography Page -->
