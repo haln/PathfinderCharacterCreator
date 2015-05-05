@@ -318,7 +318,7 @@ characterWizard.html:target ~  #header #menu-nav #link-wizard,
 .progress img{
     margin-right:40px;
 }
-
+/*class*/
 #classPicture{
     width:40%;
     float: left;
@@ -385,6 +385,20 @@ characterWizard.html:target ~  #header #menu-nav #link-wizard,
     height: auto;
     float: left;
 }
+
+#race_picture{
+    float: left;
+}
+
+#lbl_race_desc{
+    float: left;
+    
+}
+p:first-letter{
+    font-size: 50px;
+        
+}
+
 .container{
     float: left;
     margin-right: 80px;

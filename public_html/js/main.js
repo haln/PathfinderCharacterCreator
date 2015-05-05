@@ -33,7 +33,6 @@ function nextCondition(obj) {
 
     var id = $(obj).attr("ID");
     switch (id) {
-
         case "statNext":
             var i = 2;
             changeConditionClass(i);
@@ -58,7 +57,6 @@ function nextCondition(obj) {
         default:
             break;
     }
-   
 }
 function changeConditionClass(i){
     var i = i;
