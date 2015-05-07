@@ -4,7 +4,6 @@ html, body {
 }
 body {
     width: 100%;       
-
     background: #b1e583;
     overflow-x: hidden;
     overflow-y: auto;
@@ -21,6 +20,9 @@ p {
     line-height: 1.25em;
     margin: 0;
     text-align: left;
+    background-color: white;
+    color:#888;
+    padding: 5px;
 }
 p + p {
     text-indent: 2.5em;
