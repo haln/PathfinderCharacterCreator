@@ -67,18 +67,25 @@ function getAttributeAdjust(race, attribute){
             return 0;
         }
     } else {
-        var racialMod = getRacialMods(race, getStatTable(attribute));
+        var racialMod = getRacialAttributeMod(getRacialMods(race), getStatTable(attribute));
         return racialMod;
     }
-
 }
 
-function getRacialMods(race, stat){
-    var selectRace = "SELECT " + stat + " FROM pathfinder.race WHERE RACE_NAME = \"" + race + "\";";
-    console.log(selectRace);
-    $.get("db_conn.php", {query: selectRace}).done(function(data){
+function getRacialMods(race){
+    $.get("results_racial_mod.php", {race: race}).done(function(data){
+        console.log("has: " + data);
         return data;
     });
+}
+
+function getRacialAttributeMod(table, stat) {
+    for (var key in table){
+        if (key == stat){
+            console.log(table[key]);
+            return table[key];
+        }
+    }
 }
 
 function getStatTable(stat) {
