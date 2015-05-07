@@ -9,134 +9,114 @@
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
         <title>Pathfinder Character Creator - Home Page</title>
-        
+
         <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-        
+
         <link rel="stylesheet" href="css/main.css">
         <link rel="stylesheet" href="css/animations.css">
     </head>
-    
-    <body>
-        <!-- Top Bar Menu -->
-        <!--<form id="signin" action="">
-            <input type="text" placeholder="Username">
-            <input type="password" placeholder="Password">
-            <input type="submit">
-        </form>
-        <a href='profile.html'>My Profile</a>
-        
-        
+
+    <body>        
         <!-- The Navigation Menu -->
-        
-            <div id="header">
-                <a class="pathfinderLogo" href="index.html">Pathfinder Character Creator</a>
-                <!--<h1>Pathfinder Character Creator</h1>-->
-                <nav id="menu-nav">
-                    <a class="link-home" href="index.html">Home</a>
-                    <a class="link-wizard" href="characterWizard.html">Create a Character</a>
-                    
-                </nav>
-                
-                <div id="user-nav">
-                    <a class="link-login" href="login.html">Log In</a>
-                    <a class="link-signup" href="signup.html">Sign Up</a>
-                    
-                </div>
+
+        <div id="header">
+            <a class="pathfinderLogo" href="index.html">Pathfinder Character Creator</a>
+            <!--<h1>Pathfinder Character Creator</h1>-->
+            <nav id="menu-nav">
+                <a class="link-home" href="index.html">Home</a>
+                <a class="link-wizard" href="characterWizard.html">Create a Character</a>
+
+            </nav>
+
+            <div id="user-nav">
+                <a class="link-login" href="login.html">Log In</a>
+                <a class="link-signup" href="signup.html">Sign Up</a>
+
             </div>
-        
-        <!-- Progress bar -->
-        
-        <div class="progress">
-          <div id="statsCon" class="circle">
-            <span class="label">1</span>
-            <span class="title">Stats</span>
-          </div>
-
-          <span class="bar"></span>
-          <div id="raceCon" class="circle">
-            <span class="label">2</span>
-            <span class="title">Race</span>
-          </div>
-
-          <span class="bar"></span>
-          <div id="classCon" class="circle">
-            <span class="label">3</span>
-            <span class="title">Class</span>
-          </div>
-
-          <span class="bar"></span>
-          <div id="basicsCon" class="circle">
-            <span class="label">4</span>
-            <span class="title">Basics</span>
-          </div>
-
-          <span class="bar"></span>
-          <div id="finishCon" class="circle">
-            <span class="label">5</span>
-            <span class="title">Finish</span>
-          </div>
         </div>
-        
+
+        <!-- Progress bar -->
+
+        <div class="progress">
+            <div id="statsCon" class="circle">
+                <span class="label">1</span>
+                <span class="title">Stats</span>
+            </div>
+
+            <span class="bar"></span>
+            <div id="raceCon" class="circle">
+                <span class="label">2</span>
+                <span class="title">Race</span>
+            </div>
+
+            <span class="bar"></span>
+            <div id="classCon" class="circle">
+                <span class="label">3</span>
+                <span class="title">Class</span>
+            </div>
+
+            <span class="bar"></span>
+            <div id="basicsCon" class="circle">
+                <span class="label">4</span>
+                <span class="title">Basics</span>
+            </div>
+
+            <span class="bar"></span>
+            <div id="finishCon" class="circle">
+                <span class="label">5</span>
+                <span class="title">Finish</span>
+            </div>
+        </div>
+
         <!-- Stats Page -->
-        <div id="stats" class="statscontent">
-                
-                <!-- Progress Bar -->
-                <!--<div class="progress">                  
-                    <img src="Images/pink-circle.png" alt=""/>
-                    <img src="Images/grey-circle.png" alt=""/>
-                    <img src="Images/grey-circle.png" alt=""/>
-                    <img src="Images/grey-circle.png" alt=""/>
-                    <img src="Images/grey-circle.png" alt=""/>
-                </div>
-                <!-- End of Progress Bar -->
-                <p>Roll the dice and get started</p>
-                <input id="statusBar" hidden="hidden" value="1">
-                <div id="dice">
-                    <div id="diceBtn">
+        <div id="stats" class="statscontent">                
+            <p class="instruction"></p>
+            <h2>Roll the dice and get started</h2>
+            <input id="statusBar" hidden="hidden" value="1">
+            <div id="dice">
+                <div id="diceBtn">
                     <img src="Images/Dice/dice.png" onclick="rollCharacter()" draggable="false" alt="Roll the dice"/>
-                    </div>
-                    <div id="dieBtn">
+                </div>
+                <div id="dieBtn">
                     <img src="Images/Dice/container.png" id="stat1" ondragstart="drag(event)" draggable="true" alt="" ondragover="" ondrop=""/>
                     <img src="Images/Dice/container.png" id="stat2" ondragstart="drag(event)" draggable="true" alt="" ondragover="" ondrop=""/>
                     <img src="Images/Dice/container.png" id="stat3" ondragstart="drag(event)" draggable="true" alt="" ondragover="" ondrop=""/>
                     <img src="Images/Dice/container.png" id="stat4" ondragstart="drag(event)" draggable="true" alt="" ondragover="" ondrop=""/>
                     <img src="Images/Dice/container.png" id="stat5" ondragstart="drag(event)" draggable="true" alt="" ondragover="" ondrop=""/>
                     <img src="Images/Dice/container.png" id="stat6" ondragstart="drag(event)" draggable="true" alt="" ondragover="" ondrop=""/>              
-                    </div>
                 </div>
-                <div id="stats-button">
-
-                    <input id="strenthbtn" class="statsbutton" type="button" value="Strength" onclick="setToInnerHTML(getXML('str_desc'), 'txt_description')">                  
-                    <img src="Images/Dice/container.png" id="strCon" class="container" ondragover="allowDrop(event)" ondrop="drop(event)" draggable="false" alt="container" ondragstart=""/>
-                    <input id="dexteritybtn" class="statsbutton" type="button" value="Dexterity" onclick="setToInnerHTML(getXML('dex_desc'), 'txt_description')">
-                    <img src="Images/Dice/container.png" id="dexCon" class="container" ondragover="allowDrop(event)" ondrop="drop(event)" draggable="false" alt="container" ondragstart=""/>
-                    <input id="constitutionbtn" class="statsbutton" type="button" value="Constitution" onclick="setToInnerHTML(getXML('con_desc'), 'txt_description')">
-                    <img src="Images/Dice/container.png" id="conCon" class="container" ondragover="allowDrop(event)" ondrop="drop(event)" draggable="false" alt="container" ondragstart=""/>
-                    <input id="intelligencebtn" class="statsbutton" type="button" value="Intelligence" onclick="setToInnerHTML(getXML('int_desc'), 'txt_description')">
-                    <img src="Images/Dice/container.png" id="intCon" class="container" ondragover="allowDrop(event)" ondrop="drop(event)" draggable="false" alt="container" ondragstart=""/>
-                    <input id="wisdombtn" class="statsbutton" type="button" value="Wisdom" onclick="setToInnerHTML(getXML('wis_desc'), 'txt_description')">
-                    <img src="Images/Dice/container.png" id="wisCon" class="container" ondragover="allowDrop(event)" ondrop="drop(event)" draggable="false" alt="container" ondragstart=""/>
-                    <input id="charismabtn" class="statsbutton" type="button" value="Charisma" onclick="setToInnerHTML(getXML('cha_desc'), 'txt_description')"> 
-                    <img src="Images/Dice/container.png" id="chaCon" class="container" ondragover="allowDrop(event)" ondrop="drop(event)" draggable="false" alt="container" ondragstart=""/>
-
-                    <br />
-                </div>   
-                <div id="stats-description">
-                    <p><label id="txt_description">Click on 'Roll the dice' to get your attribute values, and then drag the results to the desired stat. Click on a stat to get a description of what it does.</label></p>
-                </div>
-                
-                
-               
-                    <a id="statNext" class="next" href="#race" onclick="goToRace(this)">Next</a>
-                
             </div>
+            <div id="stats-button">
+
+                <input id="strenthbtn" class="statsbutton" type="button" value="Strength" onclick="setToInnerHTML(getXML('str_desc'), 'txt_description')">                  
+                <img src="Images/Dice/container.png" id="strCon" class="container" ondragover="allowDrop(event)" ondrop="drop(event)" draggable="false" alt="container" ondragstart=""/>
+                <input id="dexteritybtn" class="statsbutton" type="button" value="Dexterity" onclick="setToInnerHTML(getXML('dex_desc'), 'txt_description')">
+                <img src="Images/Dice/container.png" id="dexCon" class="container" ondragover="allowDrop(event)" ondrop="drop(event)" draggable="false" alt="container" ondragstart=""/>
+                <input id="constitutionbtn" class="statsbutton" type="button" value="Constitution" onclick="setToInnerHTML(getXML('con_desc'), 'txt_description')">
+                <img src="Images/Dice/container.png" id="conCon" class="container" ondragover="allowDrop(event)" ondrop="drop(event)" draggable="false" alt="container" ondragstart=""/>
+                <input id="intelligencebtn" class="statsbutton" type="button" value="Intelligence" onclick="setToInnerHTML(getXML('int_desc'), 'txt_description')">
+                <img src="Images/Dice/container.png" id="intCon" class="container" ondragover="allowDrop(event)" ondrop="drop(event)" draggable="false" alt="container" ondragstart=""/>
+                <input id="wisdombtn" class="statsbutton" type="button" value="Wisdom" onclick="setToInnerHTML(getXML('wis_desc'), 'txt_description')">
+                <img src="Images/Dice/container.png" id="wisCon" class="container" ondragover="allowDrop(event)" ondrop="drop(event)" draggable="false" alt="container" ondragstart=""/>
+                <input id="charismabtn" class="statsbutton" type="button" value="Charisma" onclick="setToInnerHTML(getXML('cha_desc'), 'txt_description')"> 
+                <img src="Images/Dice/container.png" id="chaCon" class="container" ondragover="allowDrop(event)" ondrop="drop(event)" draggable="false" alt="container" ondragstart=""/>
+
+                <br />
+            </div>   
+            <div id="stats-description">
+                <p id="txt_description">Click on 'Roll the dice' to get your attribute values, and then drag the results to the desired stat. Click on a stat to get a description of what it does.</p>
+            </div>
+
+
+
+            <a id="statNext" class="next" href="#race" onclick="goToRace(this)">Next</a>
+
+        </div>
         <!-- End of Stats Page -->
-        
+
         <!-- Race Page -->
         <div id="race" class="panel">
-            <div class="content">
-      
-                
+            <div class="content">                
                 <div id="race_buttons">
                     <input id="btn_dwarf" type="button" class="racebutton" value="Dwarf" onclick="displayRace('Dwarf')">
                     <input id="btn_halfling" type="button" class="racebutton" value="Halfling" onclick="displayRace('Halfling')">
@@ -152,7 +132,7 @@
                     <img id='raceImage' src='Images/Race/Dwarf.png'>
                 </div>
                 <div id="race_text">
-                    <p><label id="lbl_race_abil">
+                    <p id="lbl_race_abil">
                         +2 Constitution, +2 Wisdom, –2 Charisma: Dwarves are both tough and wise, but also a bit gruff.<br /><br />
                         Medium: Dwarves are Medium creatures and have no bonuses or penalties due to their size.<br /><br />
                         Slow and Steady: Dwarves have a base speed of 20 feet, but their speed is never modified by armor or encumbrance.<br /><br />
@@ -165,7 +145,7 @@
                         Stonecunning: Dwarves receive a +2 bonus on Perception checks to potentially notice unusual stonework, such as traps and hidden doors located in stone walls or floors. They receive a check to notice such features whenever they pass within 10 feet of them, whether or not they are actively looking. <br /><br />
                         Weapon Familiarity: Dwarves are proficient with battleaxes, heavy picks, and warhammers, and treat any weapon with the word dwarven in its name as a martial weapon.<br /><br />
                         Languages: Dwarves begin play speaking Common and Dwarven. Dwarves with high Intelligence scores can choose from the following: Giant, Gnome, Goblin, Orc, Terran, and Undercommon.<br /><br />
-                    </label></p>
+                    </p>
                     <br /><br />
                     <select id='selectAttr' hidden="hidden">
                         <option>Strength</option>
@@ -175,22 +155,22 @@
                         <option>Wisdom</option>
                         <option>Charisma</option>
                     </select>
-                    
-                    <p><label id="lbl_race_desc">Dwarves are a stoic but stern race, ensconced in cities carved from the hearts
+
+                    <p id="lbl_race_desc">Dwarves are a stoic but stern race, ensconced in cities carved from the hearts
                         of mountains and fiercely determined to repel the depredations of savage races like orcs and goblins.
                         More than any other race, the dwarves have acquired a reputation as dour and humorless craftsmen of 
                         the earth. It could be said that dwarven history shapes the dark disposition of many dwarves, for 
                         they reside in high mountains and dangerous realms below the earth, constantly at war with giants, 
-                        goblins, and other such horrors.</label></p>
+                        goblins, and other such horrors.</p>
                 </div>
-                
-                    <a id="raceBack" href="#stats" onclick="nextCondition(this)">Return to Stats</a>
-                    <a id="raceNext" class="next" href="#class" onclick="nextCondition(this)">Next</a>
-               
+
+                <a id="raceBack" href="#stats" onclick="nextCondition(this)">Return to Stats</a>
+                <a id="raceNext" class="next" href="#class" onclick="nextCondition(this)">Next</a>
+
             </div>
         </div>
         <!-- End of Race Page -->
-        
+
         <!-- Class Page -->
         <div id="class" class="panel">
             <div class="content">                             
@@ -215,31 +195,37 @@
                     <img id="classImage" src='Images/Class/Barbarian.jpg'>
                 </div>
                 <div id="classDescription">
-                    <p><label id="lbl_class_desc">For some, there is only rage. In the ways of their people, in the fury of their passion, in the howl of battle, conflict is all these brutal souls know. Savages, hired muscle, masters of vicious martial techniques, they are not soldiers or professional warriors—they are the battle possessed, creatures of slaughter and spirits of war. Known as barbarians, these warmongers know little of training, preparation, or the rules of warfare; for them, only the moment exists, with the foes that stand before them and the knowledge that the next moment might hold their death. They possess a sixth sense in regard to danger and the endurance to weather all that might entail. These brutal warriors might rise from all walks of life, both civilized and savage, though whole societies embracing such philosophies roam the wild places of the world. Within barbarians storms the primal spirit of battle, and woe to those who face their rage.</label>
-                    <br /><br />
-                    Hit Points: d<label id='lbl_class_hp'>12</label>
-                    <br /><br />
-                    Alignment: <label id='lbl_class_align'>Cannot be lawful</label>
-                    <br /><br />
-                    Skill Points: <label id='lbl_class_skillPoints'>4</label> + int modifier per level.
-                    <br /><br />
-                    Class Skills: <label id='lbl_class_skills'>Acrobatics (Dex), Climb (Str), Craft (Int), Handle Animal (Cha), Intimidate (Cha), Knowledge (nature) (Int), Perception (Wis), Ride (Dex), Survival (Wis), and Swim (Str)</label></p>
+                    <p id="lbl_class_desc">For some, there is only rage. In the ways of their people, in the fury of their passion, in the howl of battle, conflict is all these brutal souls know. Savages, hired muscle, masters of vicious martial techniques, they are not soldiers or professional warriors—they are the bid="lbl_class_desc"attle possessed, creatures of slaughter and spirits of war. Known as barbarians, these warmongers know little of training, preparation, or the rules of warfare; for them, only the moment exists, with the foes that stand before them and the knowledge that the next moment might hold their death. They possess a sixth sense in regard to danger and the endurance to weather all that might entail. These brutal warriors might rise from all walks of life, both civilized and savage, though whole societies embracing such philosophies roam the wild places of the world. Within barbarians storms the primal spirit of battle, and woe to those who face their rage.</label>
+                        <br /><br />
+                        Hit Points: d<label id='lbl_class_hp'>12</label>
+                        <br /><br />
+                        Alignment: <label id='lbl_class_align'>Cannot be lawful</label>
+                        <br /><br />
+                        Skill Points: <label id='lbl_class_skillPoints'>4</label> + int modifier per level.
+                        <br /><br />
+                        Class Skills: <label id='lbl_class_skills'>Acrobatics (Dex), Climb (Str), Craft (Int), Handle Animal (Cha), Intimidate (Cha), Knowledge (nature) (Int), Perception (Wis), Ride (Dex), Survival (Wis), and Swim (Str)</p>
                 </div>
-                
-                    <a id="classBack" href="#race" onclick="nextCondition(this)">Return to Race Selection</a>
-                    <a id="classNext" class="next" href="#bio" onclick="checkRace(),nextCondition(this)">Next</a>
+
+                <a id="classBack" href="#race" onclick="nextCondition(this)">Return to Race Selection</a>
+                <a id="classNext" class="next" href="#bio" onclick="checkRace(), nextCondition(this)">Next</a>
 
             </div>
         </div>
         <!-- End of Class Page -->
-        
+
         <!-- Biography Page -->
         <div id="bio" class="panel">
             <div class="content">
 
                 <div id="bio_image">
                     <img src="Images/Profile/Dwarf1.jpg" id="bio_char_image" >
-                    <select onchange="document.getElementById('bio_char_image').src = this.value">
+                    
+                </div>
+                <div id="bio_info">
+                    <h2>Write something about your character..</h2>
+                <form action="" method="post" class="basicsInfo">    
+                    <label for="picSelect">Profile picture:</label>
+                    <select id="picSelect" onchange="document.getElementById('bio_char_image').src = this.value">
                         <option value="Images/Profile/Dwarf1.jpg">Dwarf 1</option>
                         <option value="Images/Profile/Dwarf2.jpg">Dwarf 2</option>
                         <option value="Images/Profile/Dwarf3.jpg">Dwarf 3</option>
@@ -276,22 +262,22 @@
                         <option value="Images/Profile/Human4.jpg">Human 4</option>
                         <option value="Images/Profile/Human5.jpg">Human 5</option>
                     </select>
-                </div>
-                <div id="bio_info">
-                    Name: <input type="text" id="bio_name">
+                    <br/>
+                    <label for="bio_name">Name:</label>
+                    <input type="text" id="bio_name" placeholder="Character name" value="">
                     <br />
-                    Gender: 
+                    <label for="bio_gender">Gender: </label>
                     <select id="bio_gender">
                         <option value="Male">Male</option>
                         <option value="Female">Female</option>
                     </select>
                     <br />
-                    Alignment: 
-                    <select id="alignSelect">
-                    </select>
+                    <label for="alignSelect">Alignment: </label>
+                    <select id="alignSelect"></select>
                     <br />
-                    Favored Class: 
-                    <select>
+                    <label for="favorclassSelect">Favored Class: </label>
+                    
+                    <select id="favorclassSelect">
                         <option value="Barbarian">Barbarian</option>
                         <option value="Bard">Bard</option>
                         <option value="Cleric">Cleric</option>
@@ -318,24 +304,25 @@
                         <option value="Wizard">Wizard</option>
                     </select>
                     <br />
-                    Description: <input type="text">
+                    <label for="description">Description:</label> 
+                    <br />
+                    <textarea id="description" placeholder="Write down the character description" name="description"></textarea>
+                    </form>
                 </div>
-                
-                    <a href="#class" id ="basicsBack" onclick="nextCondition(this)">Return to Class Selection</a>
 
-                    <a href="#results" id="basicsNext" class="next" onclick="getBio(), getAttributeResults(), nextCondition(this)">Create Character</a>
+                <a href="#class" id ="basicsBack" onclick="nextCondition(this)">Return to Class Selection</a>
+                <a href="#results" id="basicsNext" class="next" onclick="getBio(), getAttributeResults(), nextCondition(this)">Create Character</a>
 
             </div>
         </div>
         <!-- End of Biography Page -->
-        
+
         <!-- Result Page -->
         <div id="results" class="panel">
             <div class="content">
-                <h2>Character sheet</h2>
+                <h2>Character sheet</h2>               
+                <img id="result_image" src=""/>
 
-                <image id="result_image" src="">
-                
                 <div id="result_bio">
                     <label>Name: </label>
                     <label id="result_name"></label><br />
@@ -350,7 +337,7 @@
                     <label>Class: </label>
                     <label id="result_class"></label><br />
                 </div>
-                
+
                 <div id="result_attributes">
                     <table>
                         <tr>
@@ -390,15 +377,15 @@
                         </tr>
                     </table>
                 </div>
-                
-                
+
+
                 <a href="#bio" id="resultBack" onclick="nextCondition(this)">Return to biography Selection</a>
                 <a href="" id="resultNext" class="next" onclick="nextCondition(this)">Create Character</a>
-                
+
             </div>
         </div>
         <!-- End of Biography Page -->
-        
+
         <script src="js/jquery-2.1.3.min.js"></script>
         <script src="js/AttributeFunctions.js"></script>
         <script src="js/Dice.js"></script>

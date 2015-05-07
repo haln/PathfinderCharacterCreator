@@ -44,6 +44,7 @@ p + p:first-line {
 }
 
 
+
 /*header*/
 #header{
     background: #6fa93c;
@@ -240,14 +241,13 @@ p + p:first-line {
     position: absolute;
     padding-bottom: 30px;
 }
-.content h2{
-    font-size: 110px;
-    padding: 10px 0px 20px 0px;
-    margin-top: 52px;
-    color: #fff;
-    color: rgba(255,255,255,0.9);
-    text-shadow: 0px 1px 1px rgba(0,0,0,0.3);
+.statscontent h2,.content h2{
+  font-size: 40px;
+  color: rgba(255,255,255,0.9);
+  text-shadow: 0px 1px 1px rgba(0,0,0,0.3);
+  margin: 0;
 }
+
 /*.content p{
         font-size: 18px;
         padding: 10px;
@@ -426,10 +426,14 @@ characterWizard.html:target ~  #header #menu-nav #link-wizard,
     margin-left: 10px;
     margin-right: 10px;
     margin-bottom: 20px;
-    
+}
+.container{
+    float: left;
+    margin-right: 80px;
+    margin-bottom: 38px;
 }
 #stats p{
-    
+
 }
 #stats-button{
     width:800px;
@@ -442,6 +446,8 @@ characterWizard.html:target ~  #header #menu-nav #link-wizard,
     float: left;
 }
 
+
+/*race*/
 #race_picture{
     float: left;
 }
@@ -460,8 +466,63 @@ characterWizard.html:target ~  #header #menu-nav #link-wizard,
 
 }
 
-.container{
+/*bio*/
+#bio_image{
     float: left;
-    margin-right: 80px;
-    margin-bottom: 38px;
 }
+
+#bio_image img{
+    height: 400px;
+    width:316px;
+}
+#bio_info{
+    font-size: 18px;
+    float:left;
+    margin-left: 80px;
+    width: 60%;
+}
+.basicsInfo label{
+    float: left;
+    width: 150px;
+    display: block;
+    margin: 0px 0px 5px;
+    text-align: left;
+    padding-right: 10px;
+    margin-top: 10px;
+    color: white;
+}
+
+.basicsInfo form{
+    margin: 0px;
+    border:1px;
+}
+.basicsInfo textarea{
+    height:100px;
+    padding: 5px 0px 0px 5px;
+    width: 70%;
+    border: 1px solid #C5E2FF;
+    outline: 0;
+    -webkit-box-shadow:inset 0px 1px 6px #ECF3F5;
+    box-shadow: inset 0px 1px 6px #ECF3F5;
+    font: 200 12px/25px Arial, Helvetica, sans-serif;
+    margin: 2px 6px 16px 0px;
+}
+.basicsInfo input,select{
+    color: #888;
+    width: 40%;
+    padding: 0px 0px 0px 5px;
+    border: 1px solid #C5E2FF;
+    background: #FBFBFB;
+    outline: 0;
+    -webkit-box-shadow:inset 0px 1px 6px #ECF3F5;
+    box-shadow: inset 0px 1px 6px #ECF3F5;
+    font: 200 12px/25px Arial, Helvetica, sans-serif;
+    height: 30px;
+    line-height:15px;
+    margin: 2px 6px 16px 0px;
+}
+br{
+    clear: left;
+}
+
+
