@@ -67,7 +67,39 @@ function getAttributeAdjust(race, attribute){
             return 0;
         }
     } else {
-        return 0;
+        var racialMod = getRacialMods(race, getStatTable(attribute));
+        return racialMod;
     }
 
+}
+
+function getRacialMods(race, stat){
+    var selectRace = "SELECT " + stat + " FROM RACE WHERE RACE_NAME = " + race + ";";
+    console.log(selectRace);
+    $.get("db_conn.php", {query: selectRace}).done(function(data){
+        return data;
+    });
+}
+
+function getStatTable(stat) {
+    switch(stat){
+        case "Strength" :
+            return "RACE_STR"
+            break;
+        case "Dexterity" :
+            return "RACE_DEX"
+            break;
+        case "Constitution" :
+            return "RACE_CON"
+            break;
+        case "Intelligence" :
+            return "RACE_INT"
+            break;
+        case "Wisdom" :
+            return "RACE_WIS"
+            break;
+        case "Charisma" :
+            return "RACE_CHA"
+            break;
+    }
 }
