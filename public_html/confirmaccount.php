@@ -13,7 +13,7 @@
     </head>
     <body>
         <!-- Top Bar Menu -->
-        <form id="signin" action="">
+        <form id="signin" action="index.html">
             <input type="text" placeholder="Username">
             <input type="password" placeholder="Password">
             <input type="submit">
@@ -40,8 +40,7 @@
                 $password = "project2015";
 
                 //Check if the account fields have something
-                if(isset($_POST["username"]) &&
-                        isset($_POST["password"])){
+                if(isset($_POST["username"]) && isset($_POST["password"])){
                     $acc_user = strtolower($_POST["username"]);
                     $acc_pass = $_POST["password"];
                     //Don't allow an empty string to be passed
@@ -51,6 +50,7 @@
                     else{
                         $acc_email = $_POST["email"];
                     }
+                    echo "<script>console.log('acc_email = " . $acc_email . "')</script>";
                     
                     //Attempt a PDO connection to the database and insert a new account
                     try{
@@ -59,22 +59,29 @@
                         echo "<script>console.log('Connected successfully')</script>"; 
 
                         $rowStatement = $conn->query('SELECT COUNT(*) FROM USERS');
-                        $rowCount = $rowStatement->rowCount();
+                        $rowCount = $rowStatement->fetchColumn();
 
-                        error_log("rowCount = " . $rowCount);
                         echo "<script>console.log('rowCount = " . $rowCount . "')</script>";
-
-                        $checkStatement = $conn->prepare('SELECT USER_NAME, USER_EMAIL FROM USERS WHERE USER_NAME = :username OR USER_EMAIL = :email');
-                        $checkStatement->execute(array(
-                            ':username' => $acc_user,
-                            ':email' => $acc_email
-                        ));
-                        $checkName = $checkStatement->fetchColumn(0);
-                        $checkEmail = $checkStatement->fetchColumn(1);
+                        
+                        /*
+                        $hrequser = new HttpRequest('php/check_username.php', HTTP_REQUEST::METH_POST);
+                        $hrequser->addPostFields(array('username' => $acc_user));
+                        
+                        $hreqemail = new HttpRequest('php/check_email.php', HTTP_REQUEST::METH_POST);
+                        $hreqemail->addPostFields(array('email' => $acc_email));
+                        
+                        try{
+                            $checkName = $hrequser->send()->getBody();
+                            $checkEmail = $hreqemail->send()->getBody();
+                        }
+                        catch(HttpException $e){
+                            error_log($e->getMessage());
+                        }
+                        */
                         
                         //If the username and the email are not already in use, insert a new account
-                        if($checkName != null && $checkName != "" && $checkEmail != null && $checkEmail != ""){
-                            $statement = $conn->prepare('INSERT INTO USERS VALUES (:userid,:username, :password, :email)');
+                        if($checkName == "Username is available" && ($checkEmail == "" || $acc_email == "no_email")){
+                            $statement = $conn->prepare('INSERT INTO USERS VALUES (:userid, :username, :password, :email)');
                             $statement->execute(array(
                                 ':userid' => $rowCount,
                                 ':username' => $acc_user,
@@ -88,15 +95,14 @@
                             echo "The username or email is already registered with this site.";
                         }
                         
-                        $conn = null;
                     } catch (PDOException $e) {
                         echo "Account has not been created, an error has occured. ";
-                        error_log($e->getMessage());
                         echo "<script>console.log('" . $e->getMessage() . "')</script>";
                     }
                 }
                 ?>
             </p>
         </div>
+        <script src="js/jquery-2.1.3.min.js"></script>
     </body>
 </html>

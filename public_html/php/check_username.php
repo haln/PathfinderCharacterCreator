@@ -2,8 +2,8 @@
 $dsn = 'mysql:host=p3nlmysql61plsk.secureserver.net;port=3306;dbname=pathfinder';
 $username = 'pathfinder';
 $password = 'project2015';
-
-if($methodType == 'POST'){
+$methodType = $_SERVER['REQUEST_METHOD'];
+if($methodType === 'POST'){
     if(isset($_POST["username"])){
         if(!isset($_SERVER['HTTP_X_REQUESTED_WITH']) AND strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) != 'xmlhttprequest') {
             die();
@@ -29,7 +29,7 @@ if($methodType == 'POST'){
 
         } catch (PDOException $e) {
             error_log($e->getMessage());
-            die('');
+            die('An error occurred');
         }
 
     }

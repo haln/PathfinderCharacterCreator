@@ -4,7 +4,7 @@ $username = 'pathfinder';
 $password = 'project2015';
 $methodType = $_SERVER['REQUEST_METHOD'];
 if($methodType === 'POST'){
-    if(isset($_POST["username"])){
+    if(isset($_POST["email"])){
         if(!isset($_SERVER['HTTP_X_REQUESTED_WITH']) AND strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) != 'xmlhttprequest') {
             die();
         }
@@ -13,23 +13,23 @@ if($methodType === 'POST'){
             $conn = new PDO($dsn, $username, $password);
             $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-            $username = strtolower($_POST["username"]);
-            $statement = $conn->prepare('SELECT USER_ID FROM USERS WHERE USER_NAME = :username');
+            $email = strtolower($_POST["email"]);
+            $statement = $conn->prepare('SELECT USER_ID FROM USERS WHERE USER_EMAIL = :email');
             $statement->execute(array(
-                ':username' => $username
+                ':email' => $email
             ));
             $user_exists = $statement->rowCount();
 
             if($user_exists){
-                die('Username is not available');
+                die('Email is already in use');
             }
             else{
-                die('Username is available');
+                die('');
             }
 
         } catch (PDOException $e) {
             error_log($e->getMessage());
-            die('');
+            die('An error occurred');
         }
 
     }

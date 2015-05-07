@@ -56,6 +56,7 @@
                     <br/>
                     <label for="email" id="emailLabel">Email</label>
                     <input type="email" id="email" name="email">
+                    <span id="emailError"></span>
                     <br/>
                     <input type="submit" id="submitBtn">
                 </fieldset>
@@ -81,13 +82,21 @@
                             $("#usernameError").html(data);
                         });
                         */
-                        $.post("check_username.php", {username: user_name}).done(function(data){
+                        $.post("php/check_username.php", {username: user_name}).done(function(data){
                             console.log(data);
                             $("#usernameError").html(data);
                         });
                         
                     }
                 });
+                $("#email").keyup(function(e){
+                    var e_mail = $(this).val();
+                    console.log(e_mail);
+                    $.post("php/check_email.php", {email: e_mail}).done(function(data){
+                        console.log(data);
+                        $("#emailError").html(data);
+                    })
+                })
             });
         </script>
             
