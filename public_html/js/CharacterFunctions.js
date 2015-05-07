@@ -74,7 +74,7 @@ function getAttributeAdjust(race, attribute){
 }
 
 function getRacialMods(race, stat){
-    var selectRace = "SELECT " + stat + " FROM RACE WHERE RACE_NAME = " + race + ";";
+    var selectRace = "SELECT " + stat + " FROM pathfinder.race WHERE RACE_NAME = \"" + race + "\";";
     console.log(selectRace);
     $.get("db_conn.php", {query: selectRace}).done(function(data){
         return data;
@@ -84,22 +84,22 @@ function getRacialMods(race, stat){
 function getStatTable(stat) {
     switch(stat){
         case "Strength" :
-            return "RACE_STR"
+            return "RACE_STR";
             break;
         case "Dexterity" :
-            return "RACE_DEX"
+            return "RACE_DEX";
             break;
         case "Constitution" :
-            return "RACE_CON"
+            return "RACE_CON";
             break;
         case "Intelligence" :
-            return "RACE_INT"
+            return "RACE_INT";
             break;
         case "Wisdom" :
-            return "RACE_WIS"
+            return "RACE_WIS";
             break;
         case "Charisma" :
-            return "RACE_CHA"
+            return "RACE_CHA";
             break;
     }
 }
