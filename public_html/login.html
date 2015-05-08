@@ -33,14 +33,14 @@
         <!-- The Account log in Page Content -->
         <div class="content">
             <h2>Account Log In</h2>
-            <form id="signup" onsubmit="return validateForm();">
+            <form id="signin" onsubmit="event.preventDefault();return validateForm();">
                 <fieldset name="signupFieldset">
                     <legend>Log In</legend>
                     <label for="username" id="usernameLabel">Username</label>
-                    <input type="text" id="username" name="username">
+                    <input type="text" id="username" name="username" required="required">
                     <br/>
                     <label for="password" id="passwordLabel">Password</label>
-                    <input type="password" id="password" name="password">
+                    <input type="password" id="password" name="password" required="required">
                     <br/>
                     <input type="submit" id="submitBtn">
                 </fieldset>
@@ -53,9 +53,22 @@
                 var user_name = $("#username").val();
                 var pass_word = $("#password").val();
                 $.post("php/login.php", {username: user_name, password: pass_word}).done(function (data){
-                    console.log(data);
-                    $("#error").html(data);
+                    if(data){
+                        data = JSON.parse(data);
+                        console.log("Returned data: " + data);
+                        console.log("UserID: " + data["USER_ID"]);
+                        localStorage.setItem("username", user_name);
+                        localStorage.setItem("password", pass_word);
+                        localStorage.setItem("userID", data["USER_ID"]);
+                        $("#error").html("");
+                        window.location.href = "index.html";
+                    }
+                    else{
+                        $("#error").html("Username or password is incorrect");
+                        return false;
+                    }
                 });
+                
             }
         </script>
     </body>

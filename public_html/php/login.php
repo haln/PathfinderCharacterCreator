@@ -14,18 +14,21 @@ if($methodType === 'POST'){
             $conn = new PDO($dsn, $username, $password);
             $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             
-            $statement = $conn->prepare('SELECT USER_ID WHERE USER_NAME = :username AND USER_PASS = :password');
+            $statement = $conn->prepare('SELECT USER_ID FROM USERS WHERE USER_NAME = :username AND USER_PASS = :password');
             $statement->execute(array(
                 ':username' => $acc_user,
                 ':password' => $acc_pass
             ));
-            
-            $result = $statement->fetch();
-            die($result); 
+            $results = $statement->fetch(PDO::FETCH_ASSOC);
+            if(empty($results)){
+                die(false);
+            }
+            echo json_encode($results);
+            die(); 
             
         } catch (PDOException $e) {
             error_log($e->getMessage());
-            die('An error occurred');
+            die(false);
         }
 
     }
