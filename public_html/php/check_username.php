@@ -1,5 +1,5 @@
 <?php
-include 'db_login.php';
+require 'db_login.php';
 $methodType = $_SERVER['REQUEST_METHOD'];
 if($methodType === 'POST'){
     if(isset($_POST["username"])){
