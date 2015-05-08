@@ -35,9 +35,7 @@
             <p>
                 <!-- Connect to the database and insert a user account -->
                 <?php
-                $dsn = "mysql:host=p3nlmysql61plsk.secureserver.net;port=3306;dbname=pathfinder";
-                $username = "pathfinder";
-                $password = "project2015";
+                include 'db_login.php';
 
                 //Check if the account fields have something
                 if(isset($_POST["username"]) && isset($_POST["password"])){
@@ -54,33 +52,26 @@
                     
                     //Attempt a PDO connection to the database and insert a new account
                     try{
+                        //Setup a PDO connectoin to the database
                         $conn = new PDO($dsn, $username, $password);
                         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
                         echo "<script>console.log('Connected successfully')</script>"; 
 
+                        //Checks what the next USER_ID should be
                         $rowStatement = $conn->query('SELECT COUNT(*) FROM USERS');
                         $rowCount = $rowStatement->fetchColumn();
 
                         echo "<script>console.log('rowCount = " . $rowCount . "')</script>";
                         
-                        /*
-                        $hrequser = new HttpRequest('php/check_username.php', HTTP_REQUEST::METH_POST);
-                        $hrequser->addPostFields(array('username' => $acc_user));
-                        
-                        $hreqemail = new HttpRequest('php/check_email.php', HTTP_REQUEST::METH_POST);
-                        $hreqemail->addPostFields(array('email' => $acc_email));
-                        
-                        try{
-                            $checkName = $hrequser->send()->getBody();
-                            $checkEmail = $hreqemail->send()->getBody();
-                        }
-                        catch(HttpException $e){
-                            error_log($e->getMessage());
-                        }
-                        */
+                        //Check if username already exists in the database
+                        $checkName = $conn->query('SELECT USER_ID FROM USERS WHERE USER_NAME = ' . $acc_user);
+                        $checkName = $checkName->fetch();
+                        //Check if email already exists in database
+                        $checkEmail = $conn->query('SELECT USER_ID FROM USERS WHERE USER_EMAIL = ' . $acc_email);
+                        $checkEmail = $checkEmail->fetch();
                         
                         //If the username and the email are not already in use, insert a new account
-                        if($checkName == "Username is available" && ($checkEmail == "" || $acc_email == "no_email")){
+                        if($checkName != false && ($acc_email == "no_email" || $checkEmail != false)){
                             $statement = $conn->prepare('INSERT INTO USERS VALUES (:userid, :username, :password, :email)');
                             $statement->execute(array(
                                 ':userid' => $rowCount,

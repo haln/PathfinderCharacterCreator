@@ -1,7 +1,5 @@
 <?php
-$dsn = 'mysql:host=p3nlmysql61plsk.secureserver.net;port=3306;dbname=pathfinder';
-$username = 'pathfinder';
-$password = 'project2015';
+include 'db_login.php';
 $methodType = $_SERVER['REQUEST_METHOD'];
 if($methodType === 'POST'){
     if(isset($_POST["email"])){
