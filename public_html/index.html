@@ -13,32 +13,42 @@
         <link rel="stylesheet" href="css/animations.css">
     </head>
     <body>
-        <!-- Top Bar Menu -->
-        
         
         
         <!-- The Navigation Menu -->
-        
-        
+
         <div id="header">
-                <a class="pathfinderLogo" href="index.html">Pathfinder Character Creator</a>
-                <!--<h1>Pathfinder Character Creator</h1>-->
-                <nav id="menu-nav">
-                    <a class="link-home" href="index.html">Home</a>
-                    <a class="link-wizard" href="characterWizard.html">Create a Character</a>
-                    
-                </nav>
-                
-                <div id="user-nav">
+            <a class="pathfinderLogo" href="index.html">Pathfinder Character Creator</a>
+            <!--<h1>Pathfinder Character Creator</h1>-->
+            <nav id="menu-nav">
+                <a class="link-home" href="index.html">Home</a>
+                <a class="link-wizard" href="characterWizard.html">Create a Character</a>
+
+            </nav>
+
+            <div id="user-nav">
+                <div id="loggedIn" hidden="hidden">
+                    <label id="welcomeMessage" >                   
+                    </label>
+                    <a class="link-logout" href="index.html" onclick="logOut()">Log Out</a>
+                    <a class="link-myprofile" href="profile.html">My Profile</a>
+                </div>
+                <div id="notlogIn" >
                     <a class="link-login" href="login.html">Log In</a>
                     <a class="link-signup" href="signup.html">Sign Up</a>
-                    
                 </div>
+            </div>
         </div>
+        
         <!-- The Homepage Content -->
         <div id="homepage" class="statscontent">
             <h2>Home</h2>
-            <p>Welcome to the Pathfinder Character Creator.</p>
+            <p>Welcome to the Pathfinder Character Creator.
+            
+            <br/>This website is made by 
+            <br/>
+            
+            Justin Walk, Casper Co Evelyn Dai</p>
         </div>
     </body>
 </html>

@@ -74,4 +74,6 @@ $(document).ready(function(){
 
 function logOut(){
     localStorage.clear();
+    $("#notlogIn").removeAttr("hidden");
+    $("#loggedIn").attr("hidden","hidden");
 }

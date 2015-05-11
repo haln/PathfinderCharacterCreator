@@ -76,11 +76,14 @@
         </div>
 
         <!-- Stats Page -->
-        <div id="stats" class="statscontent">                
-            <h2>Roll the dice and get started</h2>
-            <div class="nextBtn">
-                <a id="statNext" class="next" href="#race" onclick="goToRace(this)"></a>
+        <div id="stats" class="statscontent">         
+            <div class="headerbar">
+                <h2>Roll the dice and get started..</h2>
+                <div class="nextBtn">
+                    <a id="statNext" class="next" href="#race" onclick="goToRace(this)">Next</a>
+                </div>
             </div>
+
             <input id="statusBar" hidden="hidden" value="1">
             <div id="dice">
                 <div id="diceBtn">
@@ -119,9 +122,19 @@
         <!-- Race Page -->
         <div id="race" class="panel">
             <div class="content">  
-                <div class="backBtn">
-                    <a id="raceBack" href="#stats" onclick="nextCondition(this)">Return to Stats</a>
+                <div class="headerbar">
+                 <div class="backBtn">
+                    <a id="raceBack" href="#stats" onclick="nextCondition(this)"></a>
+                </div>   
+                <h2>Choose your race</h2>
+                <div class="nextBtn">
+                    <a id="raceNext" class="next" href="#class" onclick="nextCondition(this)"></a>
                 </div>
+                    
+                </div>
+                
+                
+                
                 <div id="race_buttons">
                     <input id="btn_dwarf" type="button" class="racebutton" value="Dwarf" onclick="displayRace('Dwarf')">
                     <input id="btn_halfling" type="button" class="racebutton" value="Halfling" onclick="displayRace('Halfling')">
@@ -131,13 +144,11 @@
                     <input id="btn_horc" type="button" class="racebutton" value="Half-Orc" onclick="displayRace('Half-Orc')">
                     <input id="btn_helf" type="button" class="racebutton" value="Half-Elf" onclick="displayRace('Half-Elf')">     
                 </div>
-                <div class="nextBtn">
-                    <a id="raceNext" class="next" href="#class" onclick="nextCondition(this)"><img src="ico-pagination-arrow-next.png" alt=""/>Next</a>
-                </div>
+                
                 <input type="hidden" id="selected_race" value="Dwarf">
                 <br /><br />
                 <div id="race_picture">
-                    <img id='raceImage' src='Images/Race/Dwarf.png' alt="race picture" / >
+                    <img id='raceImage' src='Images/Race/Dwarf.png' alt="race picture" />
                 </div>
                 <div id="race_text">
                     <p id="lbl_race_abil">
@@ -179,9 +190,18 @@
         <div id="class" class="panel">
             <div class="content">                             
                 <!--<p>This is the class selection page.</p>-->
-                <div class="backBtn">                 
-                    <a id="classBack" href="#race" onclick="nextCondition(this)">Return to Race Selection</a>
+                <div class="headerbar">
+                    <div class="backBtn">                 
+                        <a id="classBack" href="#race" onclick="nextCondition(this)"></a>
+                    </div>
+                    <h2>Choose your class.</h2>  
+                    <div class="nextBtn">
+                        <a id="classNext" class="next" href="#bio" onclick="checkRace(), nextCondition(this)"></a>
+                    </div>
                 </div>
+
+
+
                 <div id="class_buttons">
                     <input id='btn_Barbarian' type='button' class="classbutton" value='Barbarian' onclick='displayClass("Barbarian")'>
                     <input id='btn_Bard' type='button' class="classbutton" value='Bard' onclick='displayClass("Bard")'>
@@ -195,9 +215,7 @@
                     <input id='btn_Sorcerer' type='button' class="classbutton" value='Sorcerer' onclick='displayClass("Sorcerer")'>
                     <input id='btn_Wizard' type='button' class="classbutton" value='Wizard' onclick='displayClass("Wizard")'>
                 </div>
-                <div class="nextBtn">
-                    <a id="classNext" class="next" href="#bio" onclick="checkRace(), nextCondition(this)">Next</a>
-                </div>
+
                 <input type="hidden" id="selected_class" value="Barbarian">
                 <br />
                 <div id="classPicture">
@@ -233,17 +251,21 @@
         <!-- Biography Page -->
         <div id="bio" class="panel">
             <div class="content">
+                <div class="headerbar">
                 <div class="backBtn">
-                    <a href="#class" id ="basicsBack" onclick="nextCondition(this)">Return to Class Selection</a>
+                    <a href="#class" id ="basicsBack" onclick="nextCondition(this)"></a>
                 </div>
+                <h2>Write something about your character..</h2>
                 <div class="nextBtn">
-                    <a href="#results" id="basicsNext" class="next" onclick="getBio(), getAttributeResults(), nextCondition(this)">Create Character</a>
+                    <a href="#results" id="basicsNext" class="next" onclick="getBio(), getAttributeResults(), nextCondition(this)"></a>
+                </div>    
                 </div>
+                
                 <div id="bio_image">
                     <img src="Images/Profile/Dwarf1.jpg" id="bio_char_image" alt="bio image"/>                   
                 </div>
                 <div id="bio_info">
-                    <h2>Write something about your character..</h2>
+                    
                     <form action="" method="post" class="basicsInfo">    
                         <label for="picSelect">Profile picture:</label>
                         <select id="picSelect" onchange="document.getElementById('bio_char_image').src = this.value">
@@ -340,11 +362,12 @@
                 <div class="backBtn">
                     <a href="#bio" id="resultBack" onclick="nextCondition(this)">Return to biography Selection</a>
                 </div>
+                <h2>Character sheet</h2>  
                 <div class="nextBtn">
                     <a href="" id="resultNext" class="next" onclick="nextCondition(this)">Create Character</a>
                 </div>
-                <h2>Character sheet</h2>               
-                <img id="result_image" src=""/>
+                             
+                <img id="result_image" src="" alt="result image"/>
 
                 <div id="result_bio">
                     <label>Name: </label>
