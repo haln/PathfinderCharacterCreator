@@ -40,9 +40,21 @@
         <script src="js/jquery-2.1.3.min.js"></script>
         <script src="js/main.js"></script>
         <script type="text/javascript">
-            var charNm = getParameterByName('char');
-            console.log(charNm);
-            $("#charName").html(charNm);
+                $char = $_GET["char"];
+                if($char){
+                    $.get("php/characters.php", {char: $char}).done(function(data){
+                        if(data){
+                            data = JSON.parse(data);
+                            console.log(data);
+                            for(var k in data) {
+                                $("#charlist").append("<li><a href=characterSheet.html?char=" + data[k]["CHAR_ID"] + ">" + data[k]["CHAR_NAME"] + "<\/script>");
+                             }
+                        }
+                        else{
+                            $("#charlist").append("No characters");
+                        }
+                    });
+                }
         </script>
     </body>
 </html>
