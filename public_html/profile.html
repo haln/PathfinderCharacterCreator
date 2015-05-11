@@ -40,11 +40,36 @@
         
         <!-- The User's Profile Content -->
         <div id="profile" class="statscontent">
-            <h2>Username's Profile</h2>           
-            <ul>
-                <li><a href='characterSheet.html?char=Bobby&nbsp;Joe'>Bobby Joe</a></li>
-                <li><a href='characterSheet.html?char=Joseph&nbsp;Arian'>Joseph Arian</a></li>
+            <h2><span id='user_name'></span>'s Profile</h2>           
+            <ul id="charlist">
             </ul>
         </div>
+        <script src="js/jquery-2.1.3.min.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function(){
+                //Change the profile to show the user's username
+                $username = localStorage.getItem("username");
+                if($username){
+                    $("#user_name").html($username);
+                }
+                
+                //Gets the list of characters that this user has and make links to them
+                $user = localStorage.getItem("userID");
+                if($user){
+                    $.post("php/userchars.php", {user: $user}).done(function(data){
+                        if(data){
+                            data = JSON.parse(data);
+                            console.log(data);
+                            for(var k in data) {
+                                $("#charlist").append("<li><a href=characterSheet.html?char=" + data[k]["CHAR_ID"] + ">" + data[k]["CHAR_NAME"] + "<\/script>");
+                             }
+                        }
+                        else{
+                            $("#charlist").append("No characters");
+                        }
+                    });
+                }
+            });
+        </script>
     </body>
 </html>

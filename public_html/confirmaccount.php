@@ -85,3 +85,5 @@
         </div>
         <script src="js/jquery-2.1.3.min.js"></script>
 <?php require 'php/footer.php'; ?>
+    </body>
+</html>
