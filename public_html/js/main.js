@@ -65,9 +65,13 @@ function changeConditionClass(i, direction){
 $(document).ready(function(){
     var username = localStorage.getItem("username");
     if(username !== null){
-         document.getElementById("welcomeMessage").innerHTML = "welcome, " + username;
+         document.getElementById("welcomeMessage").innerHTML = "Welcome, " + username;
     }
     $("#loggedIn").removeAttr("hidden");
     $("#notlogIn").attr("hidden","hidden");
    
 });
+
+function logOut(){
+    localStorage.clear();
+}
