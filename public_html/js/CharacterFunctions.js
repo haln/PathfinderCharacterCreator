@@ -26,19 +26,20 @@ function getBio(){
 
 }
 
-function getAttributeResults() {
+function getAttributeResults(data) {
+    
     var str = parseInt(document.getElementById("strCon").getAttribute("alt")) + 
-              parseInt(getAttributeAdjust(document.getElementById('selected_race').value, "Strength"));
+              parseInt(getAttributeAdjust(document.getElementById('selected_race').value, "Strength", data));
     var dex = parseInt(document.getElementById("dexCon").getAttribute("alt")) + 
-              parseInt(getAttributeAdjust(document.getElementById('selected_race').value, "Dexterity"));
+              parseInt(getAttributeAdjust(document.getElementById('selected_race').value, "Dexterity", data));
     var con = parseInt(document.getElementById("conCon").getAttribute("alt")) + 
-              parseInt(getAttributeAdjust(document.getElementById('selected_race').value, "Constitution"));
+              parseInt(getAttributeAdjust(document.getElementById('selected_race').value, "Constitution", data));
     var int = parseInt(document.getElementById("intCon").getAttribute("alt")) + 
-              parseInt(getAttributeAdjust(document.getElementById('selected_race').value, "Intelligence"));
+              parseInt(getAttributeAdjust(document.getElementById('selected_race').value, "Intelligence", data));
     var wis = parseInt(document.getElementById("wisCon").getAttribute("alt")) + 
-              parseInt(getAttributeAdjust(document.getElementById('selected_race').value, "Wisdom"));
+              parseInt(getAttributeAdjust(document.getElementById('selected_race').value, "Wisdom", data));
     var cha = parseInt(document.getElementById("chaCon").getAttribute("alt")) + 
-              parseInt(getAttributeAdjust(document.getElementById('selected_race').value, "Charisma"));
+              parseInt(getAttributeAdjust(document.getElementById('selected_race').value, "Charisma", data));
     
     document.getElementById('result_str').innerHTML = str;
     document.getElementById('result_dex').innerHTML = dex;
@@ -55,7 +56,7 @@ function getAttributeResults() {
     document.getElementById('result_cha_mod').innerHTML = getStatModifier(cha);
 }
 
-function getAttributeAdjust(race, attribute){
+function getAttributeAdjust(race, attribute, data){
     if (race == "Human" || race == "Half-Elf" || race == "Half-Orc") {
         
         var a = document.getElementById('selectAttr');
@@ -67,28 +68,29 @@ function getAttributeAdjust(race, attribute){
             return 0;
         }
     } else {
-        var raceMods = getRacialMods(race);
         var statColumn = getStatTable(attribute);
-        var racialMod = getRacialAttributeMod(raceMods, statColumn);
-        return racialMod;
+        return data[0][statColumn];
+
     }
 }
 
-function getRacialMods(race){
-    $.get("results_racial_mod.php", {race: race}).done(function(data){
-        console.log("has: " + data);
-        return data;
-    });
-}
+function getAttributeDB(){
 
-function getRacialAttributeMod(table, stat) {
-    for (var key in table){
-        console.log("Hi");
-        if (key == stat){
-            console.log(table[key]);
-            return table[key];
-        }
-    }
+    var strRace = document.getElementById('selected_race').value;
+
+    $.ajax({
+          url: "results_racial_mod.php",
+          dataType: "json",
+          type: "GET",
+          data: {race:strRace },
+          success: function(data) {
+              getAttributeResults(data);
+          },
+          error: function(jqXHR, textStatus, errorThrown) {
+              $("#p1").text(jqXHR.statusText);
+          }
+      });
+        
 }
 
 function getStatTable(stat) {
