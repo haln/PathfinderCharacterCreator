@@ -15,21 +15,29 @@
     <body>
         
          <!-- The Navigation Menu -->
-        
-            <div id="header">
-                <a class="pathfinderLogo" href="index.html">Pathfinder Character Creator</a>
-                <nav id="menu-nav">
-                    <a class="link-home" href="index.html">Home</a>
-                    <a class="link-wizard" href="characterWizard.html">Create a Character</a>
-                    
-                </nav>
-                
-                <div id="user-nav">
+
+        <div id="header">
+            <a class="pathfinderLogo" href="index.html">Pathfinder Character Creator</a>
+            <!--<h1>Pathfinder Character Creator</h1>-->
+            <nav id="menu-nav">
+                <a class="link-home" href="index.html">Home</a>
+                <a class="link-wizard" href="characterWizard.html">Create a Character</a>
+
+            </nav>
+
+            <div id="user-nav">
+                <div id="loggedIn" hidden="hidden">
+                    <label id="welcomeMessage" >                   
+                    </label>
+                    <a class="link-logout" href="index.html" onclick="logOut()">Log Out</a>
+                    <a class="link-myprofile" href="profile.html">My Profile</a>
+                </div>
+                <div id="notlogIn" >
                     <a class="link-login" href="login.html">Log In</a>
                     <a class="link-signup" href="signup.html">Sign Up</a>
-                    
                 </div>
             </div>
+        </div>
          
         <!-- The Account log in Page Content -->
         <div class="statscontent">
