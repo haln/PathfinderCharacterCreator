@@ -61,3 +61,13 @@ function changeConditionClass(i, direction){
         $('.progress .circle:nth-of-type(' + (i) + ') .label').html(i);
     }
 }
+
+$(document).ready(function(){
+    var username = localStorage.getItem("username");
+    if(username !== null){
+         document.getElementById("welcomeMessage").innerHTML = "welcome, " + username;
+    }
+    $("#loggedIn").removeAttr("hidden");
+    $("#notlogIn").attr("hidden","hidden");
+   
+});

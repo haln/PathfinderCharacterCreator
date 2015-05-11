@@ -29,18 +29,17 @@
             </nav>
 
             <div id="user-nav">
-                <div class="loggedin" hidden="hidden">
-                    <div class="welcomeMessage" >                   
+                <div id="loggedIn" hidden="hidden">
+                    <div id="welcomeMessage" >                   
                     </div>
                     <a class="link-logout" href="index.html" >Log Out</a>
                     <a class="link-myprofile" href="profile.html">My Profile</a>
                 </div>
-                <div class="notlogin" >
+                <div id="notlogIn" >
                     <a class="link-login" href="login.html">Log In</a>
                     <a class="link-signup" href="signup.html">Sign Up</a>
                 </div>
             </div>
-
         </div>
 
         <!-- Progress bar -->
@@ -138,7 +137,7 @@
                 <input type="hidden" id="selected_race" value="Dwarf">
                 <br /><br />
                 <div id="race_picture">
-                    <img id='raceImage' src='Images/Race/Dwarf.png'>
+                    <img id='raceImage' src='Images/Race/Dwarf.png' alt="race picture" / >
                 </div>
                 <div id="race_text">
                     <p id="lbl_race_abil">
@@ -202,7 +201,7 @@
                 <input type="hidden" id="selected_class" value="Barbarian">
                 <br />
                 <div id="classPicture">
-                    <img id="classImage" src='Images/Class/Barbarian.jpg'>
+                    <img id="classImage" src='Images/Class/Barbarian.jpg' alt="class picture" />
                 </div>
                 <div id="classDescription">
                     <p id="lbl_class_desc">For some, there is only rage. In the ways of their people, 
@@ -225,7 +224,7 @@
                     <br /><br />
                     Skill Points: <label id='lbl_class_skillPoints'>4</label> + int modifier per level.
                     <br /><br />
-                    Class Skills: <label id='lbl_class_skills'>Acrobatics (Dex), Climb (Str), Craft (Int), Handle Animal (Cha), Intimidate (Cha), Knowledge (nature) (Int), Perception (Wis), Ride (Dex), Survival (Wis), and Swim (Str)</p>
+                    Class Skills: <label id='lbl_class_skills'>Acrobatics (Dex), Climb (Str), Craft (Int), Handle Animal (Cha), Intimidate (Cha), Knowledge (nature) (Int), Perception (Wis), Ride (Dex), Survival (Wis), and Swim (Str)
                 </div>       
             </div>
         </div>
@@ -241,7 +240,7 @@
                     <a href="#results" id="basicsNext" class="next" onclick="getBio(), getAttributeResults(), nextCondition(this)">Create Character</a>
                 </div>
                 <div id="bio_image">
-                    <img src="Images/Profile/Dwarf1.jpg" id="bio_char_image" >                   
+                    <img src="Images/Profile/Dwarf1.jpg" id="bio_char_image" alt="bio image"/>                   
                 </div>
                 <div id="bio_info">
                     <h2>Write something about your character..</h2>
