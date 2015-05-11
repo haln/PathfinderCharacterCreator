@@ -3,6 +3,7 @@ $dsn = 'mysql:host=p3nlmysql61plsk.secureserver.net;port=3306;dbname=pathfinder'
 $username = 'pathfinder';
 $password = 'project2015';
 $methodType = $_SERVER['REQUEST_METHOD'];
+$data = array("msg" => "$methodType");
 if($methodType === 'GET'){
     if(isset($_GET["race"])){
         if(!isset($_SERVER['HTTP_X_REQUESTED_WITH']) AND strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) != 'xmlhttprequest') {

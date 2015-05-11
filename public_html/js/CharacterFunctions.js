@@ -67,7 +67,9 @@ function getAttributeAdjust(race, attribute){
             return 0;
         }
     } else {
-        var racialMod = getRacialAttributeMod(getRacialMods(race), getStatTable(attribute));
+        var raceMods = getRacialMods(race);
+        var statColumn = getStatTable(attribute);
+        var racialMod = getRacialAttributeMod(raceMods, statColumn);
         return racialMod;
     }
 }
@@ -81,6 +83,7 @@ function getRacialMods(race){
 
 function getRacialAttributeMod(table, stat) {
     for (var key in table){
+        console.log("Hi");
         if (key == stat){
             console.log(table[key]);
             return table[key];
