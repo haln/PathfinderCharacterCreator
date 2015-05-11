@@ -80,7 +80,7 @@
             <div class="headerbar">
                 <h2>Roll the dice and get started..</h2>
                 <div class="nextBtn">
-                    <a id="statNext" class="next" href="#race" onclick="goToRace(this)">Next</a>
+                    <a id="statNext" class="next" href="#race" onclick="goToRace(this)"></a>
                 </div>
             </div>
 
@@ -123,18 +123,18 @@
         <div id="race" class="panel">
             <div class="content">  
                 <div class="headerbar">
-                 <div class="backBtn">
-                    <a id="raceBack" href="#stats" onclick="nextCondition(this)"></a>
-                </div>   
-                <h2>Choose your race</h2>
-                <div class="nextBtn">
-                    <a id="raceNext" class="next" href="#class" onclick="nextCondition(this)"></a>
+                    <div class="backBtn">
+                        <a id="raceBack" href="#stats" onclick="nextCondition(this)"></a>
+                    </div>   
+                    <h2>Choose your race</h2>
+                    <div class="nextBtn">
+                        <a id="raceNext" class="next" href="#class" onclick="nextCondition(this)"></a>
+                    </div>
+
                 </div>
-                    
-                </div>
-                
-                
-                
+
+
+
                 <div id="race_buttons">
                     <input id="btn_dwarf" type="button" class="racebutton" value="Dwarf" onclick="displayRace('Dwarf')">
                     <input id="btn_halfling" type="button" class="racebutton" value="Halfling" onclick="displayRace('Halfling')">
@@ -144,7 +144,7 @@
                     <input id="btn_horc" type="button" class="racebutton" value="Half-Orc" onclick="displayRace('Half-Orc')">
                     <input id="btn_helf" type="button" class="racebutton" value="Half-Elf" onclick="displayRace('Half-Elf')">     
                 </div>
-                
+
                 <input type="hidden" id="selected_race" value="Dwarf">
                 <br /><br />
                 <div id="race_picture">
@@ -242,7 +242,7 @@
                     <br /><br />
                     Skill Points: <label id='lbl_class_skillPoints'>4</label> + int modifier per level.
                     <br /><br />
-                    Class Skills: <label id='lbl_class_skills'>Acrobatics (Dex), Climb (Str), Craft (Int), Handle Animal (Cha), Intimidate (Cha), Knowledge (nature) (Int), Perception (Wis), Ride (Dex), Survival (Wis), and Swim (Str)
+                    Class Skills: <label id='lbl_class_skills'>Acrobatics (Dex), Climb (Str), Craft (Int), Handle Animal (Cha), Intimidate (Cha), Knowledge (nature) (Int), Perception (Wis), Ride (Dex), Survival (Wis), and Swim (Str)</label>
                 </div>       
             </div>
         </div>
@@ -252,107 +252,106 @@
         <div id="bio" class="panel">
             <div class="content">
                 <div class="headerbar">
-                <div class="backBtn">
-                    <a href="#class" id ="basicsBack" onclick="nextCondition(this)"></a>
-                </div>
-                <h2>Write something about your character..</h2>
-                <div class="nextBtn">
+                    <div class="backBtn">
+                        <a href="#class" id ="basicsBack" onclick="nextCondition(this)"></a>
+                    </div>
+                    <h2>Write something about your character..</h2>
+                    <div class="nextBtn">
+                        <a href="#results" id="basicsNext" class="next" onclick="getBio(), getAttributeDB(), nextCondition(this)"></a>
+                    </div>
 
-                <a href="#results" id="basicsNext" class="next" onclick="getBio(), getAttributeDB(), nextCondition(this)"></a>
+                    <div id="bio_image">
+                        <img src="Images/Profile/Dwarf1.jpg" id="bio_char_image" alt="bio image"/>                   
+                    </div>
+                    <div id="bio_info">
 
-                </div>
-                
-                <div id="bio_image">
-                    <img src="Images/Profile/Dwarf1.jpg" id="bio_char_image" alt="bio image"/>                   
-                </div>
-                <div id="bio_info">
-                    
-                    <form action="" method="post" class="basicsInfo">    
-                        <label for="picSelect">Profile picture:</label>
-                        <select id="picSelect" onchange="document.getElementById('bio_char_image').src = this.value">
-                            <option value="Images/Profile/Dwarf1.jpg">Dwarf 1</option>
-                            <option value="Images/Profile/Dwarf2.jpg">Dwarf 2</option>
-                            <option value="Images/Profile/Dwarf3.jpg">Dwarf 3</option>
-                            <option value="Images/Profile/Dwarf4.jpg">Dwarf 4</option>
-                            <option value="Images/Profile/Dwarf5.jpg">Dwarf 5</option>
-                            <option value="Images/Profile/Elf1.jpg">Elf 1</option>
-                            <option value="Images/Profile/Elf2.jpg">Elf 2</option>
-                            <option value="Images/Profile/Elf3.jpg">Elf 3</option>
-                            <option value="Images/Profile/Elf4.jpg">Elf 4</option>
-                            <option value="Images/Profile/Elf5.jpg">Elf 5</option>
-                            <option value="Images/Profile/Gnome1.jpg">Gnome 1</option>
-                            <option value="Images/Profile/Gnome2.jpg">Gnome 2</option>
-                            <option value="Images/Profile/Gnome3.jpg">Gnome 3</option>
-                            <option value="Images/Profile/Gnome4.jpg">Gnome 4</option>
-                            <option value="Images/Profile/Gnome5.jpg">Gnome 5</option>
-                            <option value="Images/Profile/HalfElf1.jpg">Half-Elf 1</option>
-                            <option value="Images/Profile/HalfElf2.jpg">Half-Elf 2</option>
-                            <option value="Images/Profile/HalfElf3.jpg">Half-Elf 3</option>
-                            <option value="Images/Profile/HalfElf4.jpg">Half-Elf 4</option>
-                            <option value="Images/Profile/HalfElf5.jpg">Half-Elf 5</option>
-                            <option value="Images/Profile/HalfOrc1.jpg">Half-Orc 1</option>
-                            <option value="Images/Profile/HalfOrc2.jpg">Half-Orc 2</option>
-                            <option value="Images/Profile/HalfOrc3.jpg">Half-Orc 3</option>
-                            <option value="Images/Profile/HalfOrc4.jpg">Half-Orc 4</option>
-                            <option value="Images/Profile/HalfOrc5.jpg">Half-Orc 5</option>
-                            <option value="Images/Profile/Halfling1.jpg">Halfling 1</option>
-                            <option value="Images/Profile/Halfling2.jpg">Halfling 2</option>
-                            <option value="Images/Profile/Halfling3.jpg">Halfling 3</option>
-                            <option value="Images/Profile/Halfling4.jpg">Halfling 4</option>
-                            <option value="Images/Profile/Halfling5.jpg">Halfling 5</option>
-                            <option value="Images/Profile/Human1.jpg">Human 1</option>
-                            <option value="Images/Profile/Human2.jpg">Human 2</option>
-                            <option value="Images/Profile/Human3.jpg">Human 3</option>
-                            <option value="Images/Profile/Human4.jpg">Human 4</option>
-                            <option value="Images/Profile/Human5.jpg">Human 5</option>
-                        </select>
-                        <br/>
-                        <label for="bio_name">Name:</label>
-                        <input type="text" id="bio_name" placeholder="Character name" value="">
-                        <br />
-                        <label for="bio_gender">Gender: </label>
-                        <select id="bio_gender">
-                            <option value="Male">Male</option>
-                            <option value="Female">Female</option>
-                        </select>
-                        <br />
-                        <label for="alignSelect">Alignment: </label>
-                        <select id="alignSelect"></select>
-                        <br />
-                        <label for="favorclassSelect">Favored Class: </label>
+                        <form action="" method="post" class="basicsInfo">    
+                            <label for="picSelect">Profile picture:</label>
+                            <select id="picSelect" onchange="document.getElementById('bio_char_image').src = this.value">
+                                <option value="Images/Profile/Dwarf1.jpg">Dwarf 1</option>
+                                <option value="Images/Profile/Dwarf2.jpg">Dwarf 2</option>
+                                <option value="Images/Profile/Dwarf3.jpg">Dwarf 3</option>
+                                <option value="Images/Profile/Dwarf4.jpg">Dwarf 4</option>
+                                <option value="Images/Profile/Dwarf5.jpg">Dwarf 5</option>
+                                <option value="Images/Profile/Elf1.jpg">Elf 1</option>
+                                <option value="Images/Profile/Elf2.jpg">Elf 2</option>
+                                <option value="Images/Profile/Elf3.jpg">Elf 3</option>
+                                <option value="Images/Profile/Elf4.jpg">Elf 4</option>
+                                <option value="Images/Profile/Elf5.jpg">Elf 5</option>
+                                <option value="Images/Profile/Gnome1.jpg">Gnome 1</option>
+                                <option value="Images/Profile/Gnome2.jpg">Gnome 2</option>
+                                <option value="Images/Profile/Gnome3.jpg">Gnome 3</option>
+                                <option value="Images/Profile/Gnome4.jpg">Gnome 4</option>
+                                <option value="Images/Profile/Gnome5.jpg">Gnome 5</option>
+                                <option value="Images/Profile/HalfElf1.jpg">Half-Elf 1</option>
+                                <option value="Images/Profile/HalfElf2.jpg">Half-Elf 2</option>
+                                <option value="Images/Profile/HalfElf3.jpg">Half-Elf 3</option>
+                                <option value="Images/Profile/HalfElf4.jpg">Half-Elf 4</option>
+                                <option value="Images/Profile/HalfElf5.jpg">Half-Elf 5</option>
+                                <option value="Images/Profile/HalfOrc1.jpg">Half-Orc 1</option>
+                                <option value="Images/Profile/HalfOrc2.jpg">Half-Orc 2</option>
+                                <option value="Images/Profile/HalfOrc3.jpg">Half-Orc 3</option>
+                                <option value="Images/Profile/HalfOrc4.jpg">Half-Orc 4</option>
+                                <option value="Images/Profile/HalfOrc5.jpg">Half-Orc 5</option>
+                                <option value="Images/Profile/Halfling1.jpg">Halfling 1</option>
+                                <option value="Images/Profile/Halfling2.jpg">Halfling 2</option>
+                                <option value="Images/Profile/Halfling3.jpg">Halfling 3</option>
+                                <option value="Images/Profile/Halfling4.jpg">Halfling 4</option>
+                                <option value="Images/Profile/Halfling5.jpg">Halfling 5</option>
+                                <option value="Images/Profile/Human1.jpg">Human 1</option>
+                                <option value="Images/Profile/Human2.jpg">Human 2</option>
+                                <option value="Images/Profile/Human3.jpg">Human 3</option>
+                                <option value="Images/Profile/Human4.jpg">Human 4</option>
+                                <option value="Images/Profile/Human5.jpg">Human 5</option>
+                            </select>
+                            <br/>
+                            <label for="bio_name">Name:</label>
+                            <input type="text" id="bio_name" placeholder="Character name" value="">
+                            <br />
+                            <label for="bio_gender">Gender: </label>
+                            <select id="bio_gender">
+                                <option value="Male">Male</option>
+                                <option value="Female">Female</option>
+                            </select>
+                            <br />
+                            <label for="alignSelect">Alignment: </label>
+                            <select id="alignSelect"></select>
+                            <br />
+                            <label for="favorclassSelect">Favored Class: </label>
 
-                        <select id="favorclassSelect">
-                            <option value="Barbarian">Barbarian</option>
-                            <option value="Bard">Bard</option>
-                            <option value="Cleric">Cleric</option>
-                            <option value="Druid">Druid</option>
-                            <option value="Fighter">Fighter</option>
-                            <option value="Monk">Monk</option>
-                            <option value="Paladin">Paladin</option>
-                            <option value="Ranger">Ranger</option>
-                            <option value="Rogue">Rogue</option>
-                            <option value="Sorcerer">Sorcerer</option>
-                            <option value="Wizard">Wizard</option>
-                        </select>
-                        <select id="favored_class2" hidden>
-                            <option value="Barbarian">Barbarian</option>
-                            <option value="Bard">Bard</option>
-                            <option value="Cleric">Cleric</option>
-                            <option value="Druid">Druid</option>
-                            <option value="Fighter">Fighter</option>
-                            <option value="Monk">Monk</option>
-                            <option value="Paladin">Paladin</option>
-                            <option value="Ranger">Ranger</option>
-                            <option value="Rogue">Rogue</option>
-                            <option value="Sorcerer">Sorcerer</option>
-                            <option value="Wizard">Wizard</option>
-                        </select>
-                        <br />
-                        <label for="description">Description:</label> 
-                        <br />
-                        <textarea id="description" placeholder="Write down the character description..." name="description"></textarea>
-                    </form>
-                </div>         
+                            <select id="favorclassSelect">
+                                <option value="Barbarian">Barbarian</option>
+                                <option value="Bard">Bard</option>
+                                <option value="Cleric">Cleric</option>
+                                <option value="Druid">Druid</option>
+                                <option value="Fighter">Fighter</option>
+                                <option value="Monk">Monk</option>
+                                <option value="Paladin">Paladin</option>
+                                <option value="Ranger">Ranger</option>
+                                <option value="Rogue">Rogue</option>
+                                <option value="Sorcerer">Sorcerer</option>
+                                <option value="Wizard">Wizard</option>
+                            </select>
+                            <select id="favored_class2" hidden>
+                                <option value="Barbarian">Barbarian</option>
+                                <option value="Bard">Bard</option>
+                                <option value="Cleric">Cleric</option>
+                                <option value="Druid">Druid</option>
+                                <option value="Fighter">Fighter</option>
+                                <option value="Monk">Monk</option>
+                                <option value="Paladin">Paladin</option>
+                                <option value="Ranger">Ranger</option>
+                                <option value="Rogue">Rogue</option>
+                                <option value="Sorcerer">Sorcerer</option>
+                                <option value="Wizard">Wizard</option>
+                            </select>
+                            <br />
+                            <label for="description">Description:</label> 
+                            <br />
+                            <textarea id="description" placeholder="Write down the character description..." name="description"></textarea>
+                        </form>
+                    </div>         
+                </div>
             </div>
         </div>
         <!-- End of Biography Page -->
@@ -360,14 +359,15 @@
         <!-- Result Page -->
         <div id="results" class="panel">
             <div class="content">
-                <div class="backBtn">
-                    <a href="#bio" id="resultBack" onclick="nextCondition(this)">Return to biography Selection</a>
-                </div>
-                <h2>Character sheet</h2>  
-                <div class="nextBtn">
-                    <a href="" id="resultNext" class="next" onclick="nextCondition(this)">Create Character</a>
-                </div>
-                             
+                <div class="headerbar">
+                    <div class="backBtn">
+                        <a href="#bio" id="resultBack" onclick="nextCondition(this)"></a>
+                    </div>
+                    <h2>Character sheet</h2>  
+                    <div class="nextBtn">
+                        <a href="" id="resultNext" class="next" onclick="nextCondition(this)"></a>
+                    </div>
+                </div>            
                 <img id="result_image" src="" alt="result image"/>
 
                 <div id="result_bio">

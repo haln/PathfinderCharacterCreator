@@ -557,8 +557,9 @@ characterWizard.html:target ~  #header #menu-nav #link-wizard,
 #bio_info{
     font-size: 18px;
     float:left;
-    margin-left: 80px;
+    margin-left: 40px;
     width: 60%;
+    
 }
 .basicsInfo label{
     float: left;
