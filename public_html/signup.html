@@ -14,7 +14,7 @@
 <?php require_once('php/header.php'); ?>
          
         <!-- The Account Signup Page Content -->
-        <div class="content">
+        <div class="statscontent">
             <h2>Account Signup</h2>
             <form id="signup" name="signup" action="confirmaccount.php" method="post">
                 <fieldset name="signupFieldset">
@@ -77,8 +77,8 @@
                     $.post("php/check_email.php", {email: e_mail}).done(function(data){
                         console.log(data);
                         $("#emailError").html(data);
-                    })
-                })
+                    });
+                });
             });
         </script>
             
