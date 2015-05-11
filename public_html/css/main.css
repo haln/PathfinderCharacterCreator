@@ -46,6 +46,7 @@ body {
   width: 144px;
   height: 53px;
   line-height: 53px;
+  
 }
 
 .nextBtn a:hover {
@@ -152,22 +153,8 @@ p + p:first-line {
     position:absolute;
     right: 0px;
 }
-.link-login{
-    background-color: rgb(240, 180, 12);
-    padding:0 12px;
-    color: #fff;
-    display: inline-block;
-    font-weight: 700;
-    height: 15px;
-    margin: 0 5px 5px 0;
-    padding:8px;
-    text-decoration: none;
-    text-transform: uppercase;
-    cursor: auto;
 
-}
-
-.link-signup{
+#user-nav a{
     background-color: rgb(240, 180, 12);
     padding:0 12px;
     color: #fff;
@@ -180,6 +167,22 @@ p + p:first-line {
     text-transform: uppercase;
     cursor: auto;
 }
+#loggedIn a{
+    background-color: rgb(52, 152, 219);
+    padding:0 12px;
+    color: #fff;
+    display: inline-block;
+    font-weight: 700;
+    height: 15px;
+    margin: 0 5px 5px 0;
+    padding:8px;
+    text-decoration: none;
+    text-transform: uppercase;
+    cursor: auto;
+}
+
+
+
 
 
 
@@ -304,16 +307,6 @@ p + p:first-line {
   margin: 0;
 }
 
-/*.content p{
-        font-size: 18px;
-        padding: 10px;
-        line-height: 24px;
-        color: #fff;
-        display: inline-block;
-        background: black;
-        padding: 10px;
-        margin: 3px 0px;
-}*/
 .panel{
     width: 98%;
     height:1000px;

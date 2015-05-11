@@ -13,31 +13,37 @@
         <link rel="stylesheet" href="css/animations.css">
     </head>
     <body>
-        <!-- Top Bar Menu -->
-        <form id="signin" action="">
-            <input type="text" placeholder="Username">
-            <input type="password" placeholder="Password">
-            <input type="submit">
-        </form>
-        <a href='profile.html'>My Profile</a>
-        <!-- The Navigation Menu -->
-        <nav>
-            <div id="header">
-                <h1>Pathfinder Character Creator</h1>
-                <ul id="navigation">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="characterWizard.html">Character Wizard</a></li>
-                    <li><a href="signup.html">Account Signup</a></li>
-                </ul>
+         <!-- The Navigation Menu -->
+         <div id="header">
+            <a class="pathfinderLogo" href="index.html">Pathfinder Character Creator</a>
+            <!--<h1>Pathfinder Character Creator</h1>-->
+            <nav id="menu-nav">
+                <a class="link-home" href="index.html">Home</a>
+                <a class="link-wizard" href="characterWizard.html">Create a Character</a>
+
+            </nav>
+
+            <div id="user-nav">
+                
+                <div class="loggedin" hidden="hidden">
+                    <div class="welcomeMessage" >                   
+                    </div>
+                <a class="link-logout" href="index.html" >Log Out</a>
+                <a class="link-myprofile" href="profile.html">My Profile</a>
+                </div>
+                
+                <div class="notlogin">
+                <a class="link-login" href="login.html">Log In</a>
+                <a class="link-signup" href="signup.html">Sign Up</a>
+                </div>
+
             </div>
-        </nav>
+            
+        </div>
+        
         <!-- The User's Profile Content -->
-        <div id="profile" class="content">
-            <h2>Username's Profile</h2>
-            <p>
-                username here<br/>
-                email here<br/>
-            </p>
+        <div id="profile" class="statscontent">
+            <h2>Username's Profile</h2>           
             <ul>
                 <li><a href='characterSheet.html?char=Bobby&nbsp;Joe'>Bobby Joe</a></li>
                 <li><a href='characterSheet.html?char=Joseph&nbsp;Arian'>Joseph Arian</a></li>
