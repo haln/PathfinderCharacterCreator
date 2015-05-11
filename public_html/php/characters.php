@@ -1,23 +1,23 @@
 <?php
 include 'db_login.php';
 $methodType = $_SERVER['REQUEST_METHOD'];
-if($methodType === 'POST'){
-    if(isset($_POST["char"])){
+if($methodType === 'GET'){
+    if(isset($_GET["char"])){
         if(!isset($_SERVER['HTTP_X_REQUESTED_WITH']) AND strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) != 'xmlhttprequest') {
             die();
         }
 
-        $acc_userID = $_POST["user"];
+        $charID = $_GET["char"];
         
         try{
             $conn = new PDO($dsn, $username, $password);
             $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             
-            $statement = $conn->prepare('SELECT USER_CHAR.CHAR_ID, CHAR_NAME FROM USER_CHAR JOIN CHARACTERS WHERE USER_ID = :user AND CHARACTERS.CHAR_ID = USER_CHAR.CHAR_ID');
+            $statement = $conn->prepare('SELECT * FROM CHARACTERS WHERE CHAR_ID = :char');
             $statement->execute(array(
-                ':user' => $acc_userID
+                ':char' => $charID
             ));
-            $results = $statement->fetchAll();
+            $results = $statement->fetch(PDO::FETCH_ASSOC);
             if(empty($results)){
                 die(false);
             }
