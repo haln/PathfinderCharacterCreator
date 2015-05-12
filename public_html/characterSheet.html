@@ -38,7 +38,7 @@
             </div>
         </div>
         <!-- The Character Sheet Content -->
-        <div id="homepage" class="content">
+        <div id="homepage" class="statscontent">
             <h2 id="charName"></h2>
             <p id='characterDetails'></p>
         </div>
@@ -54,8 +54,9 @@
                             console.log(data);
                             $("#charName").html(data["CHAR_NAME"]);
                             for(key in data){
-                                console.log("<span id=" + key + ">" + key + ": "+data[key] + "</span>");
-                                $("#characterDetails").append("<span id=" + key + ">" + key + ": "+data[key] + "</span>");
+                                if(key != "CHAR_NAME" && key != "CHAR_ID"){
+                                    $("#characterDetails").append("<span id=" + key + ">" + key + ": "+data[key] + "</span><br/>");
+                                }
                             }
                         }
                         else{
