@@ -117,15 +117,15 @@ function getStatTable(stat) {
 }
 
 function getSpeed(data){
-    var speed = data[0][RACE_SPEED];
-    if ($('#selected_class') == "Barabrian"){
+    var speed = parseInt(data[0]["RACE_SPEED"]);
+    if (document.getElementById('selected_class').value == "Barbarian"){
         speed += 10;
     }
-    $('#results_speed').html(speed);
+    $('#result_speed').html(speed);
 }
 
 function getClassDB() {
-    var selectClass = $('#selected_class');
+    var selectClass = document.getElementById('selected_class').value;
     $.ajax({
         url: "php/results_class_mod.php",
         dataType: "json",
@@ -141,7 +141,7 @@ function getClassDB() {
 }
 
 function getClassModifiers(data){
-    $('#result_fort').html(data[0][2]);
-    $('#result_reflex').html(data[0][3]);
-    $('#result_will').html(data[0][4]);
+    $('#result_fort').html(data[0]["FORT"]);
+    $('#result_reflex').html(data[0]["REFLEX"]);
+    $('#result_will').html(data[0]["WILL"]);
 }

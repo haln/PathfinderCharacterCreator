@@ -13,16 +13,15 @@ if($methodType === 'GET'){
             $conn = new PDO($dsn, $username, $password);
             $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             
-            $selectClass = ($_GET["selectClass"]);
-            $statement = $conn->prepare("SELECT * FROM :selectClass");
-            $statement->execute(array(
-                ':selectClass' => $selectClass
-            ));
+            $selectClass = strtoupper($_GET["selectClass"]);
+            $statement = $conn->prepare(str_replace("%selectClass%", $selectClass, "SELECT * FROM %selectClass%" ));
+            $statement->execute();
 
             $data = $statement->fetchAll(PDO::FETCH_ASSOC);
             echo json_encode($data, JSON_FORCE_OBJECT);
         } catch (PDOException $e) {
-            error_log($e->getMessage());
+            echo json_encode($msg, $e->getMessage());
+            //error_log($e->getMessage());
             die('');
         }
     }
