@@ -41,9 +41,25 @@
         <!-- The User's Profile Content -->
         <div id="profile" class="statscontent">
             <h2><span id='user_name'></span>'s Profile</h2>
-            <p>Make some changes or something to your profile.</p>
+            <form onsubmit="return changePassword()">
+                <fieldset name="changePassword">
+                    <legend>Change your password</legend>
+                    <label for="newPass">New password</label>
+                    <input title="Your password must contain at least 6 characters that include UPPERCASE letters, lowercase letters and digits" 
+                           type="password" id="newPass" name="newPass" 
+                           required="required" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" 
+                           onchange="signup.confirmNewPass.pattern = this.value;">
+                    <label for="confirmNewPass">Confirm new password</label>
+                    <input title="Passwords do not match" 
+                           type="password" id="confirmNewPass" name="confirmNewPass" 
+                           required="required" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}">
+                    <input type="submit" id="submitBtn">
+                </fieldset>
+            </form>
+            <span id="newPassLabel"></span>
         </div>
         <script src="js/jquery-2.1.3.min.js"></script>
         <script src='js/main.js'></script>
+        <script src="js/profileManagement.js"></script>
     </body>
 </html>
