@@ -79,12 +79,13 @@ function getAttributeDB() {
     var strRace = document.getElementById('selected_race').value;
 
     $.ajax({
-        url: "results_racial_mod.php",
+        url: "php/results_racial_mod.php",
         dataType: "json",
         type: "GET",
         data: {race: strRace},
         success: function (data) {
             getAttributeResults(data);
+            getSpeed(data);
         },
         error: function (jqXHR, textStatus, errorThrown) {
             $("#p1").text(jqXHR.statusText);
@@ -113,4 +114,34 @@ function getStatTable(stat) {
             return "RACE_CHA";
             break;
     }
+}
+
+function getSpeed(data){
+    var speed = data[0][RACE_SPEED];
+    if ($('#selected_class') == "Barabrian"){
+        speed += 10;
+    }
+    $('#results_speed').html(speed);
+}
+
+function getClassDB() {
+    var selectClass = $('#selected_class');
+    $.ajax({
+        url: "php/results_class_mod.php",
+        dataType: "json",
+        type: "GET",
+        data: {selectClass: selectClass},
+        success: function (data) {
+            getClassModifiers(data);
+        },
+        error: function (jqXHR, textStatus, errorThrown) {
+            $("#p1").text(jqXHR.statusText);
+        }
+    });
+}
+
+function getClassModifiers(data){
+    $('#result_fort').html(data[0][2]);
+    $('#result_reflex').html(data[0][3]);
+    $('#result_will').html(data[0][4]);
 }
