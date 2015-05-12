@@ -19,22 +19,22 @@ body {
 
 /*next & previous */
 .posts-nav-wrap {
-  text-align: center;
-  width: 100%;
-  height: 53px;
-  margin: 30px 0;
-  display: inline-block;
-  clear: both;
+    text-align: center;
+    width: 100%;
+    height: 53px;
+    margin: 30px 0;
+    display: inline-block;
+    clear: both;
 }
 
 
 .backBtn,.nextBtn {
-  margin: 0 13px 0 0;
-  display: inline-block;
+    margin: 0 13px 0 0;
+    display: inline-block;
 }
 
 .nextBtn{
-  float: right;
+    float: right;
 
 }
 
@@ -45,43 +45,43 @@ body {
 
 
 .backBtn a,.nextBtn a {
-  text-indent: -9999em;
-  text-align: left;
-  -moz-border-radius: 5px;
-  -webkit-border-radius: 5px;
-  border-radius: 5px;
-  display: inline-block;
-  -moz-transition: all .20s ease-in-out;
-  -webkit-transition: all .20s ease-in-out;
-  transition: all .20s ease-in-out;
+    text-indent: -9999em;
+    text-align: left;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    display: inline-block;
+    -moz-transition: all .20s ease-in-out;
+    -webkit-transition: all .20s ease-in-out;
+    transition: all .20s ease-in-out;
 }
 
 .nextBtn a {
-  background: #6fa93c url(ico-pagination-arrow-next.png) no-repeat center;
-  width: 144px;
-  height: 53px;
-  line-height: 53px;
-  
+    background: #6fa93c url(ico-pagination-arrow-next.png) no-repeat center;
+    width: 144px;
+    height: 53px;
+    line-height: 53px;
+
 }
 
 .nextBtn a:hover {
-  text-decoration: none;
-  background: #ffe900 url(ico-pagination-arrow-next.png) no-repeat 110px center;
+    text-decoration: none;
+    background: #ffe900 url(ico-pagination-arrow-next.png) no-repeat 110px center;
 }
 
 .backBtn a {
-  width: 78px;
-  height: 53px;
-  line-height: 53px;
-  background-color: #6fa93c;
-  background-image: url(ico-pagination-arrow-previous.png);
-  background-position: center;
-  background-repeat: no-repeat;
+    width: 78px;
+    height: 53px;
+    line-height: 53px;
+    background-color: #6fa93c;
+    background-image: url(ico-pagination-arrow-previous.png);
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .backBtn a:hover {
-  text-decoration: none;
-  background: #ffe900 url(ico-pagination-arrow-previous.png) no-repeat 12px center;
+    text-decoration: none;
+    background: #ffe900 url(ico-pagination-arrow-previous.png) no-repeat 12px center;
 }
 
 /*paragraph*/
@@ -129,10 +129,10 @@ p + p:first-line {
 
 }
 .headerbar{
-  float: left;
-  width: 95%;
-  text-align: Center;
-  margin: 10px auto;
+    float: left;
+    width: 95%;
+    text-align: Center;
+    margin: 10px auto;
 }
 
 .link-home{
@@ -160,13 +160,31 @@ p + p:first-line {
     cursor: auto;
 }
 .pathfinderLogo{
-    bottom:0;
+    bottom: 0;
     display: block;
     height: 30px;
     left: 50%;
-    margin-left:-40px;
-    position:absolute;
+    margin-left: -40px;
+    opacity: .9;
+    position: absolute;
+    top: 5px;
+    width: 80px;
+    text-align: center;
+    -webkit-transition: opacity ease-in 85ms;
+    transition: opacity ease-in 85ms;
     z-index: 2001;  
+
+}
+.header-logo-default {
+    background-image: url(logo.png);
+    background-position: top right;
+    background-repeat: no-repeat;
+    background-size: 80px 30px;
+    height: 30px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 80px;
 }
 #menu-nav{
     float: left;
@@ -204,8 +222,8 @@ p + p:first-line {
 }
 
 #welcomeMessage{
-  margin-right: 10px;
-  color: white;
+    margin-right: 10px;
+    color: white;
 }
 
 
@@ -277,23 +295,6 @@ p + p:first-line {
 }
 
 /*
-#header h1{
-        font-size: 30px;
-        font-weight: 400;
-        text-transform: uppercase;
-        color: rgba(255,255,255,0.9);
-        text-shadow: 0px 1px 1px rgba(0,0,0,0.3);
-        padding: 20px;
-        background: #000;
-}
-#navigation {
-       
-        margin-top: 20px;
-        width: 235px;
-        display:block;
-        list-style:none;
-        z-index:3;
-}
 #navigation a{
         color: #444;
         display: block;
@@ -323,11 +324,11 @@ p + p:first-line {
     padding-bottom: 30px;
 }
 .statscontent h2,.content h2{
-  font-size: 40px;
-  color: rgba(255,255,255,0.9);
-  text-shadow: 0px 1px 1px rgba(0,0,0,0.3);
-  margin: 0;
-  display: inline-block;
+    font-size: 40px;
+    color: rgba(255,255,255,0.9);
+    text-shadow: 0px 1px 1px rgba(0,0,0,0.3);
+    margin: 0;
+    display: inline-block;
 }
 
 .panel{
@@ -559,7 +560,7 @@ characterWizard.html:target ~  #header #menu-nav #link-wizard,
     float:left;
     margin-left: 40px;
     width: 60%;
-    
+
 }
 .basicsInfo label{
     float: left;
