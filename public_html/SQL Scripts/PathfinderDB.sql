@@ -331,468 +331,169 @@ INSERT INTO CLASSES VALUES (
 INSERT INTO CLASSES VALUES (
 'WIZARD', '6', '2');
 
-/*Barbarian Table Values*/
-INSERT INTO BARBARIAN VALUES (
-'1', '1', '2', '0', '0');
-INSERT INTO BARBARIAN VALUES (
-'2', '1', '1', '0', '0');
-INSERT INTO BARBARIAN VALUES (
-'3', '1', '0', '1', '1');
-INSERT INTO BARBARIAN VALUES (
-'4', '1', '1', '0', '0');
-INSERT INTO BARBARIAN VALUES (
-'5', '1', '0', '0', '0');
-INSERT INTO BARBARIAN VALUES (
-'6', '1', '1', '1', '1');
-INSERT INTO BARBARIAN VALUES (
-'7', '1', '0', '0', '0');
-INSERT INTO BARBARIAN VALUES (
-'8', '1', '1', '0', '0');
-INSERT INTO BARBARIAN VALUES (
-'9', '1', '0', '1', '1');
-INSERT INTO BARBARIAN VALUES (
-'10', '1', '1', '0', '0');
-INSERT INTO BARBARIAN VALUES (
-'11', '1', '0', '0', '0');
-INSERT INTO BARBARIAN VALUES (
-'12', '1', '1', '1', '1');
-INSERT INTO BARBARIAN VALUES (
-'13', '1', '0', '0', '0');
-INSERT INTO BARBARIAN VALUES (
-'14', '1', '1', '0', '0');
-INSERT INTO BARBARIAN VALUES (
-'15', '1', '0', '1', '1');
-INSERT INTO BARBARIAN VALUES (
-'16', '1', '1', '0', '0');
-INSERT INTO BARBARIAN VALUES (
-'17', '1', '0', '0', '0');
-INSERT INTO BARBARIAN VALUES (
-'18', '1', '1', '1', '1');
-INSERT INTO BARBARIAN VALUES (
-'19', '1', '0', '0', '0');
-INSERT INTO BARBARIAN VALUES (
-'20', '1', '1', '0', '0');
+CREATE TABLE BARBARIAN(
+LVL  INT NOT NULL,
+BAB  INT NOT NULL,
+FORT INT NOT NULL,
+REFL INT NOT NULL,
+WILL INT NOT NULL,
+CONSTRAINT barbarian_pk
+PRIMARY KEY (LVL)
+);
 
-/*Bard Table Values*/
-INSERT INTO BARD VALUES (
-'1', '0', '0', '2', '2', '1', '0', '0', '0', '0', '0');
-INSERT INTO BARD VALUES (
-'2', '1', '0', '1', '1', '1', '0', '0', '0', '0', '0');
-INSERT INTO BARD VALUES (
-'3', '1', '1', '0', '0', '1', '0', '0', '0', '0', '0');
-INSERT INTO BARD VALUES (
-'4', '1', '0', '1', '1', '0', '1', '0', '0', '0', '0');
-INSERT INTO BARD VALUES (
-'5', '0', '0', '0', '0', '1', '1', '0', '0', '0', '0');
-INSERT INTO BARD VALUES (
-'6', '1', '1', '1', '1', '0', '1', '0', '0', '0', '0');
-INSERT INTO BARD VALUES (
-'7', '1', '0', '0', '0', '0', '0', '1', '0', '0', '0');
-INSERT INTO BARD VALUES (
-'8', '1', '0', '1', '1', '0', '1', '1', '0', '0', '0');
-INSERT INTO BARD VALUES (
-'9', '0', '1', '0', '0', '1', '0', '1', '0', '0', '0');
-INSERT INTO BARD VALUES (
-'10', '1', '0', '1', '1', '0', '0', '0', '1', '0', '0');
-INSERT INTO BARD VALUES (
-'11', '1', '0', '0', '0', '0', '0', '1', '1', '0', '0');
-INSERT INTO BARD VALUES (
-'12', '1', '1', '1', '1', '0', '1', '0', '1', '0', '0');
-INSERT INTO BARD VALUES (
-'13', '0', '0', '0', '0', '0', '0', '0', '0', '1', '0');
-INSERT INTO BARD VALUES (
-'14', '1', '0', '1', '1', '0', '0', '0', '1', '1', '0');
-INSERT INTO BARD VALUES (
-'15', '1', '1', '0', '0', '0', '0', '1', '0', '1', '0');
-INSERT INTO BARD VALUES (
-'16', '1', '0', '1', '1', '0', '0', '0', '0', '0', '1');
-INSERT INTO BARD VALUES (
-'17', '0', '0', '0', '0', '0', '0', '0', '0', '1', '1');
-INSERT INTO BARD VALUES (
-'18', '1', '1', '1', '1', '0', '0', '0', '1', '0', '1');
-INSERT INTO BARD VALUES (
-'19', '1', '0', '0', '0', '0', '0', '0', '0', '1', '1');
-INSERT INTO BARD VALUES (
-'20', '1', '0', '1', '1', '0', '0', '0', '0', '0', '1');
+CREATE TABLE BARD(
+LVL    INT NOT NULL,
+BAB    INT NOT NULL,
+FORT   INT NOT NULL,
+REFL   INT NOT NULL,
+WILL   INT NOT NULL,
+SPELL1 INT NOT NULL,
+SPELL2 INT NOT NULL,
+SPELL3 INT NOT NULL,
+SPELL4 INT NOT NULL,
+SPELL5 INT NOT NULL,
+SPELL6 INT NOT NULL,
+CONSTRAINT bard_pk
+PRIMARY KEY (LVL)
+);
 
-/*Cleric Table Values*/
-INSERT INTO CLERIC VALUES (
-'1', '0', '2', '0', '2', '3', '1', '0', '0', '0', '0', '0', '0', '0', '0');
-INSERT INTO CLERIC VALUES (
-'2', '1', '1', '0', '1', '1', '1', '0', '0', '0', '0', '0', '0', '0', '0');
-INSERT INTO CLERIC VALUES (
-'3', '1', '0', '1', '0', '0', '0', '1', '0', '0', '0', '0', '0', '0', '0');
-INSERT INTO CLERIC VALUES (
-'4', '1', '1', '0', '1', '0', '1', '1', '0', '0', '0', '0', '0', '0', '0');
-INSERT INTO CLERIC VALUES (
-'5', '0', '0', '0', '0', '0', '0', '0', '1', '0', '0', '0', '0', '0', '0');
-INSERT INTO CLERIC VALUES (
-'6', '1', '1', '1', '1', '0', '0', '1', '1', '0', '0', '0', '0', '0', '0');
-INSERT INTO CLERIC VALUES (
-'7', '1', '0', '0', '0', '0', '1', '0', '0', '1', '0', '0', '0', '0', '0');
-INSERT INTO CLERIC VALUES (
-'8', '1', '1', '0', '1', '0', '0', '0', '1', '1', '0', '0', '0', '0', '0');
-INSERT INTO CLERIC VALUES (
-'9', '0', '0', '1', '0', '0', '0', '1', '0', '0', '1', '0', '0', '0', '0');
-INSERT INTO CLERIC VALUES (
-'10', '1', '1', '0', '1', '0', '0', '0', '0', '1', '1', '0', '0', '0', '0');
-INSERT INTO CLERIC VALUES (
-'11', '1', '0', '0', '0', '0', '0', '0', '1', '0', '0', '1', '0', '0', '0');
-INSERT INTO CLERIC VALUES (
-'12', '1', '1', '1', '1', '0', '0', '0', '0', '0', '1', '1', '0', '0', '0');
-INSERT INTO CLERIC VALUES (
-'13', '0', '0', '0', '0', '0', '0', '0', '0', '1', '0', '0', '1', '0', '0');
-INSERT INTO CLERIC VALUES (
-'14', '1', '1', '0', '1', '0', '0', '0', '0', '0', '0', '1', '1', '0', '0');
-INSERT INTO CLERIC VALUES (
-'15', '1', '0', '1', '0', '0', '0', '0', '0', '0', '1', '0', '0', '1', '0');
-INSERT INTO CLERIC VALUES (
-'16', '1', '1', '0', '1', '0', '0', '0', '0', '0', '0', '0', '1', '1', '0');
-INSERT INTO CLERIC VALUES (
-'17', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '1', '0', '0', '1');
-INSERT INTO CLERIC VALUES (
-'18', '1', '1', '1', '1', '0', '0', '0', '0', '0', '0', '0', '0', '1', '1');
-INSERT INTO CLERIC VALUES (
-'19', '1', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '1', '0', '1');
-INSERT INTO CLERIC VALUES (
-'20', '1', '1', '0', '1', '0', '0', '0', '0', '0', '0', '0', '0', '1', '1');
+CREATE TABLE CLERIC(
+LVL  INT NOT NULL,
+BAB  INT NOT NULL,
+FORT INT NOT NULL,
+REFL INT NOT NULL,
+WILL INT NOT NULL,
+SPELL0    INT NOT NULL,
+SPELL1    INT NOT NULL,
+SPELL2    INT NOT NULL,
+SPELL3    INT NOT NULL,
+SPELL4    INT NOT NULL,
+SPELL5    INT NOT NULL,
+SPELL6    INT NOT NULL,
+SPELL7    INT NOT NULL,
+SPELL8    INT NOT NULL,
+SPELL9    INT NOT NULL,
+CONSTRAINT cleric_pk
+PRIMARY KEY (LVL)
+);
 
-/*Druid Table Values*/
-INSERT INTO DRUID VALUES (
-'1', '0', '2', '0', '2', '3', '1', '0', '0', '0', '0', '0', '0', '0', '0');
-INSERT INTO DRUID VALUES (
-'2', '1', '1', '0', '1', '1', '1', '0', '0', '0', '0', '0', '0', '0', '0');
-INSERT INTO DRUID VALUES (
-'3', '1', '0', '1', '0', '0', '0', '1', '0', '0', '0', '0', '0', '0', '0');
-INSERT INTO DRUID VALUES (
-'4', '1', '1', '0', '1', '0', '1', '1', '0', '0', '0', '0', '0', '0', '0');
-INSERT INTO DRUID VALUES (
-'5', '0', '0', '0', '0', '0', '0', '0', '1', '0', '0', '0', '0', '0', '0');
-INSERT INTO DRUID VALUES (
-'6', '1', '1', '1', '1', '0', '0', '1', '1', '0', '0', '0', '0', '0', '0');
-INSERT INTO DRUID VALUES (
-'7', '1', '0', '0', '0', '0', '1', '0', '0', '1', '0', '0', '0', '0', '0');
-INSERT INTO DRUID VALUES (
-'8', '1', '1', '0', '1', '0', '0', '0', '1', '1', '0', '0', '0', '0', '0');
-INSERT INTO DRUID VALUES (
-'9', '0', '0', '1', '0', '0', '0', '1', '0', '0', '1', '0', '0', '0', '0');
-INSERT INTO DRUID VALUES (
-'10', '1', '1', '0', '1', '0', '0', '0', '0', '1', '1', '0', '0', '0', '0');
-INSERT INTO DRUID VALUES (
-'11', '1', '0', '0', '0', '0', '0', '0', '1', '0', '0', '1', '0', '0', '0');
-INSERT INTO DRUID VALUES (
-'12', '1', '1', '1', '1', '0', '0', '0', '0', '0', '1', '1', '0', '0', '0');
-INSERT INTO DRUID VALUES (
-'13', '0', '0', '0', '0', '0', '0', '0', '0', '1', '0', '0', '1', '0', '0');
-INSERT INTO DRUID VALUES (
-'14', '1', '1', '0', '1', '0', '0', '0', '0', '0', '0', '1', '1', '0', '0');
-INSERT INTO DRUID VALUES (
-'15', '1', '0', '1', '0', '0', '0', '0', '0', '0', '1', '0', '0', '1', '0');
-INSERT INTO DRUID VALUES (
-'16', '1', '1', '0', '1', '0', '0', '0', '0', '0', '0', '0', '1', '1', '0');
-INSERT INTO DRUID VALUES (
-'17', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '1', '0', '0', '1');
-INSERT INTO DRUID VALUES (
-'18', '1', '1', '1', '1', '0', '0', '0', '0', '0', '0', '0', '0', '1', '1');
-INSERT INTO DRUID VALUES (
-'19', '1', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '1', '0', '1');
-INSERT INTO DRUID VALUES (
-'20', '1', '1', '0', '1', '0', '0', '0', '0', '0', '0', '0', '0', '1', '1');
+CREATE TABLE DRUID(
+LVL  INT NOT NULL,
+BAB  INT NOT NULL,
+FORT INT NOT NULL,
+REFL INT NOT NULL,
+WILL INT NOT NULL,
+SPELL0    INT NOT NULL,
+SPELL1    INT NOT NULL,
+SPELL2    INT NOT NULL,
+SPELL3    INT NOT NULL,
+SPELL4    INT NOT NULL,
+SPELL5    INT NOT NULL,
+SPELL6    INT NOT NULL,
+SPELL7    INT NOT NULL,
+SPELL8    INT NOT NULL,
+SPELL9    INT NOT NULL,
+CONSTRAINT druid_pk
+PRIMARY KEY (LVL)
+);
 
-/*Fighter Table Values*/
-INSERT INTO FIGHTER VALUES (
-'1', '1', '2', '0', '0');
-INSERT INTO FIGHTER VALUES (
-'2', '1', '1', '0', '0');
-INSERT INTO FIGHTER VALUES (
-'3', '1', '0', '1', '1');
-INSERT INTO FIGHTER VALUES (
-'4', '1', '1', '0', '0');
-INSERT INTO FIGHTER VALUES (
-'5', '1', '0', '0', '0');
-INSERT INTO FIGHTER VALUES (
-'6', '1', '1', '1', '1');
-INSERT INTO FIGHTER VALUES (
-'7', '1', '0', '0', '0');
-INSERT INTO FIGHTER VALUES (
-'8', '1', '1', '0', '0');
-INSERT INTO FIGHTER VALUES (
-'9', '1', '0', '1', '1');
-INSERT INTO FIGHTER VALUES (
-'10', '1', '1', '0', '0');
-INSERT INTO FIGHTER VALUES (
-'11', '1', '0', '0', '0');
-INSERT INTO FIGHTER VALUES (
-'12', '1', '1', '1', '1');
-INSERT INTO FIGHTER VALUES (
-'13', '1', '0', '0', '0');
-INSERT INTO FIGHTER VALUES (
-'14', '1', '1', '0', '0');
-INSERT INTO FIGHTER VALUES (
-'15', '1', '0', '1', '1');
-INSERT INTO FIGHTER VALUES (
-'16', '1', '1', '0', '0');
-INSERT INTO FIGHTER VALUES (
-'17', '1', '0', '0', '0');
-INSERT INTO FIGHTER VALUES (
-'18', '1', '1', '1', '1');
-INSERT INTO FIGHTER VALUES (
-'19', '1', '0', '0', '0');
-INSERT INTO FIGHTER VALUES (
-'20', '1', '1', '0', '0');
+CREATE TABLE FIGHTER(
+LVL  INT NOT NULL,
+BAB  INT NOT NULL,
+FORT INT NOT NULL,
+REFL INT NOT NULL,
+WILL INT NOT NULL,
+CONSTRAINT fighter_pk
+PRIMARY KEY (LVL)
+);
 
-/*Monk Table Values*/
-INSERT INTO MONK VALUES (
-'1', '0', '2', '2', '2');
-INSERT INTO MONK VALUES (
-'2', '1', '1', '1', '1');
-INSERT INTO MONK VALUES (
-'3', '1', '0', '0', '0');
-INSERT INTO MONK VALUES (
-'4', '1', '1', '1', '1');
-INSERT INTO MONK VALUES (
-'5', '0', '0', '0', '0');
-INSERT INTO MONK VALUES (
-'6', '1', '1', '1', '1');
-INSERT INTO MONK VALUES (
-'7', '1', '0', '0', '0');
-INSERT INTO MONK VALUES (
-'8', '1', '1', '1', '1');
-INSERT INTO MONK VALUES (
-'9', '0', '0', '0', '0');
-INSERT INTO MONK VALUES (
-'10', '1', '1', '1', '1');
-INSERT INTO MONK VALUES (
-'11', '1', '0', '0', '0');
-INSERT INTO MONK VALUES (
-'12', '1', '1', '1', '1');
-INSERT INTO MONK VALUES (
-'13', '0', '0', '0', '0');
-INSERT INTO MONK VALUES (
-'14', '1', '1', '1', '1');
-INSERT INTO MONK VALUES (
-'15', '1', '0', '0', '0');
-INSERT INTO MONK VALUES (
-'16', '1', '1', '1', '1');
-INSERT INTO MONK VALUES (
-'17', '0', '0', '0', '0');
-INSERT INTO MONK VALUES (
-'18', '1', '1', '1', '1');
-INSERT INTO MONK VALUES (
-'19', '1', '0', '0', '0');
-INSERT INTO MONK VALUES (
-'20', '1', '1', '1', '1');
+CREATE TABLE MONK(
+LVL  INT NOT NULL,
+BAB  INT NOT NULL,
+FORT INT NOT NULL,
+REFL INT NOT NULL,
+WILL INT NOT NULL,
+CONSTRAINT monk_pk
+PRIMARY KEY (LVL)
+);
 
-/*Paladin Table Values*/
-INSERT INTO PALADIN VALUES (
-'1', '1', '2', '0', '2', '0', '0', '0', '0');
-INSERT INTO PALADIN VALUES (
-'2', '1', '1', '0', '1', '0', '0', '0', '0');
-INSERT INTO PALADIN VALUES (
-'3', '1', '0', '1', '0', '0', '0', '0', '0');
-INSERT INTO PALADIN VALUES (
-'4', '1', '1', '0', '1', '0', '0', '0', '0');
-INSERT INTO PALADIN VALUES (
-'5', '1', '0', '0', '0', '1', '0', '0', '0');
-INSERT INTO PALADIN VALUES (
-'6', '1', '1', '1', '1', '0', '0', '0', '0');
-INSERT INTO PALADIN VALUES (
-'7', '1', '0', '0', '0', '0', '0', '0', '0');
-INSERT INTO PALADIN VALUES (
-'8', '1', '1', '0', '1', '0', '1', '0', '0');
-INSERT INTO PALADIN VALUES (
-'9', '1', '0', '1', '0', '1', '0', '0', '0');
-INSERT INTO PALADIN VALUES (
-'10', '1', '1', '0', '1', '0', '0', '0', '0');
-INSERT INTO PALADIN VALUES (
-'11', '1', '0', '0', '0', '0', '0', '1', '0');
-INSERT INTO PALADIN VALUES (
-'12', '1', '1', '1', '1', '0', '1', '0', '0');
-INSERT INTO PALADIN VALUES (
-'13', '1', '0', '0', '0', '1', '0', '0', '0');
-INSERT INTO PALADIN VALUES (
-'14', '1', '1', '0', '1', '0', '0', '0', '1');
-INSERT INTO PALADIN VALUES (
-'15', '1', '0', '1', '0', '0', '0', '1', '0');
-INSERT INTO PALADIN VALUES (
-'16', '1', '1', '0', '1', '0', '1', '0', '0');
-INSERT INTO PALADIN VALUES (
-'17', '1', '0', '0', '0', '1', '0', '0', '0');
-INSERT INTO PALADIN VALUES (
-'18', '1', '1', '1', '1', '0', '0', '0', '1');
-INSERT INTO PALADIN VALUES (
-'19', '1', '0', '0', '0', '0', '0', '1', '0');
-INSERT INTO PALADIN VALUES (
-'20', '1', '1', '0', '1', '0', '1', '0', '1');
+CREATE TABLE PALADIN(
+LVL  INT NOT NULL,
+BAB  INT NOT NULL,
+FORT INT NOT NULL,
+REFL INT NOT NULL,
+WILL INT NOT NULL,
+SPELL1    INT NOT NULL,
+SPELL2    INT NOT NULL,
+SPELL3    INT NOT NULL,
+SPELL4    INT NOT NULL,
+CONSTRAINT paladin_pk
+PRIMARY KEY (LVL)
+);
 
-/*Ranger Table Values*/
-INSERT INTO RANGER VALUES (
-'1', '1', '2', '2', '0', '0', '0', '0', '0');
-INSERT INTO RANGER VALUES (
-'2', '1', '1', '1', '0', '0', '0', '0', '0');
-INSERT INTO RANGER VALUES (
-'3', '1', '0', '0', '1', '0', '0', '0', '0');
-INSERT INTO RANGER VALUES (
-'4', '1', '1', '1', '0', '0', '0', '0', '0');
-INSERT INTO RANGER VALUES (
-'5', '1', '0', '0', '0', '1', '0', '0', '0');
-INSERT INTO RANGER VALUES (
-'6', '1', '1', '1', '1', '0', '0', '0', '0');
-INSERT INTO RANGER VALUES (
-'7', '1', '0', '0', '0', '0', '0', '0', '0');
-INSERT INTO RANGER VALUES (
-'8', '1', '1', '1', '0', '0', '1', '0', '0');
-INSERT INTO RANGER VALUES (
-'9', '1', '0', '0', '1', '1', '0', '0', '0');
-INSERT INTO RANGER VALUES (
-'10', '1', '1', '1', '0', '0', '0', '0', '0');
-INSERT INTO RANGER VALUES (
-'11', '1', '0', '0', '0', '0', '0', '1', '0');
-INSERT INTO RANGER VALUES (
-'12', '1', '1', '1', '1', '0', '1', '0', '0');
-INSERT INTO RANGER VALUES (
-'13', '1', '0', '0', '0', '1', '0', '0', '0');
-INSERT INTO RANGER VALUES (
-'14', '1', '1', '1', '0', '0', '0', '0', '1');
-INSERT INTO RANGER VALUES (
-'15', '1', '0', '0', '1', '0', '0', '1', '0');
-INSERT INTO RANGER VALUES (
-'16', '1', '1', '1', '0', '0', '1', '0', '0');
-INSERT INTO RANGER VALUES (
-'17', '1', '0', '0', '0', '1', '0', '0', '0');
-INSERT INTO RANGER VALUES (
-'18', '1', '1', '1', '1', '0', '0', '0', '1');
-INSERT INTO RANGER VALUES (
-'19', '1', '0', '0', '0', '0', '0', '1', '0');
-INSERT INTO RANGER VALUES (
-'20', '1', '1', '1', '0', '0', '1', '0', '1');
+CREATE TABLE RANGER(
+LVL  INT NOT NULL,
+BAB  INT NOT NULL,
+FORT INT NOT NULL,
+REFL INT NOT NULL,
+WILL INT NOT NULL,
+SPELL1    INT NOT NULL,
+SPELL2    INT NOT NULL,
+SPELL3    INT NOT NULL,
+SPELL4    INT NOT NULL,
+CONSTRAINT ranger_pk
+PRIMARY KEY (LVL)
+);
 
-/*Rogue Table Values*/
-INSERT INTO ROGUE VALUES (
-'1', '0', '0', '2', '0');
-INSERT INTO ROGUE VALUES (
-'2', '1', '0', '1', '0');
-INSERT INTO ROGUE VALUES (
-'3', '1', '1', '0', '1');
-INSERT INTO ROGUE VALUES (
-'4', '1', '0', '1', '0');
-INSERT INTO ROGUE VALUES (
-'5', '0', '0', '0', '0');
-INSERT INTO ROGUE VALUES (
-'6', '1', '1', '1', '1');
-INSERT INTO ROGUE VALUES (
-'7', '1', '0', '0', '0');
-INSERT INTO ROGUE VALUES (
-'8', '1', '0', '1', '0');
-INSERT INTO ROGUE VALUES (
-'9', '0', '1', '0', '1');
-INSERT INTO ROGUE VALUES (
-'10', '1', '0', '1', '0');
-INSERT INTO ROGUE VALUES (
-'11', '1', '0', '0', '0');
-INSERT INTO ROGUE VALUES (
-'12', '1', '1', '1', '1');
-INSERT INTO ROGUE VALUES (
-'13', '0', '0', '0', '0');
-INSERT INTO ROGUE VALUES (
-'14', '1', '0', '1', '0');
-INSERT INTO ROGUE VALUES (
-'15', '1', '1', '0', '1');
-INSERT INTO ROGUE VALUES (
-'16', '1', '0', '1', '0');
-INSERT INTO ROGUE VALUES (
-'17', '0', '0', '0', '0');
-INSERT INTO ROGUE VALUES (
-'18', '1', '1', '1', '1');
-INSERT INTO ROGUE VALUES (
-'19', '1', '0', '0', '0');
-INSERT INTO ROGUE VALUES (
-'20', '1', '0', '1', '0');
+CREATE TABLE ROGUE(
+LVL  INT NOT NULL,
+BAB  INT NOT NULL,
+FORT INT NOT NULL,
+REFL INT NOT NULL,
+WILL INT NOT NULL,
+CONSTRAINT rogue_pk
+PRIMARY KEY (LVL)
+);
 
-/**Sorcerer Table Values*/
-INSERT INTO SORCERER VALUES (
-'1', '0', '0', '0', '2', '4', '2', '0', '0', '0', '0', '0', '0', '0', '0');
-INSERT INTO SORCERER VALUES (
-'2', '1', '0', '0', '1', '1', '0', '0', '0', '0', '0', '0', '0', '0', '0');
-INSERT INTO SORCERER VALUES (
-'3', '0', '1', '1', '0', '0', '1', '0', '0', '0', '0', '0', '0', '0', '0');
-INSERT INTO SORCERER VALUES (
-'4', '1', '0', '0', '1', '1', '0', '1', '0', '0', '0', '0', '0', '0', '0');
-INSERT INTO SORCERER VALUES (
-'5', '0', '0', '0', '0', '0', '1', '1', '0', '0', '0', '0', '0', '0', '0');
-INSERT INTO SORCERER VALUES (
-'6', '1', '1', '1', '1', '1', '0', '0', '1', '0', '0', '0', '0', '0', '0');
-INSERT INTO SORCERER VALUES (
-'7', '0', '0', '0', '0', '0', '1', '1', '1', '0', '0', '0', '0', '0', '0');
-INSERT INTO SORCERER VALUES (
-'8', '1', '0', '0', '1', '1', '0', '0', '0', '1', '0', '0', '0', '0', '0');
-INSERT INTO SORCERER VALUES (
-'9', '0', '1', '1', '0', '0', '0', '1', '1', '1', '0', '0', '0', '0', '0');
-INSERT INTO SORCERER VALUES (
-'10', '1', '0', '0', '1', '1', '0', '0', '0', '0', '1', '0', '0', '0', '0');
-INSERT INTO SORCERER VALUES (
-'11', '0', '0', '0', '0', '0', '0', '1', '1', '1', '1', '0', '0', '0', '0');
-INSERT INTO SORCERER VALUES (
-'12', '1', '1', '1', '1', '0', '0', '0', '0', '0', '0', '1', '0', '0', '0');
-INSERT INTO SORCERER VALUES (
-'13', '0', '0', '0', '0', '0', '0', '0', '0', '1', '1', '1', '0', '0', '0');
-INSERT INTO SORCERER VALUES (
-'14', '1', '0', '0', '1', '0', '0', '0', '0', '0', '0', '0', '1', '0', '0');
-INSERT INTO SORCERER VALUES (
-'15', '0', '1', '1', '0', '0', '0', '0', '0', '0', '1', '1', '1', '0', '0');
-INSERT INTO SORCERER VALUES (
-'16', '1', '0', '0', '1', '0', '0', '0', '0', '0', '0', '0', '0', '1', '0');
-INSERT INTO SORCERER VALUES (
-'17', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '1', '1', '0');
-INSERT INTO SORCERER VALUES (
-'18', '1', '1', '1', '1', '0', '0', '0', '0', '0', '0', '0', '0', '0', '1');
-INSERT INTO SORCERER VALUES (
-'19', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '1', '1');
-INSERT INTO SORCERER VALUES (
-'20', '1', '0', '0', '1', '0', '0', '0', '0', '0', '0', '0', '0', '0', '1');
+CREATE TABLE SORCERER(
+LVL  INT NOT NULL,
+BAB  INT NOT NULL,
+FORT INT NOT NULL,
+REFL INT NOT NULL,
+WILL INT NOT NULL,
+SPELL0    INT NOT NULL,
+SPELL1    INT NOT NULL,
+SPELL2    INT NOT NULL,
+SPELL3    INT NOT NULL,
+SPELL4    INT NOT NULL,
+SPELL5    INT NOT NULL,
+SPELL6    INT NOT NULL,
+SPELL7    INT NOT NULL,
+SPELL8    INT NOT NULL,
+SPELL9    INT NOT NULL,
+CONSTRAINT sorcerer_pk
+PRIMARY KEY (LVL)
+);
 
-/*Wizard Table Values*/
-INSERT INTO WIZARD VALUES (
-'1', '0', '0', '0', '2', '3', '1', '0', '0', '0', '0', '0', '0', '0', '0');
-INSERT INTO WIZARD VALUES (
-'2', '1', '0', '0', '1', '1', '1', '0', '0', '0', '0', '0', '0', '0', '0');
-INSERT INTO WIZARD VALUES (
-'3', '0', '1', '1', '0', '0', '0', '1', '0', '0', '0', '0', '0', '0', '0');
-INSERT INTO WIZARD VALUES (
-'4', '1', '0', '0', '1', '0', '1', '1', '0', '0', '0', '0', '0', '0', '0');
-INSERT INTO WIZARD VALUES (
-'5', '0', '0', '0', '0', '0', '0', '0', '1', '0', '0', '0', '0', '0', '0');
-INSERT INTO WIZARD VALUES (
-'6', '1', '1', '1', '1', '0', '0', '1', '1', '0', '0', '0', '0', '0', '0');
-INSERT INTO WIZARD VALUES (
-'7', '0', '0', '0', '0', '0', '1', '0', '0', '1', '0', '0', '0', '0', '0');
-INSERT INTO WIZARD VALUES (
-'8', '1', '0', '0', '1', '0', '0', '0', '1', '1', '0', '0', '0', '0', '0');
-INSERT INTO WIZARD VALUES (
-'9', '0', '1', '1', '0', '0', '0', '1', '0', '0', '1', '0', '0', '0', '0');
-INSERT INTO WIZARD VALUES (
-'10', '1', '0', '0', '1', '0', '0', '0', '0', '1', '1', '0', '0', '0', '0');
-INSERT INTO WIZARD VALUES (
-'11', '0', '0', '0', '0', '0', '0', '0', '1', '0', '0', '1', '0', '0', '0');
-INSERT INTO WIZARD VALUES (
-'12', '1', '1', '1', '1', '0', '0', '0', '0', '0', '1', '1', '0', '0', '0');
-INSERT INTO WIZARD VALUES (
-'13', '0', '0', '0', '0', '0', '0', '0', '0', '1', '0', '0', '1', '0', '0');
-INSERT INTO WIZARD VALUES (
-'14', '1', '0', '0', '1', '0', '0', '0', '0', '0', '0', '1', '1', '0', '0');
-INSERT INTO WIZARD VALUES (
-'15', '0', '1', '1', '0', '0', '0', '0', '0', '0', '1', '0', '0', '1', '0');
-INSERT INTO WIZARD VALUES (
-'16', '1', '0', '0', '1', '0', '0', '0', '0', '0', '0', '0', '1', '1', '0');
-INSERT INTO WIZARD VALUES (
-'17', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '1', '0', '0', '1');
-INSERT INTO WIZARD VALUES (
-'18', '1', '1', '1', '1', '0', '0', '0', '0', '0', '0', '0', '0', '1', '1');
-INSERT INTO WIZARD VALUES (
-'19', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '1', '0', '1');
-INSERT INTO WIZARD VALUES (
-'20', '1', '0', '0', '1', '0', '0', '0', '0', '0', '0', '0', '0', '1', '1');
-
+CREATE TABLE WIZARD(
+LVL  INT NOT NULL,
+BAB  INT NOT NULL,
+FORT INT NOT NULL,
+REFL INT NOT NULL,
+WILL INT NOT NULL,
+SPELL0    INT NOT NULL,
+SPELL1    INT NOT NULL,
+SPELL2    INT NOT NULL,
+SPELL3    INT NOT NULL,
+SPELL4    INT NOT NULL,
+SPELL5    INT NOT NULL,
+SPELL6    INT NOT NULL,
+SPELL7    INT NOT NULL,
+SPELL8    INT NOT NULL,
+SPELL9    INT NOT NULL,
+CONSTRAINT wizard_pk
+PRIMARY KEY (LVL)
+);
 /*Bonus Spell Table */
 INSERT INTO BONUS_SPELLS VALUES (
 '-5', '0', '0', '0', '0', '0', '0', '0', '0', '0');
