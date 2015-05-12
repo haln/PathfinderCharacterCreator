@@ -14,7 +14,7 @@ if($methodType === 'GET'){
             $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             
             $selectClass = strtoupper($_GET["selectClass"]);
-            $statement = $conn->prepare(str_replace("%selectClass%", $selectClass, "SELECT * FROM %selectClass%" ));
+            $statement = $conn->prepare(str_replace("%selectClass%", $selectClass, "SELECT * FROM %selectClass% WHERE LVL = 1"));
             $statement->execute();
 
             $data = $statement->fetchAll(PDO::FETCH_ASSOC);

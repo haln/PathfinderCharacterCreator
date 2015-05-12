@@ -141,7 +141,15 @@ function getClassDB() {
 }
 
 function getClassModifiers(data){
-    $('#result_fort').html(data[0]["FORT"]);
-    $('#result_reflex').html(data[0]["REFLEX"]);
-    $('#result_will').html(data[0]["WILL"]);
+    var fort = parseInt(data[0]["FORT"]) + parseInt($('#result_con_mod'));
+    var reflex = parseInt(data[0]["REFL"]) + parseInt($('#result_dex_mod'));
+    var will = parseInt(data[0]["WILL"]) + parseInt($('#result_wis_mod'));
+    if (document.getElementById('selected_race').value == "Halfling"){
+        fort += 1;
+        reflex += 1;
+        will += 1;
+    }
+    $('#result_fort').html(fort);
+    $('#result_reflex').html(reflex);
+    $('#result_will').html(will);
 }
