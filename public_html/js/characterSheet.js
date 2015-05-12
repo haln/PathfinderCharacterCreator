@@ -5,10 +5,15 @@ $(document).ready(function(){
             if(data){
                 data = JSON.parse(data);
                 console.log(data);
-                $("#charName").html(data["CHAR_NAME"]);
+                $("#charName").prepend(data["CHAR_NAME"]);
                 for(key in data){
                     if(key !== "CHAR_NAME" && key !== "CHAR_ID"){
-                        $("#characterDetails").append("<span id=" + key + ">" + key + ": "+data[key] + "</span><br/>");
+                        if(data[key] === '0'){
+                            $("#"+key).css("display","none");
+                        }
+                        else{
+                            $("#"+key).append(data[key]);
+                        }
                     }
                 }
             }
