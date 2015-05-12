@@ -1,5 +1,5 @@
 <?php
-require 'php/db_login.php';
+require 'db_login.php';
 $methodType = $_SERVER["REQUEST_METHOD"];
 if($methodType === "POST"){
     if(isset($_POST["password"]) && isset($_POST["userID"])){
@@ -8,22 +8,16 @@ if($methodType === "POST"){
         }
         $newpassword = $_POST["password"];
         $userID = $_POST["userID"];
-        
         try{
             $conn = new PDO($dsn, $username, $password);
             $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            
             $statement = $conn->prepare('UPDATE USERS SET USER_PASS = :pass WHERE USER_ID = :user');
             $statement->execute(array(
                 ':user' => $userID,
                 ':pass' => $newpassword
             ));
-            $results = $statement->fetch(PDO::FETCH_ASSOC);
-            if(empty($results)){
-                die(false);
-            }
-            echo json_encode($results);
-            die(); 
+            echo "Password changed";
+            die(true); 
         } catch (PDOException $e) {
             error_log($e->getMessage());
             die(false);

@@ -41,18 +41,20 @@
         <!-- The User's Profile Content -->
         <div id="profile" class="statscontent">
             <h2><span id='user_name'></span>'s Profile</h2>
-            <form onsubmit="return changePassword()">
-                <fieldset name="changePassword">
+            <form id="changePass" onsubmit="event.preventDefault();return changePassword();">
+                <fieldset>
                     <legend>Change your password</legend>
                     <label for="newPass">New password</label>
                     <input title="Your password must contain at least 6 characters that include UPPERCASE letters, lowercase letters and digits" 
                            type="password" id="newPass" name="newPass" 
                            required="required" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" 
-                           onchange="signup.confirmNewPass.pattern = this.value;">
+                           onchange="changePass.confirmNewPass.pattern = this.value;">
+                    <br/>
                     <label for="confirmNewPass">Confirm new password</label>
                     <input title="Passwords do not match" 
                            type="password" id="confirmNewPass" name="confirmNewPass" 
                            required="required" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}">
+                    <br/>
                     <input type="submit" id="submitBtn">
                 </fieldset>
             </form>
