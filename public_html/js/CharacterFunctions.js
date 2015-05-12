@@ -176,6 +176,23 @@ function getArmorClass(data){
 function getHitPoints(basicClassData){
     var conMod = document.getElementById('result_con_mod').innerHTML;
     var hitPoints = parseInt(basicClassData[0]["CLASS_HP"]) + parseInt(conMod);
+    var selectedClass = document.getElementById('selected_class').value;
+    var selectedRace = document.getElementById('selected_race').value;
+    if (selectedRace == "Half-Elf"){
+        var favorClassSelect = document.getElementById('favored_class');
+        var favoredClass1 = favorClassSelect.options[favorClassSelect.selectedIndex].value;
+        var favorClassSelect2 = document.getElementById('favored_class2');
+        var favoredClass2 = favorClassSelect2.options[favorClassSelect2.selectedIndex].value;
+        if(selectedClass == favoredClass1 || selectedClass == favoredClass2){
+            hitPoints += 1;
+        }
+    } else {
+        var favorClassSelect = document.getElementById('favored_class');
+        var favoredClass1 = favorClassSelect.options[favorClassSelect.selectedIndex].value;
+        if(selectedClass == favoredClass1){
+            hitPoints += 1;
+        }
+    }
     $('#result_hp').html(hitPoints);
 }
 
