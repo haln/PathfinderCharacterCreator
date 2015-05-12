@@ -185,7 +185,7 @@ function getBasicClassDB() {
         url: "php/results_basic_class_mod.php",
         dataType: "json",
         type: "GET",
-        data: {selectClass: selectClass},
+        data: {selectedClass: selectedClass},
         success: function (basicClassData) {
             getHitPoints(basicClassData);
         },
