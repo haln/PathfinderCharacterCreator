@@ -54,6 +54,10 @@ function getAttributeResults(data) {
     document.getElementById('result_int_mod').innerHTML = getStatModifier(int);
     document.getElementById('result_wis_mod').innerHTML = getStatModifier(wis);
     document.getElementById('result_cha_mod').innerHTML = getStatModifier(cha);
+    
+    getClassDB();
+    getArmorClass(data);
+    getBasicClassDB()
 }
 
 function getAttributeAdjust(race, attribute, data) {
@@ -131,8 +135,8 @@ function getClassDB() {
         dataType: "json",
         type: "GET",
         data: {selectClass: selectClass},
-        success: function (data) {
-            getClassModifiers(data);
+        success: function (classData) {
+            getClassModifiers(classData);
         },
         error: function (jqXHR, textStatus, errorThrown) {
             $("#p1").text(jqXHR.statusText);
@@ -140,10 +144,13 @@ function getClassDB() {
     });
 }
 
-function getClassModifiers(data){
-    var fort = parseInt(data[0]["FORT"]) + parseInt($('#result_con_mod'));
-    var reflex = parseInt(data[0]["REFL"]) + parseInt($('#result_dex_mod'));
-    var will = parseInt(data[0]["WILL"]) + parseInt($('#result_wis_mod'));
+function getClassModifiers(classData){
+    var conMod = document.getElementById('result_con_mod').innerHTML;
+    var wisMod = document.getElementById('result_wis_mod').innerHTML;
+    var dexMod = document.getElementById('result_dex_mod').innerHTML;
+    var fort = parseInt(classData[0]["FORT"]) + parseInt(conMod);
+    var reflex = parseInt(classData[0]["REFL"]) + parseInt(dexMod);
+    var will = parseInt(classData[0]["WILL"]) + parseInt(wisMod);
     if (document.getElementById('selected_race').value == "Halfling"){
         fort += 1;
         reflex += 1;
@@ -152,4 +159,38 @@ function getClassModifiers(data){
     $('#result_fort').html(fort);
     $('#result_reflex').html(reflex);
     $('#result_will').html(will);
+}
+
+function getArmorClass(data){
+    var AC = 10;
+    AC += parseInt(document.getElementById('result_dex_mod').innerHTML);
+    if (data[0]["RACE_SIZE"] == "S"){
+        AC += 1;
+    }
+    if (document.getElementById('selected_class').value == "Monk"){
+        AC += parseInt(document.getElementById('result_wis_mod').innerHTML);
+    }
+    $('#result_ac').html(AC);
+}
+
+function getHitPoints(basicClassData){
+    var conMod = document.getElementById('result_con_mod').innerHTML;
+    var hitPoints = parseInt(basicClassData[0]["CLASS_HP"]) + parseInt(conMod);
+    $('#result_hp').html(hitPoints);
+}
+
+function getBasicClassDB() {
+    var selectedClass = document.getElementById('selected_class').value;
+    $.ajax({
+        url: "php/results_basic_class_mod.php",
+        dataType: "json",
+        type: "GET",
+        data: {selectClass: selectClass},
+        success: function (basicClassData) {
+            getHitPoints(basicClassData);
+        },
+        error: function (jqXHR, textStatus, errorThrown) {
+            $("#p1").text(jqXHR.statusText);
+        }
+    });
 }
