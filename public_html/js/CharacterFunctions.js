@@ -58,6 +58,7 @@ function getAttributeResults(data) {
     getClassDB();
     getArmorClass(data);
     getBasicClassDB();
+    $('#result_initiative').html(document.getElementById('result_dex_mod').innerHTML);
 }
 
 function getAttributeAdjust(race, attribute, data) {
@@ -137,6 +138,7 @@ function getClassDB() {
         data: {selectClass: selectClass},
         success: function (classData) {
             getClassModifiers(classData);
+            getBAB(classData);
         },
         error: function (jqXHR, textStatus, errorThrown) {
             $("#p1").text(jqXHR.statusText);
@@ -211,4 +213,22 @@ function getBasicClassDB() {
             $("#p1").text(jqXHR.statusText);
         }
     });
+}
+
+function getBAB(classData){
+    var BAB = parseInt(classData[0]["BAB"]);
+    $('#result_BAB').html(BAB);
+    getCM();
+}
+
+function getCM(){
+    var raceMod = 0;
+    if (document.getElementById('selected_race').value == "Halfling" ||
+        document.getElementById('selected_race').value == "Gnome"){
+        raceMod = -1;
+    }
+    var CMB = parseInt(document.getElementById('result_BAB').innerHTML) + parseInt(document.getElementById('result_str_mod').innerHTML) + raceMod;
+    $('#result_CMB').html(CMB);
+    var CMD = CMB + parseInt(document.getElementById('result_dex_mod').innerHTML) + 10;
+    $('#result_CMD').html(CMD);
 }
