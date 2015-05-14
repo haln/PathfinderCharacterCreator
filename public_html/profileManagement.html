@@ -36,8 +36,8 @@
                     <a class="link-myprofile" href="profile.html">My Profile</a>
                 </div>
                 <div id="notlogIn" >
-                    <a class="link-login" href="#loginModal">Log In</a>
-                    <!--<a class="link-login" href="login.html">Log In</a>-->
+                    <a id="loginModal" class="link-login" href="#loginModal">Log In</a>
+                    <a id="loginLink" class="link-login" href="login.html">Log In</a>
                     <a class="link-signup" href="signup.html">Sign Up</a>
                 </div>
             </div>

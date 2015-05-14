@@ -1,3 +1,15 @@
+$(document).ready(function(){
+    if($(window).width() < 480){
+        $("#loginModal").hide();
+        $("#loginLink").show();
+    }
+    else{
+        $("#loginLink").hide();
+        $("#loginModal").show();
+    }
+});
+$(document).trigger('resize');
+
 function validateForm() {
     var user_name = $("#username").val();
     var pass_word = $("#password").val();
