@@ -25,6 +25,18 @@ function getBio() {
     document.getElementById('result_alignment').innerHTML = alignment;
     
     $('#result_desc').html(document.getElementById('description').value);
+    
+    var fc = document.getElementById('favored_class');
+    var fclass = fc.options[fc.selectedIndex].value;
+    document.getElementById('result_fclass').innerHTML = fclass;
+    
+    if (race == "Half-Elf"){ 
+        var fc2 = document.getElementById('favored_class2');
+        var fclass2 = fc2.options[fc2.selectedIndex].value;
+        document.getElementById('result_fclass2').innerHTML = fclass2;
+    } else {
+        document.getElementById('result_fclass2').innerHTML = "";
+    }
 }
 
 function getAttributeResults(data) {
@@ -258,14 +270,27 @@ function saveCharacter(){
     var gender       = document.getElementById('result_gender').innerHTML;
     var alignment    = document.getElementById('result_alignment').innerHTML;
     var desc         = document.getElementById('result_desc').innerHTML;
+    var fclass       = document.getElementById('result_fclass').innerHTML;
+    var fclass2      = document.getElementById('result_fclass2').innerHTML;
+    var hp           = document.getElementById('result_hp').innerHTML;
+    var bab          = document.getElementById('result_BAB').innerHTML;
+    var fort         = document.getElementById('result_fort').innerHTML;
+    var reflex       = document.getElementById('result_reflex').innerHTML;
+    var will         = document.getElementById('result_will').innerHTML;
+    var speed        = document.getElementById('result_speed').innerHTML;
     
     $.ajax({
         url: "php/results_save_character.php",
         dataType: "json",
-        type: "GET",
-        data: {selectedClass: selectedClass},
-        success: function (basicClassData) {
-            getHitPoints(basicClassData);
+        type: "POST",
+        data: {strength: strength, dexterity: dexterity, constitution: constitution, intelligence: intelligence,
+               wisdom: wisdom, charisma: charisma, selectedRace: selectedRace, barb_lvl: barb_lvl, bard_lvl: bard_lvl,
+               cler_lvl: cler_lvl, drui_lvl: drui_lvl, figh_lvl: figh_lvl, monk_lvl: monk_lvl, pala_lvl: pala_lvl,
+               rang_lvl: rang_lvl, rogu_lvl: rogu_lvl, sorc_lvl: sorc_lvl, wiza_lvl: wiza_lvl, char_lvl: char_lvl,
+               name: name, gender: gender, alignment: alignment, desc: desc, fclass: fclass, fclass2: fclass2,
+               hp: hp, bab: bab, fort: fort, reflex: reflex, will: will, speed: speed},
+        success: function (saveCharacterData) {
+            
         },
         error: function (jqXHR, textStatus, errorThrown) {
             $("#p1").text(jqXHR.statusText);
