@@ -5,4 +5,10 @@ $(document).ready(function(){
    $("#stat4").draggable();
    $("#stat5").draggable();
    $("#stat6").draggable();
+   $("#strCon").droppable();
+   $("#dexCon").droppable();
+   $("#conCon").droppable();
+   $("#intCon").droppable();
+   $("#wisCon").droppable();
+   $("#chaCon").droppable();
 });
