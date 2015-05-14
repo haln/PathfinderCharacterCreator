@@ -57,7 +57,7 @@ function getAttributeResults(data) {
     
     getClassDB();
     getArmorClass(data);
-    getBasicClassDB()
+    getBasicClassDB();
 }
 
 function getAttributeAdjust(race, attribute, data) {
@@ -171,6 +171,7 @@ function getArmorClass(data){
         AC += parseInt(document.getElementById('result_wis_mod').innerHTML);
     }
     $('#result_ac').html(AC);
+    $('#result_touch_ac').html(AC);
 }
 
 function getHitPoints(basicClassData){
