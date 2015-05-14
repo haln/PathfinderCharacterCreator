@@ -9,11 +9,15 @@ function validateForm() {
             localStorage.setItem("username", user_name);
             localStorage.setItem("password", pass_word);
             localStorage.setItem("userID", data["USER_ID"]);
-            $("#error").html("");
-            window.location.href = "index.html";
+            $("#loginMsg").html("Successfully logged in");
+            //Now that we are logged in, change the header bar
+            $("#welcomeMessage").html("Welcome, " + user_name);
+            $("#loggedIn").removeAttr("hidden");
+            $("#notlogIn").attr("hidden","hidden");
+            return true;
         }
         else {
-            $("#error").html("Username or password is incorrect");
+            $("#loginMsg").html("Username or password is incorrect");
             return false;
         }
     });
