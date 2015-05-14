@@ -290,7 +290,7 @@ function saveCharacter(){
                name: name, gender: gender, alignment: alignment, desc: desc, fclass: fclass, fclass2: fclass2,
                hp: hp, bab: bab, fort: fort, reflex: reflex, will: will, speed: speed},
         success: function (saveCharacterData) {
-            
+            console.log(saveCharacterData);
         },
         error: function (jqXHR, textStatus, errorThrown) {
             $("#p1").text(jqXHR.statusText);
