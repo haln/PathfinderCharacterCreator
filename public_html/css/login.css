@@ -58,7 +58,7 @@
 }
 .closeModal:hover { background: #ff0000; }
 
-#loginModal{
+#loginModalLink{
     display: none;
 }
 

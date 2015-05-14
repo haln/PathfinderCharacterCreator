@@ -1,5 +1,5 @@
 $(document).ready(function(){
-    if($(window).width() < 480){
+    if($(window).width() <= 480){
         $("#loginModal").hide();
         $("#loginLink").show();
     }
