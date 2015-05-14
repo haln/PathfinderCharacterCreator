@@ -1,11 +1,11 @@
 $(document).ready(function(){
     if($(window).width() <= 480){
-        $("#loginModal").hide();
+        $("#loginModalLink").hide();
         $("#loginLink").show();
     }
     else{
         $("#loginLink").hide();
-        $("#loginModal").show();
+        $("#loginModalLink").show();
     }
 });
 $(document).trigger('resize');
