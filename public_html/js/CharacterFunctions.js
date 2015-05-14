@@ -23,7 +23,8 @@ function getBio() {
     var a = document.getElementById('alignSelect');
     var alignment = a.options[a.selectedIndex].value;
     document.getElementById('result_alignment').innerHTML = alignment;
-
+    
+    $('#result_desc').html(document.getElementById('description').value);
 }
 
 function getAttributeResults(data) {
@@ -231,4 +232,50 @@ function getCM(){
     $('#result_CMB').html(CMB);
     var CMD = CMB + parseInt(document.getElementById('result_dex_mod').innerHTML) + 10;
     $('#result_CMD').html(CMD);
+}
+
+function saveCharacter(){
+    var strength     = parseInt(document.getElementById('result_str').innerHTML);
+    var dexterity    = parseInt(document.getElementById('result_dex').innerHTML);
+    var constitution = parseInt(document.getElementById('result_con').innerHTML);
+    var intelligence = parseInt(document.getElementById('result_int').innerHTML);
+    var wisdom       = parseInt(document.getElementById('result_wis').innerHTML);
+    var charisma     = parseInt(document.getElementById('result_cha').innerHTML);
+    var selectedRace = document.getElementById('selectedRace').value;
+    var barb_lvl     = getClassLevel("Barbarian");
+    var bard_lvl     = getClassLevel("Bard");
+    var cler_lvl     = getClassLevel("Cleric");
+    var drui_lvl     = getClassLevel("Druid");
+    var figh_lvl     = getClassLevel("Fighter");
+    var monk_lvl     = getClassLevel("Monk");
+    var pala_lvl     = getClassLevel("Paladin");
+    var rang_lvl     = getClassLevel("Ranger");
+    var rogu_lvl     = getClassLevel("Rogue");
+    var sorc_lvl     = getClassLevel("Sorcerer");
+    var wiza_lvl     = getClassLevel("Wizard");
+    var char_lvl     = 1;
+    var name         = document.getElementById('result_name').innerHTML;
+    var gender       = document.getElementById('result_gender').innerHTML;
+    var alignment    = document.getElementById('result_alignment').innerHTML;
+    var desc         = document.getElementById('result_desc').innerHTML;
+    
+    $.ajax({
+        url: "php/results_save_character.php",
+        dataType: "json",
+        type: "GET",
+        data: {selectedClass: selectedClass},
+        success: function (basicClassData) {
+            getHitPoints(basicClassData);
+        },
+        error: function (jqXHR, textStatus, errorThrown) {
+            $("#p1").text(jqXHR.statusText);
+        }
+    });
+}
+
+function getClassLevel(selectClass){
+    if (selectClass == document.getElementById('selectedClass').value){
+        return 1;
+    }
+    return 0;
 }
