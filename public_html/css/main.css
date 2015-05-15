@@ -41,13 +41,14 @@ body {
 .backBtn a,.nextBtn a {
     text-indent: -9999em;
     text-align: left;
+
     -moz-border-radius: 5px;
     -webkit-border-radius: 5px;
     border-radius: 5px;
     display: inline-block;
-    -moz-transition: all .20s ease-in-out;
-    -webkit-transition: all .20s ease-in-out;
-    transition: all .20s ease-in-out;
+    -moz-transition: all .20s linear;
+    -webkit-transition: all .20s linear;
+    transition: all .20s linear;
 }
 
 .nextBtn a {
@@ -288,21 +289,17 @@ p + p:first-line {
     color: #0c95be;
 }
 
-/*
-
-#navigation a:hover {
-        background: #ddd;
-}*/
 .content{
     top: 20px;
     position: absolute;
-    padding-bottom: 30px;
+    /*padding-bottom: 30px;*/
+    margin-left: 3.5%;
 }
 
 .statscontent{
     top: 140px;
     position: absolute;
-    padding-bottom: 30px;
+    margin-left: 3.5%;
 }   
 .statscontent h2,.content h2{
     font-size: 40px;
@@ -340,7 +337,8 @@ characterWizard.html:target ~  #header #menu-nav #link-wizard,
 #stats:target ~ #progress #link-stats,
 #race:target ~ #progress #link-race,
 #class:target ~ #progress #link-class,
-#bio:target ~ #progress #link-bio{
+#bio:target ~ #progress #link-bio
+#results:target ~ #progress #results{
 
     background: #000;
 
@@ -450,8 +448,11 @@ characterWizard.html:target ~  #header #menu-nav #link-wizard,
 
 /*class*/
 #class_buttons{
-    float:left;
-    width:956px;
+
+    width: 95%;
+    text-align: center;
+    margin: 0 auto;
+
 }
 
 #classPicture{
@@ -507,6 +508,7 @@ characterWizard.html:target ~  #header #menu-nav #link-wizard,
 
 #stats-description{
     width:35%;
+    margin-left:3%;
     height: auto;
     float: left;
 }
@@ -515,25 +517,40 @@ characterWizard.html:target ~  #header #menu-nav #link-wizard,
 /*race*/
 #race_picture{
     float: left;
+    width: 50%;
 }
-
+#race_picture img{
+    width:90%;
+}
+#race_buttons{
+    width: 95%;
+    text-align: center;
+    margin: 0 auto;
+}
 #lbl_race_abil{
     display: block;
-    width: 40%;
-    float: right;
-    margin-right: 40px;
+    width: 45%;
+    float: left;
+    margin-left: 3%;
 }
 
 #lbl_race_desc{
-    float: left;
-    width:50%;
+
+    width:90%;
     margin-top: 20px;
 
 }
 
 /*bio*/
+
+#bio_img_info{
+    margin-top: 3%;
+    float: left;
+    width: 95%;
+}
 #bio_image{
     float: left;
+    margin-left:3%;
 }
 
 #bio_image img{
@@ -543,9 +560,8 @@ characterWizard.html:target ~  #header #menu-nav #link-wizard,
 #bio_info{
     font-size: 18px;
     float:left;
-    margin-left: 40px;
+    margin-left:3%;
     width: 60%;
-
 }
 .basicsInfo label{
     float: left;
@@ -590,22 +606,45 @@ characterWizard.html:target ~  #header #menu-nav #link-wizard,
 br{
     clear: left;
 }
+
+/* Result page*/
+#result_img_bio{
+    margin-top: 3%;
+    float: left;
+    width: 95%;
+}
+#result_img{
+    float: left;
+    margin-left:3%;
+}
+
+#result_img img{
+    height: 400px;
+    width:316px;
+}
+#result_desc{
+    width: 90%;
+}
+#result_bio{
+    font-size: 18px;
+    float:left;
+    margin-left:3%;
+    width: 60%;
+}
+.result_style{
+  font-size: 13px;
+  float: left;
+  margin-left: 3%;
+  width: 30%;
+  margin-top: 3%;
+}
+
 /* for 980px or less*/
 @media screen and (max-width:980px){
     .panel{
-        width: 98%;
-        height:98%;
-        min-height: 98%;
-        position: absolute;
-        background-color: #000;
+
         display: none;
-        margin-left: -102%;
-        z-index:2;
-        -webkit-transition: all .6s ease-in-out;
-        -moz-transition: all .6s ease-in-out;
-        -o-transition: all .6s ease-in-out;
-        -ms-transition: all .6s ease-in-out;
-        transition: all .6s ease-in-out;
+
     }
     .panel:target{
         display:inherit;
@@ -718,25 +757,54 @@ br{
     }
 
     .panel{
-        width: 98%;
-        height:98%;
-        min-height: 98%;
-        position: absolute;
-        background-color: #000;
         display: none;
-        margin-left: -102%;
-        z-index:2;
-        -webkit-transition: all .6s ease-in-out;
-        -moz-transition: all .6s ease-in-out;
-        -o-transition: all .6s ease-in-out;
-        -ms-transition: all .6s ease-in-out;
-        transition: all .6s ease-in-out;
+
     }
     .panel:target{
         display:inherit;
         margin-left: 0%;
         background-color: #b1e583;
     }
+
+    #race_picture {
+        /* float: left; */
+        text-align: center;
+        margin: 0 auto;
+        width: 100%;
+    }  
+    #lbl_race_desc {
+        clear: both;
+        width: 85%;
+        text-align: center;
+        margin: 0 auto;    
+        margin-top: 3%;
+        margin: 0 auto;
+    }
+
+    #lbl_race_abil {
+        clear: both;
+        display: block;
+        width: 85%;
+        float:none;
+        margin-top: 3%;
+        text-align: center;
+        margin: 0 auto;
+    }
+
+    .racebutton {
+
+        width: 90px;
+        height: 45px;
+        margin-right: 3%;
+        margin-bottom: 3%;
+        font-size: 0.5em;
+        letter-spacing: 2px;
+        -webkit-border-radius: 7px;
+        -moz-border-radius: 7px;
+        border-radius: 7px;
+        float: left;
+    }
+
 
     .statsbutton {
         color: rgb(255, 255, 255);
@@ -775,11 +843,14 @@ br{
         clear: both;
         margin: 0 auto;
         text-align: center;
+        float: none;
     }
     #stats-button{
         width: 90%;
         margin: 0 auto;
         text-align: center;
     }
+
+
 }
 

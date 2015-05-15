@@ -140,7 +140,7 @@ function getHref(condition){
         document.getElementById("statNext").setAttribute("href", "#race");
         nextCondition(condition);
     } else {
-        document.getElementById("statNext").setAttribute("href", "#");
+        document.getElementById("statNext").setAttribute("href", "#stats");
     }
 }
 

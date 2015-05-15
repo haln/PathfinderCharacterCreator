@@ -24,7 +24,7 @@
             </a>
             <nav id="menu-nav">
                 <a class="link-home" href="index.html">Home</a>
-                <a class="link-wizard" href="characterWizard.html">Create a Character</a>
+                <a class="link-wizard" href="characterWizard.html#stats">Create a Character</a>
 
             </nav>
 
@@ -97,7 +97,7 @@
         </div>
 
         <!-- Stats Page -->
-        <div id="stats" class="statscontent">         
+        <div id="stats" class="statscontent panel">         
             <div class="headerbar">
                 <h2>Roll the dice and get started..</h2>
                 <div class="nextBtn">
@@ -127,8 +127,6 @@
                 <img src="Images/Dice/container.png" id="dexCon" class="container" ondragover="allowDrop(event)" ondrop="drop(event)" draggable="false" alt="container" ondragstart=""/>
                 <input id="constitutionbtn" class="statsbutton" type="button" value="Constitution" onclick="setToInnerHTML(getXML('con_desc'), 'txt_description')">
                 <img src="Images/Dice/container.png" id="conCon" class="container" ondragover="allowDrop(event)" ondrop="drop(event)" draggable="false" alt="container" ondragstart=""/>
-
-
                 <input id="intelligencebtn" class="statsbutton" type="button" value="Intelligence" onclick="setToInnerHTML(getXML('int_desc'), 'txt_description')">
                 <img src="Images/Dice/container.png" id="intCon" class="container" ondragover="allowDrop(event)" ondrop="drop(event)" draggable="false" alt="container" ondragstart=""/>
                 <input id="wisdombtn" class="statsbutton" type="button" value="Wisdom" onclick="setToInnerHTML(getXML('wis_desc'), 'txt_description')">
@@ -152,7 +150,7 @@
                     <div class="backBtn">
                         <a id="raceBack" href="#stats" onclick="nextCondition(this)"></a>
                     </div>   
-                    <h2>Choose your race</h2>
+                    <h2>Choose your race..</h2>
                     <div class="nextBtn">
                         <a id="raceNext" class="next" href="#class" onclick="nextCondition(this)"></a>
                     </div>
@@ -175,23 +173,7 @@
                 <br /><br />
                 <div id="race_picture">
                     <img id='raceImage' src='Images/Race/Dwarf.png' alt="race picture" />
-                </div>
-                <div id="race_text">
-                    <p id="lbl_race_abil">
-                        +2 Constitution, +2 Wisdom, –2 Charisma: Dwarves are both tough and wise, but also a bit gruff.<br /><br />
-                        Medium: Dwarves are Medium creatures and have no bonuses or penalties due to their size.<br /><br />
-                        Slow and Steady: Dwarves have a base speed of 20 feet, but their speed is never modified by armor or encumbrance.<br /><br />
-                        Darkvision: Dwarves can see in the dark up to 60 feet.<br /><br />
-                        Defensive Training: Dwarves get a +4 dodge bonus to AC against monsters of the giant subtype. <br /><br />
-                        Greed: Dwarves receive a +2 racial bonus on Appraise skill checks made to determine the price of nonmagical goods that contain precious metals or gemstones.<br /><br />
-                        Hatred: Dwarves receive a +1 bonus on attack rolls against humanoid creatures of the orc and goblinoid subtypes due to special training against these hated foes.<br /><br />
-                        Hardy: Dwarves receive a +2 racial bonus on saving throws against poison, spells, and spell-like abilities.<br /><br />
-                        Stability: Dwarves receive a +4 racial bonus to their Combat Maneuver Defense when resisting a bull rush or trip attempt while standing on the ground.<br /><br />
-                        Stonecunning: Dwarves receive a +2 bonus on Perception checks to potentially notice unusual stonework, such as traps and hidden doors located in stone walls or floors. They receive a check to notice such features whenever they pass within 10 feet of them, whether or not they are actively looking. <br /><br />
-                        Weapon Familiarity: Dwarves are proficient with battleaxes, heavy picks, and warhammers, and treat any weapon with the word dwarven in its name as a martial weapon.<br /><br />
-                        Languages: Dwarves begin play speaking Common and Dwarven. Dwarves with high Intelligence scores can choose from the following: Giant, Gnome, Goblin, Orc, Terran, and Undercommon.<br /><br />
-                    </p>
-                    <br /><br />
+
                     <select id='selectAttr' hidden="hidden">
                         <option>Strength</option>
                         <option>Dexterity</option>
@@ -208,8 +190,26 @@
                         they reside in high mountains and dangerous realms below the earth, constantly at war with giants, 
                         goblins, and other such horrors.</p>
                 </div>
+
+                <p id="lbl_race_abil">
+                    +2 Constitution, +2 Wisdom, –2 Charisma: Dwarves are both tough and wise, but also a bit gruff.<br /><br />
+                    Medium: Dwarves are Medium creatures and have no bonuses or penalties due to their size.<br /><br />
+                    Slow and Steady: Dwarves have a base speed of 20 feet, but their speed is never modified by armor or encumbrance.<br /><br />
+                    Darkvision: Dwarves can see in the dark up to 60 feet.<br /><br />
+                    Defensive Training: Dwarves get a +4 dodge bonus to AC against monsters of the giant subtype. <br /><br />
+                    Greed: Dwarves receive a +2 racial bonus on Appraise skill checks made to determine the price of nonmagical goods that contain precious metals or gemstones.<br /><br />
+                    Hatred: Dwarves receive a +1 bonus on attack rolls against humanoid creatures of the orc and goblinoid subtypes due to special training against these hated foes.<br /><br />
+                    Hardy: Dwarves receive a +2 racial bonus on saving throws against poison, spells, and spell-like abilities.<br /><br />
+                    Stability: Dwarves receive a +4 racial bonus to their Combat Maneuver Defense when resisting a bull rush or trip attempt while standing on the ground.<br /><br />
+                    Stonecunning: Dwarves receive a +2 bonus on Perception checks to potentially notice unusual stonework, such as traps and hidden doors located in stone walls or floors. They receive a check to notice such features whenever they pass within 10 feet of them, whether or not they are actively looking. <br /><br />
+                    Weapon Familiarity: Dwarves are proficient with battleaxes, heavy picks, and warhammers, and treat any weapon with the word dwarven in its name as a martial weapon.<br /><br />
+                    Languages: Dwarves begin play speaking Common and Dwarven. Dwarves with high Intelligence scores can choose from the following: Giant, Gnome, Goblin, Orc, Terran, and Undercommon.<br /><br />
+                </p>
+                <br /><br />
+
             </div>
         </div>
+
         <!-- End of Race Page -->
 
         <!-- Class Page -->
@@ -220,7 +220,7 @@
                     <div class="backBtn">                 
                         <a id="classBack" href="#race" onclick="nextCondition(this)"></a>
                     </div>
-                    <h2>Choose your class.</h2>  
+                    <h2>Choose your class..</h2>  
                     <div class="nextBtn">
                         <a id="classNext" class="next" href="#bio" onclick="checkRace(), nextCondition(this)"></a>
                     </div>
@@ -285,7 +285,8 @@
                     <div class="nextBtn">
                         <a href="#results" id="basicsNext" class="next" onclick="getBio(), getAttributeDB(), nextCondition(this)"></a>
                     </div>
-
+                </div>
+                <div id="bio_img_info">
                     <div id="bio_image">
                         <img src="Images/Profile/Dwarf1.jpg" id="bio_char_image" alt="bio image"/>                   
                     </div>
@@ -343,7 +344,7 @@
                             <label for="alignSelect">Alignment: </label>
                             <select id="alignSelect"></select>
                             <br />
-                            <label for="favorclassSelect">Favored Class: </label>
+                            <label for="favored_class">Favored Class: </label>
 
                             <select id="favored_class">
                                 <option value="Barbarian">Barbarian</option>
@@ -376,7 +377,7 @@
                             <br />
                             <textarea id="description" placeholder="Write down the character description..." name="description"></textarea>
                         </form>
-                    </div>         
+                    </div>   
                 </div>
             </div>
         </div>
@@ -393,30 +394,33 @@
                     <div class="nextBtn">
                         <a href="" id="resultNext" class="next" onclick="nextCondition(this)"></a>
                     </div>
-                </div>            
-                <img id="result_image" src="" alt="result image"/>
-
-                <div id="result_bio">
-                    <label>Name: </label>
-                    <label id="result_name"></label><br />
-                    <label>Race: </label>
-                    <label id="result_race"></label><br />
-                    <label>Gender: </label>
-                    <label id="result_gender"></label><br />
-                    <label>Alignment: </label>
-                    <label id="result_alignment"></label><br />
-                    <label>Level: </label>
-                    <label id="result_lvl">1</label><br />
-                    <label>Class: </label>
-                    <label id="result_class"></label><br />
-                    <label>Favored Class: </label>
-                    <label id="result_fclass"></label><br />
-                    <label id="result_fclass2"></label><br />
-                    <label>Description: </label>
-                    <label id="result_desc"></label><br />
-                </div>
-
-                <div id="result_attributes">
+                </div> 
+                <div id="result_img_bio">
+                    <div id="result_img">
+                        <img id="result_image" src="" alt="result image"/>
+                    </div>
+                    <!--result_bip-->
+                    <div id="result_bio">
+                        <label>Name: </label>
+                        <label id="result_name"></label><br />
+                        <label>Race: </label>
+                        <label id="result_race"></label><br />
+                        <label>Gender: </label>
+                        <label id="result_gender"></label><br />
+                        <label>Alignment: </label>
+                        <label id="result_alignment"></label><br />
+                        <label>Level: </label>
+                        <label id="result_lvl">1</label><br />
+                        <label>Class: </label>
+                        <label id="result_class"></label><br />
+                        <label>Favored Class: </label>
+                        <label id="result_fclass"></label><br />
+                        <label id="result_fclass2"></label><br />
+                        <label>Description: </label>
+                        <label id="result_desc"></label><br />
+                    </div>
+                    <!--result_attributs-->
+                <div id="result_attributes" class="result_style">
                     <table>
                         <tr>
                             <td></td>
@@ -455,8 +459,8 @@
                         </tr>
                     </table>
                 </div>
-
-                <div id="result_defenses">
+                <!--result_defenses-->
+                <div id="result_defenses" class="result_style">
                     <label>Hit Points: </label>
                     <label id="result_hp"></label><br />
                     <label>Armor Class: </label>
@@ -474,7 +478,8 @@
                     <label>Will Save: </label>
                     <label id="result_will"></label><br />
                 </div>
-                <div id="result_combat">
+                <!--result_combat-->
+                <div id="result_combat" class="result_style">
                     <label>Base Attack Bonus: </label>
                     <label id="result_BAB"></label><br />
                     <label>Initiative: </label>
@@ -484,6 +489,8 @@
                     <label>Combat Maneuver Defense: </label>
                     <label id="result_CMD"></label><br />
                 </div>
+                </div>
+                
             </div>
         </div>
         <!-- End of Biography Page -->
