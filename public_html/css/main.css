@@ -10,7 +10,9 @@ body {
     margin: 0px;
     padding:0px;
 }
-
+table{
+    width:100%;
+}
 /*next & previous */
 .posts-nav-wrap {
     text-align: center;
@@ -92,6 +94,7 @@ p {
 p + p {
     text-indent: 2.5em;
 }
+/*
 p:first-letter {
     font-size: 3.5em;
     line-height: 1em;
@@ -109,7 +112,7 @@ p + p:first-letter {
 p + p:first-line {
     font-weight: 400;
 }
-
+*/
 
 
 /*header*/
@@ -288,6 +291,8 @@ p + p:first-line {
 .progress .circle.active .title {
     color: #0c95be;
 }
+/*transision*/
+
 
 .content{
     top: 20px;
@@ -376,6 +381,7 @@ characterWizard.html:target ~  #header #menu-nav #link-wizard,
 .footnote a{
     color: #ddd;
 }
+
 /*button style*/
 .statsbutton{
     color: rgb(255, 255, 255);
@@ -626,17 +632,31 @@ br{
     width: 90%;
 }
 #result_bio{
-    font-size: 18px;
-    float:left;
-    margin-left:3%;
+    color: rgba(255,255,255,0.9);
+    text-shadow: 0px 1px 1px rgba(0,0,0,0.3);
+    margin: 0;
+    display: inline-block;
+    line-height: 1.25em;
+    font-size: 1.5em;
+    float: left;
+    margin-left: 3%;
     width: 60%;
 }
+.result_bio_style{
+    color: #0c95be;
+    font-weight: bold;
+    font-size: 1.6em;
+}
 .result_style{
-  font-size: 13px;
-  float: left;
-  margin-left: 3%;
-  width: 30%;
-  margin-top: 3%;
+    font-size: 0.75em;
+    float: left;
+    margin-left: 3%;
+    width: 25%;
+    margin-top: 3%;
+    background-color: white;
+    padding: 1%;
+    line-height: 150%;
+    clear: right;
 }
 
 /* for 980px or less*/
@@ -851,6 +871,18 @@ br{
         text-align: center;
     }
 
+
+    /*result*/
+    #result_bio{
+
+        width: 90%;
+    }
+
+    .result_style{
+
+        width: 90%;
+
+    }
 
 }
 
