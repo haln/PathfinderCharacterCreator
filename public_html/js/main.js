@@ -71,14 +71,6 @@ $(document).ready(function(){
          $("#notlogIn").attr("hidden","hidden");
     }
     
-    /*
-    $('a[href*=#]:not([href=#])').click(function() {
-          $("html, body").animate({
-            scrollTop: 0
-          }, 1000);
-          return false;
-      });
-    */
 });
 
 function logOut(){

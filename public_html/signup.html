@@ -17,10 +17,10 @@
 
         <!-- The Navigation Menu -->
 
-         <div id="header">
+        <div id="header">
             <a class="pathfinderLogo" href="index.html">
                 <span class="header-logo-default"></span>
-                
+
             </a>
             <nav id="menu-nav">
                 <a class="link-home" href="index.html">Home</a>
@@ -41,12 +41,13 @@
                     <a class="link-signup" href="signup.html">Sign Up</a>
                 </div>
             </div>
-             
+
             <div id="loginModal" class="modalDialog">
                 <div>
                     <a href="#closeModal" title="Close Window" class="closeModal">X</a>
                     <h2>Account Login</h2>
-                    <form id="signin" onsubmit="event.preventDefault(); return validateForm();">
+                    <form id="signin" onsubmit="event.preventDefault();
+                            return validateForm();">
                         <fieldset name="signupFieldset">
                             <legend>Log In</legend>
                             <label for="username" id="usernameLabel">Username</label>
@@ -66,31 +67,35 @@
 
         <!-- The Account Signup Page Content -->
         <div class="statscontent">
-            <h2>Account Signup</h2>
+            <h2>Sign up</h2>
             <form id="signup" name="signup" action="confirmaccount.php" method="post">
                 <fieldset name="signupFieldset">
-                    <legend>Sign-up</legend>
-                    <label for="username" id="usernameLabel">Username</label>
-                    <input title="Your username must be at least 4 characters long"
-                           type="text" id="username" name="username" required="required" 
-                           pattern="(?=.*[A-Za-z\d]).{4,}">
-                    <span id="usernameError"></span>
-                    <br/>
-                    <label for="password" id="passwordLabel">Password</label>
-                    <input title="Your password must contain at least 6 characters that include UPPERCASE letters, lowercase letters and digits" 
-                           type="password" id="password" name="password" 
-                           required="required" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" 
-                           onchange="signup.confirmPassword.pattern = this.value;">
-                    <br/>
-                    <label for="confirmPassword" id="confirmPasswordLabel">Confirm Password</label>
-                    <input title="Passwords do not match" 
-                           type="password" id="confirmPassword" name="confirmpassword" 
-                           required="required" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}">
-                    <br/>
-                    <label for="email" id="emailLabel">Email</label>
-                    <input type="email" id="email" name="email">
-                    <span id="emailError"></span>
-                    <br/>
+                    <ol>
+                        <li><label for="username" id="usernameLabel">Username</label>
+                            <input title="Your username must be at least 4 characters long"
+                                   type="text" id="username" name="username" required="required" 
+                                   pattern="(?=.*[A-Za-z\d]).{4,}">
+                            <span id="usernameError"></span>
+                        </li>
+                        <li>
+                            <label for="password" id="passwordLabel">Password</label>
+                            <input title="Your password must contain at least 6 characters that include UPPERCASE letters, lowercase letters and digits" 
+                                   type="password" id="password" name="password" 
+                                   required="required" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" 
+                                   onchange="signup.confirmPassword.pattern = this.value;">
+                        </li>
+                        <li>
+                            <label for="confirmPassword" id="confirmPasswordLabel">Confirm Password</label>
+                            <input title="Passwords do not match" 
+                                   type="password" id="confirmPassword" name="confirmpassword" 
+                                   required="required" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}">
+                        </li>
+                        <li>
+                            <label for="email" id="emailLabel">Email</label>
+                            <input type="email" id="email" name="email">
+                            <span id="emailError"></span>
+                        </li>
+                    </ol>
                     <input type="submit" id="submitBtn">
                 </fieldset>
             </form>

@@ -17,10 +17,10 @@
 
         <!-- The Navigation Menu -->
 
-         <div id="header">
+        <div id="header">
             <a class="pathfinderLogo" href="index.html">
                 <span class="header-logo-default"></span>
-                
+
             </a>
             <nav id="menu-nav">
                 <a class="link-home" href="index.html">Home</a>
@@ -41,12 +41,13 @@
                     <a class="link-signup" href="signup.html">Sign Up</a>
                 </div>
             </div>
-             
+
             <div id="loginModal" class="modalDialog">
                 <div>
                     <a href="#closeModal" title="Close Window" class="closeModal">X</a>
                     <h2>Account Login</h2>
-                    <form id="signin" onsubmit="event.preventDefault(); return validateForm();">
+                    <form id="signin" onsubmit="event.preventDefault();
+                            return validateForm();">
                         <fieldset name="signupFieldset">
                             <legend>Log In</legend>
                             <label for="username" id="usernameLabel">Username</label>
@@ -95,407 +96,422 @@
                 <span class="title">Finish</span>
             </div>
         </div>
-
-        <!-- Stats Page -->
-        <div id="stats" class="statscontent panel">         
-            <div class="headerbar">
-                <h2>Roll the dice and get started..</h2>
-                <div class="nextBtn">
-                    <a id="statNext" class="next" href="#race" onclick="goToRace(this)"></a>
-                </div>
-            </div>
-
-            <input id="statusBar" hidden="hidden" value="1">
-            <div id="dice">
-                <div id="diceBtn">
-                    <img src="Images/Dice/dice.png" onclick="rollCharacter()" draggable="false" alt="Roll the dice"/>
-                </div>
-                <div id="dieBtn">
-                    <img src="Images/Dice/container.png" id="stat1" ondragstart="drag(event)" draggable="true" alt="" ondragover="" ondrop=""/>
-                    <img src="Images/Dice/container.png" id="stat2" ondragstart="drag(event)" draggable="true" alt="" ondragover="" ondrop=""/>
-                    <img src="Images/Dice/container.png" id="stat3" ondragstart="drag(event)" draggable="true" alt="" ondragover="" ondrop=""/>
-                    <img src="Images/Dice/container.png" id="stat4" ondragstart="drag(event)" draggable="true" alt="" ondragover="" ondrop=""/>
-                    <img src="Images/Dice/container.png" id="stat5" ondragstart="drag(event)" draggable="true" alt="" ondragover="" ondrop=""/>
-                    <img src="Images/Dice/container.png" id="stat6" ondragstart="drag(event)" draggable="true" alt="" ondragover="" ondrop=""/>              
-                </div>
-            </div>
-            <div id="stats-button">
-
-                <input id="strenthbtn" class="statsbutton" type="button" value="Strength" onclick="setToInnerHTML(getXML('str_desc'), 'txt_description')">                  
-                <img src="Images/Dice/container.png" id="strCon" class="container" ondragover="allowDrop(event)" ondrop="drop(event)" draggable="false" alt="container" ondragstart=""/>
-                <input id="dexteritybtn" class="statsbutton" type="button" value="Dexterity" onclick="setToInnerHTML(getXML('dex_desc'), 'txt_description')">
-                <img src="Images/Dice/container.png" id="dexCon" class="container" ondragover="allowDrop(event)" ondrop="drop(event)" draggable="false" alt="container" ondragstart=""/>
-                <input id="constitutionbtn" class="statsbutton" type="button" value="Constitution" onclick="setToInnerHTML(getXML('con_desc'), 'txt_description')">
-                <img src="Images/Dice/container.png" id="conCon" class="container" ondragover="allowDrop(event)" ondrop="drop(event)" draggable="false" alt="container" ondragstart=""/>
-                <input id="intelligencebtn" class="statsbutton" type="button" value="Intelligence" onclick="setToInnerHTML(getXML('int_desc'), 'txt_description')">
-                <img src="Images/Dice/container.png" id="intCon" class="container" ondragover="allowDrop(event)" ondrop="drop(event)" draggable="false" alt="container" ondragstart=""/>
-                <input id="wisdombtn" class="statsbutton" type="button" value="Wisdom" onclick="setToInnerHTML(getXML('wis_desc'), 'txt_description')">
-                <img src="Images/Dice/container.png" id="wisCon" class="container" ondragover="allowDrop(event)" ondrop="drop(event)" draggable="false" alt="container" ondragstart=""/>
-                <input id="charismabtn" class="statsbutton" type="button" value="Charisma" onclick="setToInnerHTML(getXML('cha_desc'), 'txt_description')"> 
-                <img src="Images/Dice/container.png" id="chaCon" class="container" ondragover="allowDrop(event)" ondrop="drop(event)" draggable="false" alt="container" ondragstart=""/>
-
-            </div>
-
-
-            <div id="stats-description">
-                <p id="txt_description">Click on the dice to get your attribute values, and then drag the results to the desired stat. Click on a stat to get a description of what it does.</p>
-            </div>
-        </div>
-        <!-- End of Stats Page -->
-
-        <!-- Race Page -->
-        <div id="race" class="panel">
-            <div class="content">  
+        
+        <div class="outer-wrapper">
+            <!-- Stats Page -->
+            <div id="stats" class="statscontent panel">         
                 <div class="headerbar">
-                    <div class="backBtn">
-                        <a id="raceBack" href="#stats" onclick="nextCondition(this)"></a>
-                    </div>   
-                    <h2>Choose your race..</h2>
+                    <h2>Roll the dice and get started..</h2>
                     <div class="nextBtn">
-                        <a id="raceNext" class="next" href="#class" onclick="nextCondition(this)"></a>
+                        <a id="statNext" class="next" href="#race" onclick="goToRace(this)"></a>
                     </div>
+                </div>
+
+                <input id="statusBar" hidden="hidden" value="1">
+
+                <div id="dice">
+                    <div id="diceBtn">
+                        <img src="Images/Dice/dice.png" onclick="rollCharacter()" draggable="false" alt="Roll the dice"/>
+                    </div>
+                    <div id="dieBtn">
+                        <img src="Images/Dice/container.png" class="pep" id="stat1" ondragstart="drag(event)" draggable="true" alt="" ondragover="" ondrop=""/>
+                        <img src="Images/Dice/container.png" class="pep" id="stat2" ondragstart="drag(event)" draggable="true" alt="" ondragover="" ondrop=""/>
+                        <img src="Images/Dice/container.png" class="pep" id="stat3" ondragstart="drag(event)" draggable="true" alt="" ondragover="" ondrop=""/>
+                        <img src="Images/Dice/container.png" class="pep" id="stat4" ondragstart="drag(event)" draggable="true" alt="" ondragover="" ondrop=""/>
+                        <img src="Images/Dice/container.png" class="pep" id="stat5" ondragstart="drag(event)" draggable="true" alt="" ondragover="" ondrop=""/>
+                        <img src="Images/Dice/container.png" class="pep" id="stat6" ondragstart="drag(event)" draggable="true" alt="" ondragover="" ondrop=""/>              
+                    </div>
+                </div>
+                <div id="stats-button">
+
+                    <input id="strenthbtn" class="statsbutton" type="button" value="Strength" onclick="setToInnerHTML(getXML('str_desc'), 'txt_description')">                  
+                    <img src="Images/Dice/container.png" id="strCon" class="container" ondragover="allowDrop(event)" ondrop="drop(event)" draggable="false" alt="container" ondragstart=""/>
+                    <input id="dexteritybtn" class="statsbutton" type="button" value="Dexterity" onclick="setToInnerHTML(getXML('dex_desc'), 'txt_description')">
+                    <img src="Images/Dice/container.png" id="dexCon" class="container" ondragover="allowDrop(event)" ondrop="drop(event)" draggable="false" alt="container" ondragstart=""/>
+                    <input id="constitutionbtn" class="statsbutton" type="button" value="Constitution" onclick="setToInnerHTML(getXML('con_desc'), 'txt_description')">
+                    <img src="Images/Dice/container.png" id="conCon" class="container" ondragover="allowDrop(event)" ondrop="drop(event)" draggable="false" alt="container" ondragstart=""/>
+                    <input id="intelligencebtn" class="statsbutton" type="button" value="Intelligence" onclick="setToInnerHTML(getXML('int_desc'), 'txt_description')">
+                    <img src="Images/Dice/container.png" id="intCon" class="container" ondragover="allowDrop(event)" ondrop="drop(event)" draggable="false" alt="container" ondragstart=""/>
+                    <input id="wisdombtn" class="statsbutton" type="button" value="Wisdom" onclick="setToInnerHTML(getXML('wis_desc'), 'txt_description')">
+                    <img src="Images/Dice/container.png" id="wisCon" class="container" ondragover="allowDrop(event)" ondrop="drop(event)" draggable="false" alt="container" ondragstart=""/>
+                    <input id="charismabtn" class="statsbutton" type="button" value="Charisma" onclick="setToInnerHTML(getXML('cha_desc'), 'txt_description')"> 
+                    <img src="Images/Dice/container.png" id="chaCon" class="container" ondragover="allowDrop(event)" ondrop="drop(event)" draggable="false" alt="container" ondragstart=""/>
 
                 </div>
 
 
-
-                <div id="race_buttons">
-                    <input id="btn_dwarf" type="button" class="racebutton" value="Dwarf" onclick="displayRace('Dwarf')">
-                    <input id="btn_halfling" type="button" class="racebutton" value="Halfling" onclick="displayRace('Halfling')">
-                    <input id="btn_elf" type="button" class="racebutton" value="Elf" onclick="displayRace('Elf')">
-                    <input id="btn_human" type="button" class="racebutton" value="Human" onclick="displayRace('Human')">
-                    <input id="btn_gnome" type="button" class="racebutton" value="Gnome" onclick="displayRace('Gnome')">
-                    <input id="btn_horc" type="button" class="racebutton" value="Half-Orc" onclick="displayRace('Half-Orc')">
-                    <input id="btn_helf" type="button" class="racebutton" value="Half-Elf" onclick="displayRace('Half-Elf')">     
+                <div id="stats-description">
+                    <p id="txt_description">Click on the dice to get your attribute values, and then drag the results to the desired stat. Click on a stat to get a description of what it does.</p>
                 </div>
-
-                <input type="hidden" id="selected_race" value="Dwarf">
-                <br /><br />
-                <div id="race_picture">
-                    <img id='raceImage' src='Images/Race/Dwarf.png' alt="race picture" />
-
-                    <select id='selectAttr' hidden="hidden">
-                        <option>Strength</option>
-                        <option>Dexterity</option>
-                        <option>Constitution</option>
-                        <option>Intelligence</option>
-                        <option>Wisdom</option>
-                        <option>Charisma</option>
-                    </select>
-
-                    <p id="lbl_race_desc">Dwarves are a stoic but stern race, ensconced in cities carved from the hearts
-                        of mountains and fiercely determined to repel the depredations of savage races like orcs and goblins.
-                        More than any other race, the dwarves have acquired a reputation as dour and humorless craftsmen of 
-                        the earth. It could be said that dwarven history shapes the dark disposition of many dwarves, for 
-                        they reside in high mountains and dangerous realms below the earth, constantly at war with giants, 
-                        goblins, and other such horrors.</p>
-                </div>
-
-                <p id="lbl_race_abil">
-                    +2 Constitution, +2 Wisdom, –2 Charisma: Dwarves are both tough and wise, but also a bit gruff.<br /><br />
-                    Medium: Dwarves are Medium creatures and have no bonuses or penalties due to their size.<br /><br />
-                    Slow and Steady: Dwarves have a base speed of 20 feet, but their speed is never modified by armor or encumbrance.<br /><br />
-                    Darkvision: Dwarves can see in the dark up to 60 feet.<br /><br />
-                    Defensive Training: Dwarves get a +4 dodge bonus to AC against monsters of the giant subtype. <br /><br />
-                    Greed: Dwarves receive a +2 racial bonus on Appraise skill checks made to determine the price of nonmagical goods that contain precious metals or gemstones.<br /><br />
-                    Hatred: Dwarves receive a +1 bonus on attack rolls against humanoid creatures of the orc and goblinoid subtypes due to special training against these hated foes.<br /><br />
-                    Hardy: Dwarves receive a +2 racial bonus on saving throws against poison, spells, and spell-like abilities.<br /><br />
-                    Stability: Dwarves receive a +4 racial bonus to their Combat Maneuver Defense when resisting a bull rush or trip attempt while standing on the ground.<br /><br />
-                    Stonecunning: Dwarves receive a +2 bonus on Perception checks to potentially notice unusual stonework, such as traps and hidden doors located in stone walls or floors. They receive a check to notice such features whenever they pass within 10 feet of them, whether or not they are actively looking. <br /><br />
-                    Weapon Familiarity: Dwarves are proficient with battleaxes, heavy picks, and warhammers, and treat any weapon with the word dwarven in its name as a martial weapon.<br /><br />
-                    Languages: Dwarves begin play speaking Common and Dwarven. Dwarves with high Intelligence scores can choose from the following: Giant, Gnome, Goblin, Orc, Terran, and Undercommon.<br /><br />
-                </p>
-                <br /><br />
-
             </div>
-        </div>
+            <!-- End of Stats Page -->
 
-        <!-- End of Race Page -->
+            <!-- Race Page -->
+            <div id="race" class="panel">
+                <div class="content">  
+                    <div class="headerbar">
+                        <div class="backBtn">
+                            <a id="raceBack" href="#stats" onclick="nextCondition(this)"></a>
+                        </div>   
+                        <h2>Choose your race..</h2>
+                        <div class="nextBtn">
+                            <a id="raceNext" class="next" href="#class" onclick="nextCondition(this)"></a>
+                        </div>
 
-        <!-- Class Page -->
-        <div id="class" class="panel">
-            <div class="content">                             
-                <!--<p>This is the class selection page.</p>-->
-                <div class="headerbar">
-                    <div class="backBtn">                 
-                        <a id="classBack" href="#race" onclick="nextCondition(this)"></a>
                     </div>
-                    <h2>Choose your class..</h2>  
-                    <div class="nextBtn">
-                        <a id="classNext" class="next" href="#bio" onclick="checkRace(), nextCondition(this)"></a>
+
+
+
+                    <div id="race_buttons">
+                        <input id="btn_dwarf" type="button" class="racebutton" value="Dwarf" onclick="displayRace('Dwarf')">
+                        <input id="btn_halfling" type="button" class="racebutton" value="Halfling" onclick="displayRace('Halfling')">
+                        <input id="btn_elf" type="button" class="racebutton" value="Elf" onclick="displayRace('Elf')">
+                        <input id="btn_human" type="button" class="racebutton" value="Human" onclick="displayRace('Human')">
+                        <input id="btn_gnome" type="button" class="racebutton" value="Gnome" onclick="displayRace('Gnome')">
+                        <input id="btn_horc" type="button" class="racebutton" value="Half-Orc" onclick="displayRace('Half-Orc')">
+                        <input id="btn_helf" type="button" class="racebutton" value="Half-Elf" onclick="displayRace('Half-Elf')">     
                     </div>
+
+                    <input type="hidden" id="selected_race" value="Dwarf">
+                    <br /><br />
+                    <div id="race_picture">
+                        <img id='raceImage' src='Images/Race/Dwarf.png' alt="race picture" />
+
+                        <select id='selectAttr' hidden="hidden">
+                            <option>Strength</option>
+                            <option>Dexterity</option>
+                            <option>Constitution</option>
+                            <option>Intelligence</option>
+                            <option>Wisdom</option>
+                            <option>Charisma</option>
+                        </select>
+
+                        <p id="lbl_race_desc">Dwarves are a stoic but stern race, ensconced in cities carved from the hearts
+                            of mountains and fiercely determined to repel the depredations of savage races like orcs and goblins.
+                            More than any other race, the dwarves have acquired a reputation as dour and humorless craftsmen of 
+                            the earth. It could be said that dwarven history shapes the dark disposition of many dwarves, for 
+                            they reside in high mountains and dangerous realms below the earth, constantly at war with giants, 
+                            goblins, and other such horrors.</p>
+                    </div>
+
+                    <p id="lbl_race_abil">
+                        +2 Constitution, +2 Wisdom, –2 Charisma: Dwarves are both tough and wise, but also a bit gruff.<br /><br />
+                        Medium: Dwarves are Medium creatures and have no bonuses or penalties due to their size.<br /><br />
+                        Slow and Steady: Dwarves have a base speed of 20 feet, but their speed is never modified by armor or encumbrance.<br /><br />
+                        Darkvision: Dwarves can see in the dark up to 60 feet.<br /><br />
+                        Defensive Training: Dwarves get a +4 dodge bonus to AC against monsters of the giant subtype. <br /><br />
+                        Greed: Dwarves receive a +2 racial bonus on Appraise skill checks made to determine the price of nonmagical goods that contain precious metals or gemstones.<br /><br />
+                        Hatred: Dwarves receive a +1 bonus on attack rolls against humanoid creatures of the orc and goblinoid subtypes due to special training against these hated foes.<br /><br />
+                        Hardy: Dwarves receive a +2 racial bonus on saving throws against poison, spells, and spell-like abilities.<br /><br />
+                        Stability: Dwarves receive a +4 racial bonus to their Combat Maneuver Defense when resisting a bull rush or trip attempt while standing on the ground.<br /><br />
+                        Stonecunning: Dwarves receive a +2 bonus on Perception checks to potentially notice unusual stonework, such as traps and hidden doors located in stone walls or floors. They receive a check to notice such features whenever they pass within 10 feet of them, whether or not they are actively looking. <br /><br />
+                        Weapon Familiarity: Dwarves are proficient with battleaxes, heavy picks, and warhammers, and treat any weapon with the word dwarven in its name as a martial weapon.<br /><br />
+                        Languages: Dwarves begin play speaking Common and Dwarven. Dwarves with high Intelligence scores can choose from the following: Giant, Gnome, Goblin, Orc, Terran, and Undercommon.<br /><br />
+                    </p>
+                    <br /><br />
+
                 </div>
-
-
-
-                <div id="class_buttons">
-                    <input id='btn_Barbarian' type='button' class="classbutton" value='Barbarian' onclick='displayClass("Barbarian")'>
-                    <input id='btn_Bard' type='button' class="classbutton" value='Bard' onclick='displayClass("Bard")'>
-                    <input id='btn_Cleric' type='button' class="classbutton" value='Cleric' onclick='displayClass("Cleric")'>
-                    <input id='btn_Druid' type='button' class="classbutton" value='Druid' onclick='displayClass("Druid")'>
-                    <input id='btn_Fighter' type='button' class="classbutton" value='Fighter' onclick='displayClass("Fighter")'>
-                    <input id='btn_Monk' type='button' class="classbutton" value='Monk' onclick='displayClass("Monk")'>
-                    <input id='btn_Paladin' type='button' class="classbutton" value='Paladin' onclick='displayClass("Paladin")'>
-                    <input id='btn_Ranger' type='button' class="classbutton" value='Ranger' onclick='displayClass("Ranger")'>
-                    <input id='btn_Rogue' type='button' class="classbutton" value='Rogue' onclick='displayClass("Rogue")'>
-                    <input id='btn_Sorcerer' type='button' class="classbutton" value='Sorcerer' onclick='displayClass("Sorcerer")'>
-                    <input id='btn_Wizard' type='button' class="classbutton" value='Wizard' onclick='displayClass("Wizard")'>
-                </div>
-
-                <input type="hidden" id="selected_class" value="Barbarian">
-                <br />
-                <div id="classPicture">
-                    <img id="classImage" src='Images/Class/Barbarian.jpg' alt="class picture" />
-                </div>
-                <div id="classDescription">
-                    <p id="lbl_class_desc">For some, there is only rage. In the ways of their people, 
-                        in the fury of their passion, in the howl of battle, conflict is all these brutal 
-                        souls know. Savages, hired muscle, masters of vicious martial techniques, they 
-                        are not soldiers or professional warriors—they are the bid="lbl_class_desc"attle
-                        possessed, creatures of slaughter and spirits of war. Known as barbarians, these
-                        warmongers know little of training, preparation, or the rules of warfare; for them, 
-                        only the moment exists, with the foes that stand before them and the knowledge that
-                        the next moment might hold their death. They possess a sixth sense in regard to 
-                        danger and the endurance to weather all that might entail. These brutal warriors
-                        might rise from all walks of life, both civilized and savage, though whole
-                        societies embracing such philosophies roam the wild places of the world.
-                        Within barbarians storms the primal spirit of battle, and woe to those who 
-                        face their rage.</p>
-                    <br /><br />
-                    Hit Points: d<label id='lbl_class_hp'>12</label>
-                    <br /><br />
-                    Alignment: <label id='lbl_class_align'>Cannot be lawful</label>
-                    <br /><br />
-                    Skill Points: <label id='lbl_class_skillPoints'>4</label> + int modifier per level.
-                    <br /><br />
-                    Class Skills: <label id='lbl_class_skills'>Acrobatics (Dex), Climb (Str), Craft (Int), Handle Animal (Cha), Intimidate (Cha), Knowledge (nature) (Int), Perception (Wis), Ride (Dex), Survival (Wis), and Swim (Str)</label>
-                </div>       
             </div>
-        </div>
-        <!-- End of Class Page -->
 
-        <!-- Biography Page -->
-        <div id="bio" class="panel">
-            <div class="content">
-                <div class="headerbar">
-                    <div class="backBtn">
-                        <a href="#class" id ="basicsBack" onclick="nextCondition(this)"></a>
+            <!-- End of Race Page -->
+
+            <!-- Class Page -->
+            <div id="class" class="panel">
+                <div class="content">                             
+                    <!--<p>This is the class selection page.</p>-->
+                    <div class="headerbar">
+                        <div class="backBtn">                 
+                            <a id="classBack" href="#race" onclick="nextCondition(this)"></a>
+                        </div>
+                        <h2>Choose your class..</h2>  
+                        <div class="nextBtn">
+                            <a id="classNext" class="next" href="#bio" onclick="checkRace(), nextCondition(this)"></a>
+                        </div>
                     </div>
-                    <h2>Write something about your character..</h2>
-                    <div class="nextBtn">
-                        <a href="#results" id="basicsNext" class="next" onclick="getBio(), getAttributeDB(), nextCondition(this)"></a>
+
+
+
+                    <div id="class_buttons">
+                        <input id='btn_Barbarian' type='button' class="classbutton" value='Barbarian' onclick='displayClass("Barbarian")'>
+                        <input id='btn_Bard' type='button' class="classbutton" value='Bard' onclick='displayClass("Bard")'>
+                        <input id='btn_Cleric' type='button' class="classbutton" value='Cleric' onclick='displayClass("Cleric")'>
+                        <input id='btn_Druid' type='button' class="classbutton" value='Druid' onclick='displayClass("Druid")'>
+                        <input id='btn_Fighter' type='button' class="classbutton" value='Fighter' onclick='displayClass("Fighter")'>
+                        <input id='btn_Monk' type='button' class="classbutton" value='Monk' onclick='displayClass("Monk")'>
+                        <input id='btn_Paladin' type='button' class="classbutton" value='Paladin' onclick='displayClass("Paladin")'>
+                        <input id='btn_Ranger' type='button' class="classbutton" value='Ranger' onclick='displayClass("Ranger")'>
+                        <input id='btn_Rogue' type='button' class="classbutton" value='Rogue' onclick='displayClass("Rogue")'>
+                        <input id='btn_Sorcerer' type='button' class="classbutton" value='Sorcerer' onclick='displayClass("Sorcerer")'>
+                        <input id='btn_Wizard' type='button' class="classbutton" value='Wizard' onclick='displayClass("Wizard")'>
+                    </div>
+
+                    <input type="hidden" id="selected_class" value="Barbarian">
+                    <br />
+                    <div id="classPicture">
+                        <img id="classImage" src='Images/Class/Barbarian.jpg' alt="class picture" />
+                    </div>
+                    <div id="classDescription">
+                        <p id="lbl_class_desc">For some, there is only rage. In the ways of their people, 
+                            in the fury of their passion, in the howl of battle, conflict is all these brutal 
+                            souls know. Savages, hired muscle, masters of vicious martial techniques, they 
+                            are not soldiers or professional warriors—they are the bid="lbl_class_desc"attle
+                            possessed, creatures of slaughter and spirits of war. Known as barbarians, these
+                            warmongers know little of training, preparation, or the rules of warfare; for them, 
+                            only the moment exists, with the foes that stand before them and the knowledge that
+                            the next moment might hold their death. They possess a sixth sense in regard to 
+                            danger and the endurance to weather all that might entail. These brutal warriors
+                            might rise from all walks of life, both civilized and savage, though whole
+                            societies embracing such philosophies roam the wild places of the world.
+                            Within barbarians storms the primal spirit of battle, and woe to those who 
+                            face their rage.</p>
+                        <br /><br />
+                        <p>
+                            Hit Points: d<label id='lbl_class_hp'>12</label>
+                            <br /><br />
+                            Alignment: <label id='lbl_class_align'>Cannot be lawful</label>
+                            <br /><br />
+                            Skill Points: <label id='lbl_class_skillPoints'>4</label> + int modifier per level.
+                            <br /><br />
+                            Class Skills: <label id='lbl_class_skills'>Acrobatics (Dex), Climb (Str), Craft (Int), Handle Animal (Cha), Intimidate (Cha), Knowledge (nature) (Int), Perception (Wis), Ride (Dex), Survival (Wis), and Swim (Str)</label>
+                        </p>
+                    </div>       
+                </div>
+            </div>
+            <!-- End of Class Page -->
+
+            <!-- Biography Page -->
+            <div id="bio" class="panel">
+                <div class="content">
+                    <div class="headerbar">
+                        <div class="backBtn">
+                            <a href="#class" id ="basicsBack" onclick="nextCondition(this)"></a>
+                        </div>
+                        <h2>Write something about your character..</h2>
+                        <div class="nextBtn">
+                            <a href="#results" id="basicsNext" class="next" onclick="getBio(), getAttributeDB(), nextCondition(this)"></a>
+                        </div>
+                    </div>
+                    <div id="bio_img_info">
+                        <div id="bio_image">
+                            <img src="Images/Profile/Dwarf1.jpg" id="bio_char_image" alt="bio image"/>                   
+                        </div>
+                        <div id="bio_info">
+
+                            <form action="" method="post" class="basicsInfo">    
+                                <label for="picSelect">Profile picture:</label>
+                                <select id="picSelect" onchange="document.getElementById('bio_char_image').src = this.value">
+                                    <option value="Images/Profile/Dwarf1.jpg">Dwarf 1</option>
+                                    <option value="Images/Profile/Dwarf2.jpg">Dwarf 2</option>
+                                    <option value="Images/Profile/Dwarf3.jpg">Dwarf 3</option>
+                                    <option value="Images/Profile/Dwarf4.jpg">Dwarf 4</option>
+                                    <option value="Images/Profile/Dwarf5.jpg">Dwarf 5</option>
+                                    <option value="Images/Profile/Elf1.jpg">Elf 1</option>
+                                    <option value="Images/Profile/Elf2.jpg">Elf 2</option>
+                                    <option value="Images/Profile/Elf3.jpg">Elf 3</option>
+                                    <option value="Images/Profile/Elf4.jpg">Elf 4</option>
+                                    <option value="Images/Profile/Elf5.jpg">Elf 5</option>
+                                    <option value="Images/Profile/Gnome1.jpg">Gnome 1</option>
+                                    <option value="Images/Profile/Gnome2.jpg">Gnome 2</option>
+                                    <option value="Images/Profile/Gnome3.jpg">Gnome 3</option>
+                                    <option value="Images/Profile/Gnome4.jpg">Gnome 4</option>
+                                    <option value="Images/Profile/Gnome5.jpg">Gnome 5</option>
+                                    <option value="Images/Profile/HalfElf1.jpg">Half-Elf 1</option>
+                                    <option value="Images/Profile/HalfElf2.jpg">Half-Elf 2</option>
+                                    <option value="Images/Profile/HalfElf3.jpg">Half-Elf 3</option>
+                                    <option value="Images/Profile/HalfElf4.jpg">Half-Elf 4</option>
+                                    <option value="Images/Profile/HalfElf5.jpg">Half-Elf 5</option>
+                                    <option value="Images/Profile/HalfOrc1.jpg">Half-Orc 1</option>
+                                    <option value="Images/Profile/HalfOrc2.jpg">Half-Orc 2</option>
+                                    <option value="Images/Profile/HalfOrc3.jpg">Half-Orc 3</option>
+                                    <option value="Images/Profile/HalfOrc4.jpg">Half-Orc 4</option>
+                                    <option value="Images/Profile/HalfOrc5.jpg">Half-Orc 5</option>
+                                    <option value="Images/Profile/Halfling1.jpg">Halfling 1</option>
+                                    <option value="Images/Profile/Halfling2.jpg">Halfling 2</option>
+                                    <option value="Images/Profile/Halfling3.jpg">Halfling 3</option>
+                                    <option value="Images/Profile/Halfling4.jpg">Halfling 4</option>
+                                    <option value="Images/Profile/Halfling5.jpg">Halfling 5</option>
+                                    <option value="Images/Profile/Human1.jpg">Human 1</option>
+                                    <option value="Images/Profile/Human2.jpg">Human 2</option>
+                                    <option value="Images/Profile/Human3.jpg">Human 3</option>
+                                    <option value="Images/Profile/Human4.jpg">Human 4</option>
+                                    <option value="Images/Profile/Human5.jpg">Human 5</option>
+                                </select>
+                                <br/>
+                                <label for="bio_name">Name:</label>
+                                <input type="text" id="bio_name" placeholder="Character name" value="">
+                                <br />
+                                <label for="bio_gender">Gender: </label>
+                                <select id="bio_gender">
+                                    <option value="Male">Male</option>
+                                    <option value="Female">Female</option>
+                                </select>
+                                <br />
+                                <label for="alignSelect">Alignment: </label>
+                                <select id="alignSelect"></select>
+                                <br />
+                                <label for="favored_class">Favored Class: </label>
+
+                                <select id="favored_class">
+                                    <option value="Barbarian">Barbarian</option>
+                                    <option value="Bard">Bard</option>
+                                    <option value="Cleric">Cleric</option>
+                                    <option value="Druid">Druid</option>
+                                    <option value="Fighter">Fighter</option>
+                                    <option value="Monk">Monk</option>
+                                    <option value="Paladin">Paladin</option>
+                                    <option value="Ranger">Ranger</option>
+                                    <option value="Rogue">Rogue</option>
+                                    <option value="Sorcerer">Sorcerer</option>
+                                    <option value="Wizard">Wizard</option>
+                                </select>
+                                <select id="favored_class2" hidden>
+                                    <option value="Barbarian">Barbarian</option>
+                                    <option value="Bard">Bard</option>
+                                    <option value="Cleric">Cleric</option>
+                                    <option value="Druid">Druid</option>
+                                    <option value="Fighter">Fighter</option>
+                                    <option value="Monk">Monk</option>
+                                    <option value="Paladin">Paladin</option>
+                                    <option value="Ranger">Ranger</option>
+                                    <option value="Rogue">Rogue</option>
+                                    <option value="Sorcerer">Sorcerer</option>
+                                    <option value="Wizard">Wizard</option>
+                                </select>
+                                <br />
+                                <label for="description">Description:</label> 
+                                <br />
+                                <textarea id="description" placeholder="Write down the character description..." name="description"></textarea>
+                            </form>
+                        </div>   
                     </div>
                 </div>
-                <div id="bio_img_info">
-                    <div id="bio_image">
-                        <img src="Images/Profile/Dwarf1.jpg" id="bio_char_image" alt="bio image"/>                   
+            </div>
+            <!-- End of Biography Page -->
+
+            <!-- Result Page -->
+            <div id="results" class="panel">
+                <div class="content">
+                    <div class="headerbar">
+                        <div class="backBtn">
+                            <a href="#bio" id="resultBack" onclick="nextCondition(this)"></a>
+                        </div>
+                        <h2>Character sheet</h2>  
+                        <div class="nextBtn">
+                            <a href="#result" id="resultNext" class="next" onclick="saveCharacter()"></a>
+                        </div>
+                    </div> 
+                    <div id="result_img_bio">
+                        <div id="result_img">
+                            <img id="result_image" src="" alt="result image"/>
+                        </div>
+                        <!--result_bip-->
+                        <div id="result_bio">
+                            <label>Name: </label>
+                            <label id="result_name" class="result_bio_style"></label><br />
+                            <label>Race: </label>
+                            <label id="result_race" class="result_bio_style"></label><br />
+                            <label>Gender: </label>
+                            <label id="result_gender" class="result_bio_style"></label><br />
+                            <label>Alignment: </label>
+                            <label id="result_alignment" class="result_bio_style"></label><br />
+                            <label>Level: </label>
+                            <label id="result_lvl" class="result_bio_style">1</label><br />
+                            <label>Class: </label>
+                            <label id="result_class" class="result_bio_style"></label><br />
+                            <label>Favored Class: </label>
+                            <label id="result_fclass" class="result_bio_style"></label><br />
+                            <label id="result_fclass2" class="result_bio_style"></label><br />
+                            <label>Description: </label>
+                            <label id="result_desc" class="result_bio_style"></label><br />
+                        </div>
+                        <!--result_attributs-->
+                        <div id="result_attributes" class="result_style">
+                            <table>
+
+                                <tr>
+                                    <th></th>
+                                    <th>Attribute Value</th>
+                                    <th>Ability Modifier</th>
+
+                                </tr>
+                                <tr>
+                                    <td>Strength: </td>
+                                    <td id="result_str"></td>
+                                    <td id="result_str_mod"></td>
+                                </tr>
+                                <tr>
+                                    <td>Dexterity: </td>
+                                    <td id="result_dex"></td>
+                                    <td id="result_dex_mod"></td>
+                                </tr>
+                                <tr>
+                                    <td>Constitution: </td>
+                                    <td id="result_con"></td>
+                                    <td id="result_con_mod"></td>
+                                </tr>
+                                <tr>
+                                    <td>Intelligence: </td>
+                                    <td id="result_int"></td>
+                                    <td id="result_int_mod"></td>
+                                </tr>
+                                <tr>
+                                    <td>Wisdom: </td>
+                                    <td id="result_wis"></td>
+                                    <td id="result_wis_mod"></td>
+                                </tr>
+                                <tr>
+                                    <td>Charisma: </td>
+                                    <td id="result_cha"></td>
+                                    <td id="result_cha_mod"></td>
+                                </tr>
+                            </table>
+                        </div>
+                        <!--result_defenses-->
+                        <div id="result_defenses" class="result_style">
+                            <label>Hit Points: </label>
+                            <label id="result_hp"></label><br />
+                            <label>Armor Class: </label>
+                            <label id="result_ac"></label><br />
+                            <label>Touch Armor Class: </label>
+                            <label id="result_touch_ac"></label><br />
+                            <label>Flat-Footed Armor Class: </label>
+                            <label id="result_flat_ac">10</label><br />
+                            <label>Movement Speed: </label>
+                            <label id="result_speed"></label><br />
+                            <label>Fortitude Save: </label>
+                            <label id="result_fort"></label><br />
+                            <label>Reflex Save: </label>
+                            <label id="result_reflex"></label><br />
+                            <label>Will Save: </label>
+                            <label id="result_will"></label><br />
+                        </div>
+                        <!--result_combat-->
+                        <div id="result_combat" class="result_style">
+                            <label>Base Attack Bonus: </label>
+                            <label id="result_BAB"></label><br />
+                            <label>Initiative: </label>
+                            <label id="result_initiative"></label><br />
+                            <label>Combat Maneuver Bonus: </label>
+                            <label id="result_CMB"></label><br />
+                            <label>Combat Maneuver Defense: </label>
+                            <label id="result_CMD"></label><br />
+                        </div>
                     </div>
-                    <div id="bio_info">
-
-                        <form action="" method="post" class="basicsInfo">    
-                            <label for="picSelect">Profile picture:</label>
-                            <select id="picSelect" onchange="document.getElementById('bio_char_image').src = this.value">
-                                <option value="Images/Profile/Dwarf1.jpg">Dwarf 1</option>
-                                <option value="Images/Profile/Dwarf2.jpg">Dwarf 2</option>
-                                <option value="Images/Profile/Dwarf3.jpg">Dwarf 3</option>
-                                <option value="Images/Profile/Dwarf4.jpg">Dwarf 4</option>
-                                <option value="Images/Profile/Dwarf5.jpg">Dwarf 5</option>
-                                <option value="Images/Profile/Elf1.jpg">Elf 1</option>
-                                <option value="Images/Profile/Elf2.jpg">Elf 2</option>
-                                <option value="Images/Profile/Elf3.jpg">Elf 3</option>
-                                <option value="Images/Profile/Elf4.jpg">Elf 4</option>
-                                <option value="Images/Profile/Elf5.jpg">Elf 5</option>
-                                <option value="Images/Profile/Gnome1.jpg">Gnome 1</option>
-                                <option value="Images/Profile/Gnome2.jpg">Gnome 2</option>
-                                <option value="Images/Profile/Gnome3.jpg">Gnome 3</option>
-                                <option value="Images/Profile/Gnome4.jpg">Gnome 4</option>
-                                <option value="Images/Profile/Gnome5.jpg">Gnome 5</option>
-                                <option value="Images/Profile/HalfElf1.jpg">Half-Elf 1</option>
-                                <option value="Images/Profile/HalfElf2.jpg">Half-Elf 2</option>
-                                <option value="Images/Profile/HalfElf3.jpg">Half-Elf 3</option>
-                                <option value="Images/Profile/HalfElf4.jpg">Half-Elf 4</option>
-                                <option value="Images/Profile/HalfElf5.jpg">Half-Elf 5</option>
-                                <option value="Images/Profile/HalfOrc1.jpg">Half-Orc 1</option>
-                                <option value="Images/Profile/HalfOrc2.jpg">Half-Orc 2</option>
-                                <option value="Images/Profile/HalfOrc3.jpg">Half-Orc 3</option>
-                                <option value="Images/Profile/HalfOrc4.jpg">Half-Orc 4</option>
-                                <option value="Images/Profile/HalfOrc5.jpg">Half-Orc 5</option>
-                                <option value="Images/Profile/Halfling1.jpg">Halfling 1</option>
-                                <option value="Images/Profile/Halfling2.jpg">Halfling 2</option>
-                                <option value="Images/Profile/Halfling3.jpg">Halfling 3</option>
-                                <option value="Images/Profile/Halfling4.jpg">Halfling 4</option>
-                                <option value="Images/Profile/Halfling5.jpg">Halfling 5</option>
-                                <option value="Images/Profile/Human1.jpg">Human 1</option>
-                                <option value="Images/Profile/Human2.jpg">Human 2</option>
-                                <option value="Images/Profile/Human3.jpg">Human 3</option>
-                                <option value="Images/Profile/Human4.jpg">Human 4</option>
-                                <option value="Images/Profile/Human5.jpg">Human 5</option>
-                            </select>
-                            <br/>
-                            <label for="bio_name">Name:</label>
-                            <input type="text" id="bio_name" placeholder="Character name" value="">
-                            <br />
-                            <label for="bio_gender">Gender: </label>
-                            <select id="bio_gender">
-                                <option value="Male">Male</option>
-                                <option value="Female">Female</option>
-                            </select>
-                            <br />
-                            <label for="alignSelect">Alignment: </label>
-                            <select id="alignSelect"></select>
-                            <br />
-                            <label for="favored_class">Favored Class: </label>
-
-                            <select id="favored_class">
-                                <option value="Barbarian">Barbarian</option>
-                                <option value="Bard">Bard</option>
-                                <option value="Cleric">Cleric</option>
-                                <option value="Druid">Druid</option>
-                                <option value="Fighter">Fighter</option>
-                                <option value="Monk">Monk</option>
-                                <option value="Paladin">Paladin</option>
-                                <option value="Ranger">Ranger</option>
-                                <option value="Rogue">Rogue</option>
-                                <option value="Sorcerer">Sorcerer</option>
-                                <option value="Wizard">Wizard</option>
-                            </select>
-                            <select id="favored_class2" hidden>
-                                <option value="Barbarian">Barbarian</option>
-                                <option value="Bard">Bard</option>
-                                <option value="Cleric">Cleric</option>
-                                <option value="Druid">Druid</option>
-                                <option value="Fighter">Fighter</option>
-                                <option value="Monk">Monk</option>
-                                <option value="Paladin">Paladin</option>
-                                <option value="Ranger">Ranger</option>
-                                <option value="Rogue">Rogue</option>
-                                <option value="Sorcerer">Sorcerer</option>
-                                <option value="Wizard">Wizard</option>
-                            </select>
-                            <br />
-                            <label for="description">Description:</label> 
-                            <br />
-                            <textarea id="description" placeholder="Write down the character description..." name="description"></textarea>
-                        </form>
-                    </div>   
                 </div>
             </div>
         </div>
         <!-- End of Biography Page -->
 
-        <!-- Result Page -->
-        <div id="results" class="panel">
-            <div class="content">
-                <div class="headerbar">
-                    <div class="backBtn">
-                        <a href="#bio" id="resultBack" onclick="nextCondition(this)"></a>
-                    </div>
-                    <h2>Character sheet</h2>  
-                    <div class="nextBtn">
-                        <a href="#result" id="resultNext" class="next" onclick="saveCharacter()"></a>
-                    </div>
-                </div> 
-                <div id="result_img_bio">
-                    <div id="result_img">
-                        <img id="result_image" src="" alt="result image"/>
-                    </div>
-                    <!--result_bip-->
-                    <div id="result_bio">
-                        <label>Name: </label>
-                        <label id="result_name" class="result_bio_style"></label><br />
-                        <label>Race: </label>
-                        <label id="result_race" class="result_bio_style"></label><br />
-                        <label>Gender: </label>
-                        <label id="result_gender" class="result_bio_style"></label><br />
-                        <label>Alignment: </label>
-                        <label id="result_alignment" class="result_bio_style"></label><br />
-                        <label>Level: </label>
-                        <label id="result_lvl" class="result_bio_style">1</label><br />
-                        <label>Class: </label>
-                        <label id="result_class" class="result_bio_style"></label><br />
-                        <label>Favored Class: </label>
-                        <label id="result_fclass" class="result_bio_style"></label><br />
-                        <label id="result_fclass2" class="result_bio_style"></label><br />
-                        <label>Description: </label>
-                        <label id="result_desc" class="result_bio_style"></label><br />
-                    </div>
-                    <!--result_attributs-->
-                <div id="result_attributes" class="result_style">
-                    <table>
-                         
-                        <tr>
-                            <th></th>
-                            <th>Attribute Value</th>
-                            <th>Ability Modifier</th>
-                            
-                        </tr>
-                        <tr>
-                            <td>Strength: </td>
-                            <td id="result_str"></td>
-                            <td id="result_str_mod"></td>
-                        </tr>
-                        <tr>
-                            <td>Dexterity: </td>
-                            <td id="result_dex"></td>
-                            <td id="result_dex_mod"></td>
-                        </tr>
-                        <tr>
-                            <td>Constitution: </td>
-                            <td id="result_con"></td>
-                            <td id="result_con_mod"></td>
-                        </tr>
-                        <tr>
-                            <td>Intelligence: </td>
-                            <td id="result_int"></td>
-                            <td id="result_int_mod"></td>
-                        </tr>
-                        <tr>
-                            <td>Wisdom: </td>
-                            <td id="result_wis"></td>
-                            <td id="result_wis_mod"></td>
-                        </tr>
-                        <tr>
-                            <td>Charisma: </td>
-                            <td id="result_cha"></td>
-                            <td id="result_cha_mod"></td>
-                        </tr>
-                    </table>
+        <!-- footer 
+
+        <footer>
+            <div class="footer-wrapper">
+                <div class="footer-text">
+                    <p>©Pathfinder Character Creator</p>
+                    <p>Evelyn Dai | Casper Co | Justin Walk</p>
                 </div>
-                <!--result_defenses-->
-                <div id="result_defenses" class="result_style">
-                    <label>Hit Points: </label>
-                    <label id="result_hp"></label><br />
-                    <label>Armor Class: </label>
-                    <label id="result_ac"></label><br />
-                    <label>Touch Armor Class: </label>
-                    <label id="result_touch_ac"></label><br />
-                    <label>Flat-Footed Armor Class: </label>
-                    <label id="result_flat_ac">10</label><br />
-                    <label>Movement Speed: </label>
-                    <label id="result_speed"></label><br />
-                    <label>Fortitude Save: </label>
-                    <label id="result_fort"></label><br />
-                    <label>Reflex Save: </label>
-                    <label id="result_reflex"></label><br />
-                    <label>Will Save: </label>
-                    <label id="result_will"></label><br />
-                </div>
-                <!--result_combat-->
-                <div id="result_combat" class="result_style">
-                    <label>Base Attack Bonus: </label>
-                    <label id="result_BAB"></label><br />
-                    <label>Initiative: </label>
-                    <label id="result_initiative"></label><br />
-                    <label>Combat Maneuver Bonus: </label>
-                    <label id="result_CMB"></label><br />
-                    <label>Combat Maneuver Defense: </label>
-                    <label id="result_CMD"></label><br />
-                </div>
-                </div>
-                
             </div>
-        </div>
-        <!-- End of Biography Page -->
+        </footer>-->
 
         <script src="js/jquery-2.1.3.min.js"></script>
         <script src="js/jquery-ui.min.js"></script>
@@ -506,6 +522,6 @@
         <script src='js/ClassFunctions.js'></script>
         <script src="js/RaceFunctions.js"></script>
         <script src="js/BiographyFunctions.js"></script>
-        <script src="js/CharacterFunctions.js"></script>
+        <script src="js/CharacterFunctions.js"></script>    
     </body>
 </html>

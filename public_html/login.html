@@ -17,10 +17,10 @@
 
         <!-- The Navigation Menu -->
 
-         <div id="header">
+        <div id="header">
             <a class="pathfinderLogo" href="index.html">
                 <span class="header-logo-default"></span>
-                
+
             </a>
             <nav id="menu-nav">
                 <a class="link-home" href="index.html">Home</a>
@@ -41,12 +41,13 @@
                     <a class="link-signup" href="signup.html">Sign Up</a>
                 </div>
             </div>
-             
+
             <div id="loginModal" class="modalDialog">
                 <div>
                     <a href="#closeModal" title="Close Window" class="closeModal">X</a>
                     <h2>Account Login</h2>
-                    <form id="signin" onsubmit="event.preventDefault(); return validateForm();">
+                    <form id="signin" onsubmit="event.preventDefault();
+                            return validateForm();">
                         <fieldset name="signupFieldset">
                             <legend>Log In</legend>
                             <label for="username" id="usernameLabel">Username</label>
@@ -65,18 +66,21 @@
 
         <!-- The Account log in Page Content -->
         <div class="statscontent">
-            <h2>Account Log In</h2>
+            <h2>Log In</h2>
             <form id="signin" onsubmit="event.preventDefault();
                     return validateForm();">
                 <fieldset name="signupFieldset">
-                    <legend>Log In</legend>
-                    <label for="username" id="usernameLabel">Username</label>
-                    <input type="text" id="username" name="username" required="required">
-                    <br/>
-                    <label for="password" id="passwordLabel">Password</label>
-                    <input type="password" id="password" name="password" required="required">
-                    <br/>
-                    <input type="submit" id="submitBtn">
+                    <ol>
+                        <li>
+                            <label for="username" id="usernameLabel">Username:</label>
+                            <input type="text" id="username" name="username" required="required">
+                        </li>
+                        <li>
+                            <label for="password" id="passwordLabel">Password:</label>
+                            <input type="password" id="password" name="password" required="required">
+                        </li>
+                    </ol>
+                    <input type="submit" name="submit" id="submitBtn">
                 </fieldset>
             </form>
             <span id="loginMsg"></span>
