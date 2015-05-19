@@ -1,11 +1,9 @@
 <?php
 require 'db_login.php';
 $methodType = $_SERVER["REQUEST_METHOD"];
-
-die("Bye");
-if($methodType === "POST"){
+if($methodType == "POST"){
     if(        isset($_POST["strength"])     && isset($_POST["dexterity"]) && isset($_POST["constitution"]) 
-            && isset($_POST["itelligence"])  && isset($_POST["wisdom"])    && isset($_POST["charisma"])
+            && isset($_POST["intelligence"]) && isset($_POST["wisdom"])    && isset($_POST["charisma"])
             && isset($_POST["selectedRace"]) && isset($_POST["barb_lvl"])  && isset($_POST["bard_lvl"])
             && isset($_POST["cler_lvl"])     && isset($_POST["drui_lvl"])  && isset($_POST["figh_lvl"])
             && isset($_POST["monk_lvl"])     && isset($_POST["pala_lvl"])  && isset($_POST["rang_lvl"])
@@ -15,7 +13,7 @@ if($methodType === "POST"){
             && isset($_POST["fclass2"])      && isset($_POST["hp"])        && isset($_POST["bab"])
             && isset($_POST["fort"])         && isset($_POST["reflex"])    && isset($_POST["will"])
             && isset($_POST["speed"])        && isset($_POST["picture"])
-            ){
+            ){ 
         if(!isset($_SERVER['HTTP_X_REQUESTED_WITH']) AND strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) != 'xmlhttprequest') {
             die();
         }
@@ -53,7 +51,7 @@ if($methodType === "POST"){
             $reflex       = $_POST["reflex"];
             $will         = $_POST["will"];
             $speed        = $_POST["speed"];
-            $picture      = $_POST["picture"];
+            $picture      = $_POST["picture"]; 
         try{
             $conn = new PDO($dsn, $username, $password);
             $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -98,7 +96,10 @@ if($methodType === "POST"){
             ));
         
             
-            echo "Character Saved";
+            $test = array();
+            $test["Hello"]="True";
+            echo json_encode($test);
+
             die(true); 
         } catch (PDOException $e) {
             error_log($e->getMessage());
