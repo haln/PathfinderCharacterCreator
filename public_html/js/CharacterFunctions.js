@@ -279,7 +279,7 @@ function saveCharacter(){
     var will         = document.getElementById('result_will').innerHTML;
     var speed        = document.getElementById('result_speed').innerHTML;
     var picture      = document.getElementById('result_image').getAttribute("src");
-    
+    console.log('before ajax');
     $.ajax({
         url: "php/results_save_character.php",
         dataType: "json",
@@ -291,9 +291,10 @@ function saveCharacter(){
                name: name, gender: gender, alignment: alignment, desc: desc, fclass: fclass, fclass2: fclass2,
                hp: hp, bab: bab, fort: fort, reflex: reflex, will: will, speed: speed, picture: picture},
         success: function (saveCharacterData) {
-            console.log(saveCharacterData);
+            console.log("save char\; "+saveCharacterData);
         },
         error: function (jqXHR, textStatus, errorThrown) {
+            console.log("broken");
             $("#p1").text(jqXHR.statusText);
         }
     });

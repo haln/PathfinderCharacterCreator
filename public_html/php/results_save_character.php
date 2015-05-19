@@ -1,6 +1,8 @@
 <?php
 require 'db_login.php';
 $methodType = $_SERVER["REQUEST_METHOD"];
+
+die("Bye");
 if($methodType === "POST"){
     if(        isset($_POST["strength"])     && isset($_POST["dexterity"]) && isset($_POST["constitution"]) 
             && isset($_POST["itelligence"])  && isset($_POST["wisdom"])    && isset($_POST["charisma"])
@@ -15,7 +17,6 @@ if($methodType === "POST"){
             && isset($_POST["speed"])        && isset($_POST["picture"])
             ){
         if(!isset($_SERVER['HTTP_X_REQUESTED_WITH']) AND strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) != 'xmlhttprequest') {
-            echo "Failed";
             die();
         }
             $rowStatement = $conn->query('SELECT COUNT(*) FROM CHARACTERS');
