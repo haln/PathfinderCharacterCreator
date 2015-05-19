@@ -12,9 +12,10 @@ if($methodType === "POST"){
             && isset($_POST["alignment"])    && isset($_POST["desc"])      && isset($_POST["fclass"])
             && isset($_POST["fclass2"])      && isset($_POST["hp"])        && isset($_POST["bab"])
             && isset($_POST["fort"])         && isset($_POST["reflex"])    && isset($_POST["will"])
-            && isset($_POST["speed"])
+            && isset($_POST["speed"])        && isset($_POST["picture"])
             ){
         if(!isset($_SERVER['HTTP_X_REQUESTED_WITH']) AND strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) != 'xmlhttprequest') {
+            echo "Failed";
             die();
         }
             $rowStatement = $conn->query('SELECT COUNT(*) FROM CHARACTERS');
@@ -51,13 +52,14 @@ if($methodType === "POST"){
             $reflex       = $_POST["reflex"];
             $will         = $_POST["will"];
             $speed        = $_POST["speed"];
+            $picture      = $_POST["picture"];
         try{
             $conn = new PDO($dsn, $username, $password);
             $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             $statement = $conn->prepare('INSERT INTO CHARCTERS VALUES (:char_ID, :strength, :dexterity, :constitution, '
                     . ':intelligence, :wisdom, :charisma, :selectedRace, :barb_lvl, :bard_lvl, :cler_lvl, :drui_lvl, '
                     . ':figh_lvl, :monk_lvl, :pala_lvl, :rang_lvl, :rogu_lvl, :sorc_lvl, :wiza_lvl, :char_lvl, :name, '
-                    . ':gender, :alignment, :desc, :fclass, :fclass2, :hp, :bab, :fort, :reflex, :will, :speed)');
+                    . ':gender, :alignment, :desc, :fclass, :fclass2, :hp, :bab, :fort, :reflex, :will, :speed), :picture');
             $statement->execute(array(
                 ':char_ID'      => $rowCount,
                 ':strength'     => $strength,
@@ -90,7 +92,8 @@ if($methodType === "POST"){
                 ':fort'         => $fort,
                 ':reflex'       => $reflex,
                 ':will'         => $will,
-                ':speed'        => $speed
+                ':speed'        => $speed,
+                ':picture'      => $picture
             ));
         
             
