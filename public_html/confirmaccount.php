@@ -101,12 +101,13 @@
                         echo "<script>console.log('rowCount = " . $rowCount . "')</script>";
 
                         //Insert a new account
-                        $statement = $conn->prepare('INSERT INTO USERS VALUES (:userid, :username, :password, :email)');
+                        $statement = $conn->prepare('INSERT INTO USERS VALUES (:userid, :username, :password, :email, :pic)');
                         $statement->execute(array(
                             ':userid' => $rowCount,
                             ':username' => $acc_user,
                             ':password' => $acc_pass,
-                            ':email' => $acc_email
+                            ':email' => $acc_email,
+                            ':pic' => NULL
                         ));
                         echo "Your Pathfinder Character Creator account has been created.<br/>";
                         echo "Please enjoy your time on the site!";
