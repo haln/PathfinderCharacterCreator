@@ -278,6 +278,7 @@ function saveCharacter(){
     var reflex       = document.getElementById('result_reflex').innerHTML;
     var will         = document.getElementById('result_will').innerHTML;
     var speed        = document.getElementById('result_speed').innerHTML;
+    var picture      = document.getElementById('result_image').getAttribute("src");
     
     $.ajax({
         url: "php/results_save_character.php",
@@ -288,7 +289,7 @@ function saveCharacter(){
                cler_lvl: cler_lvl, drui_lvl: drui_lvl, figh_lvl: figh_lvl, monk_lvl: monk_lvl, pala_lvl: pala_lvl,
                rang_lvl: rang_lvl, rogu_lvl: rogu_lvl, sorc_lvl: sorc_lvl, wiza_lvl: wiza_lvl, char_lvl: char_lvl,
                name: name, gender: gender, alignment: alignment, desc: desc, fclass: fclass, fclass2: fclass2,
-               hp: hp, bab: bab, fort: fort, reflex: reflex, will: will, speed: speed},
+               hp: hp, bab: bab, fort: fort, reflex: reflex, will: will, speed: speed, picture: picture},
         success: function (saveCharacterData) {
             console.log(saveCharacterData);
         },
