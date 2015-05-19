@@ -65,7 +65,7 @@
         
         <!-- Account Signup Content  -->
         
-        <div id="profile" class="content">
+        <div id="profile" class="statscontent">
             <h2>Account Signup</h2>
             <p>
                 <!-- Connect to the database and insert a user account -->
