@@ -253,7 +253,7 @@ function saveCharacter(){
     var intelligence = parseInt(document.getElementById('result_int').innerHTML);
     var wisdom       = parseInt(document.getElementById('result_wis').innerHTML);
     var charisma     = parseInt(document.getElementById('result_cha').innerHTML);
-    var selectedRace = document.getElementById('selectedRace').value;
+    var selectedRace = document.getElementById('selected_race').value;
     var barb_lvl     = getClassLevel("Barbarian");
     var bard_lvl     = getClassLevel("Bard");
     var cler_lvl     = getClassLevel("Cleric");
@@ -300,7 +300,7 @@ function saveCharacter(){
 }
 
 function getClassLevel(selectClass){
-    if (selectClass == document.getElementById('selectedClass').value){
+    if (selectClass == document.getElementById('selected_class').value){
         return 1;
     }
     return 0;
