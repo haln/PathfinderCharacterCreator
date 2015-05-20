@@ -61,7 +61,7 @@ if($methodType == "POST"){
             $statement = $conn->prepare('INSERT INTO CHARACTERS VALUES (:char_ID, :strength, :dexterity, :constitution, '
                     . ':intelligence, :wisdom, :charisma, :selectedRace, :barb_lvl, :bard_lvl, :cler_lvl, :drui_lvl, '
                     . ':figh_lvl, :monk_lvl, :pala_lvl, :rang_lvl, :rogu_lvl, :sorc_lvl, :wiza_lvl, :char_lvl, :name, '
-                    . ':gender, :alignment, :desc, :fclass, :fclass2, :hp, :bab, :fort, :reflex, :will, :speed), :picture');
+                    . ':gender, :alignment, :desc, :fclass, :fclass2, :hp, :bab, :fort, :reflex, :will, :speed, :picture)');
             
             $statement->execute(array(
                 ':char_ID'      => $rowCount,
