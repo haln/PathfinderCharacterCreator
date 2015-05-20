@@ -70,30 +70,7 @@
             <h2>Sign up</h2>
             <form id="signup" name="signup" action="confirmaccount.php" method="post">
                 <fieldset name="signupFieldset">
-<<<<<<< HEAD
                     <legend>Sign-up</legend>
-                    <label for="username" id="usernameLabel">Username</label>
-                    <input title="Your username must be at least 4 characters long"
-                           type="text" id="username" name="username" required="required" 
-                           pattern="(?=.*[A-Za-z\d]).{4,}">
-                    <span id="usernameError"></span>
-                    <br/>
-                    <label for="password" id="passwordLabel">Password</label>
-                    <input title="Your password must contain at least 6 characters that include UPPERCASE letters, lowercase letters and digits" 
-                           type="password" id="password" name="password" 
-                           required="required" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" 
-                           onchange="signup.confirmPassword.pattern = this.value;">
-                    <br/>
-                    <label for="confirmPassword" id="confirmPasswordLabel">Confirm Password</label>
-                    <input title="Passwords do not match" 
-                           type="password" id="confirmPassword" name="confirmpassword" 
-                           required="required" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}">
-                    <br/>
-                    <label for="email" id="emailLabel">Email (optional)</label>
-                    <input type="email" id="email" name="email">
-                    <span id="emailError"></span>
-                    <br/>
-=======
                     <ol>
                         <li><label for="username" id="usernameLabel">Username</label>
                             <input title="Your username must be at least 4 characters long"
@@ -120,7 +97,6 @@
                             <span id="emailError"></span>
                         </li>
                     </ol>
->>>>>>> origin/master
                     <input type="submit" id="submitBtn">
                 </fieldset>
             </form>
