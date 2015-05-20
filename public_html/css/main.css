@@ -717,10 +717,31 @@ input[type="submit"] {
 }
 /* for 980px or less*/
 @media screen and (max-width:980px){
+    /* for touch systems */
     .drop-target{
-        height: 30px;
-        width: 30px;
+        height: 60px;
+        width: 60px;
     }
+    
+    .not-drop-target{
+        height:60px;
+        width: 60px;
+    }
+    
+    #diceParent{
+        height: 100%;
+        width: 100%;
+    }
+    
+    .pep{
+        top: 60px;
+        left: 60px;
+        right: 120px;
+    }
+    
+    .statDieButton{}
+    
+    /* for non-touch systems */
     
     .panel{
 

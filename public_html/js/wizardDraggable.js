@@ -1,53 +1,61 @@
-function mobileReset(){
-    resetting = true;
-    $("#strCon").attr("class","drop-target");
-    $("#strCon").attr("alt","container");
-    $("#dexCon").attr("class","drop-target");
-    $("#dexCon").attr("alt","container");
-    $("#conCon").attr("class","drop-target");
-    $("#conCon").attr("alt","container");
-    $("#intCon").attr("class","drop-target");
-    $("#intCon").attr("alt","container");
-    $("#wisCon").attr("class","drop-target");
-    $("#wisCon").attr("alt","container");
-    $("#chaCon").attr("class","drop-target");
-    $("#chaCon").attr("alt","container");
+/*
+function touchHandler(event) {
+    var touch = event.changedTouches[0];
 
+    var simulatedEvent = document.createEvent("MouseEvent");
+        simulatedEvent.initMouseEvent({
+        touchstart: "mousedown",
+        touchmove: "mousemove",
+        touchend: "mouseup"
+    }[event.type], true, true, window, 1,
+        touch.screenX, touch.screenY,
+        touch.clientX, touch.clientY, false,
+        false, false, false, 0, null);
+
+    touch.target.dispatchEvent(simulatedEvent);
 }
 
-function mobileRollCharacter(){
-    mobileReset();
-    
-    var rollVal = rollStat();
-    $("#stat1").attr("src", getImage(rollVal));
-    $("#stat1").attr("alt", rollVal);
-    
-    rollVal = rollStat();
-    $("#stat2").attr("src", getImage(rollVal));
-    $("#stat2").attr("alt", rollVal);
-    
-    rollVal = rollStat();
-    $("#stat3").attr("src", getImage(rollVal));
-    $("#stat3").attr("alt", rollVal);
-    
-    rollVal = rollStat();
-    $("#stat4").attr("src", getImage(rollVal));
-    $("#stat4").attr("alt", rollVal);
-    
-    rollVal = rollStat();
-    $("#stat5").attr("src", getImage(rollVal));
-    $("#stat5").attr("alt", rollVal);
-    
-    rollVal = rollStat();
-    $("#stat6").attr("src", getImage(rollVal));
-    $("#stat6").attr("alt", rollVal);
+function init() {
+    document.addEventListener("touchstart", touchHandler, true);
+    document.addEventListener("touchmove", touchHandler, true);
+    document.addEventListener("touchend", touchHandler, true);
+    document.addEventListener("touchcancel", touchHandler, true);
 }
+*/
+
+var containerImage = "Images/Dice/container.png";
 
 $(document).ready(function(){
     var screenwidth =  (window.innerWidth > 0) ? window.innerWidth : screen.width;
-    var resetting = false;
-    var constrainedID = "";
+    //init();
     if(screenwidth <= 980 ){
+        $("#rollDiceButton").attr("onclick","mobileRollCharacter()");
+        $("#rollDiceButton").attr("draggable","false");
+        $("#strCon").attr("class","drop-target");
+        $("#dexCon").attr("class","drop-target");
+        $("#conCon").attr("class","drop-target");
+        $("#intCon").attr("class","drop-target");
+        $("#wisCon").attr("class","drop-target");
+        $("#chaCon").attr("class","drop-target");
+        $(".statDieButton").draggable({
+            snap: ".drop-target",
+            snapMode: "inner"
+        });
+        $( ".drop-target" ).droppable({
+            drop: function(event,ui) {
+                $(this).attr("alt",ui.draggable.attr("alt"));
+                $(this).attr("class","not-drop-target");
+            },
+            out: function(event,ui){
+                if($(this).attr("class") === "not-drop-target"){
+                    $(this).attr("alt","container");
+                    $(this).attr("class","drop-target");
+                }
+            }
+        });
+        /*
+        //Setup variables
+        var constrainedID;
         //Dice roller
         $("#rollDiceButton").attr("onclick","mobileRollCharacter()");
         //Stat numbers
@@ -58,33 +66,26 @@ $(document).ready(function(){
         $("#stat5").attr("class","pep");
         $("#stat6").attr("class","pep");
         //Containers
-        $("#strCon").attr("class","drop-target");
-        $("#dexCon").attr("class","drop-target");
-        $("#conCon").attr("class","drop-target");
-        $("#intCon").attr("class","drop-target");
-        $("#wisCon").attr("class","drop-target");
-        $("#chaCon").attr("class","drop-target");
+        
+        
         //start pep for touch systems        
         $(".pep").pep({
             constrainTo: function(){
                 return constrainedID;
             },
             droppable: ".drop-target",
-            stop: function(ev,obj){
-                var altValue = ev.dataTransfer.getData("alt");
-                constrainedID = ev.target.id;
-                ev.target.setAttribute("alt", altValue);
-                ev.preventDefault();
+            drag: function(){
+ 
             },
-            revert: true,
-            revertIf: function(){
-                if(resetting){
-                    resetting = !resetting;
-                    return true;
+            stop: function(ev,obj){
+                if(this.activeDropRegions.length === 1){
+                    
                 }
-                else return false;
+                ev.preventDefault();
             }
         });
+        
+        */
     }
     else{
         //Dice roller
@@ -154,3 +155,51 @@ $(document).ready(function(){
         $("#chaCon").attr("ondragstart","");
     }
 });
+$(".statDieButton").data("left", $(".statDieButton").position().left).data("top", $(".statDieButton").position().top);
+
+function mobileRollCharacter(){
+    var rollVal = rollStat();
+    $("#stat1").attr("src", getImage(rollVal));
+    $("#stat1").attr("alt", rollVal);
+
+    rollVal = rollStat();
+    $("#stat2").attr("src", getImage(rollVal));
+    $("#stat2").attr("alt", rollVal);
+
+    rollVal = rollStat();
+    $("#stat3").attr("src", getImage(rollVal));
+    $("#stat3").attr("alt", rollVal);
+
+    rollVal = rollStat();
+    $("#stat4").attr("src", getImage(rollVal));
+    $("#stat4").attr("alt", rollVal);
+
+    rollVal = rollStat();
+    $("#stat5").attr("src", getImage(rollVal));
+    $("#stat5").attr("alt", rollVal);
+
+    rollVal = rollStat();
+    $("#stat6").attr("src", getImage(rollVal));
+    $("#stat6").attr("alt", rollVal);
+    mobileReset();
+}
+
+function mobileReset(){
+    $("#stat1","#stat2","#stat3","stat4","stat5","stat6").animate({
+       "left": $("#stat1").data("left"),
+       "top": $("#stat1").data("top")
+    });
+    $("#strCon").attr("class","drop-target");
+    $("#strCon").attr("alt","container");
+    $("#dexCon").attr("class","drop-target");
+    $("#dexCon").attr("alt","container");
+    $("#conCon").attr("class","drop-target");
+    $("#conCon").attr("alt","container");
+    $("#intCon").attr("class","drop-target");
+    $("#intCon").attr("alt","container");
+    $("#wisCon").attr("class","drop-target");
+    $("#wisCon").attr("alt","container");
+    $("#chaCon").attr("class","drop-target");
+    $("#chaCon").attr("alt","container");
+    //$('.pep').pep().data('plugin_pep').revert();
+}
