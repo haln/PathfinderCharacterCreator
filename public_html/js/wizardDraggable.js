@@ -44,10 +44,10 @@ $(document).ready(function(){
         $( ".drop-target" ).droppable({
             drop: function(event,ui) {
                 $(this).attr("alt",ui.draggable.attr("alt"));
-                $(this).attr("class","not-drop-target");
+                $(this).attr("class","not-drop-target "+ui.draggable.attr("id"));
             },
             out: function(event,ui){
-                if($(this).attr("class") === "not-drop-target"){
+                if($(this).attr("class") === "not-drop-target "+ui.draggable.attr("id")){
                     $(this).attr("alt","container");
                     $(this).attr("class","drop-target");
                 }
@@ -156,7 +156,6 @@ $(document).ready(function(){
     }
 });
 $(".statDieButton").data("left", $(".statDieButton").position().left).data("top", $(".statDieButton").position().top);
-
 function mobileRollCharacter(){
     var rollVal = rollStat();
     $("#stat1").attr("src", getImage(rollVal));
@@ -185,7 +184,7 @@ function mobileRollCharacter(){
 }
 
 function mobileReset(){
-    $("#stat1","#stat2","#stat3","stat4","stat5","stat6").animate({
+    $("#stat1, #stat2, #stat3, #stat4, #stat5, #stat6").animate({
        "left": $("#stat1").data("left"),
        "top": $("#stat1").data("top")
     });
