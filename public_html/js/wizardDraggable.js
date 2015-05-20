@@ -1,36 +1,13 @@
-/*
-function touchHandler(event) {
-    var touch = event.changedTouches[0];
-
-    var simulatedEvent = document.createEvent("MouseEvent");
-        simulatedEvent.initMouseEvent({
-        touchstart: "mousedown",
-        touchmove: "mousemove",
-        touchend: "mouseup"
-    }[event.type], true, true, window, 1,
-        touch.screenX, touch.screenY,
-        touch.clientX, touch.clientY, false,
-        false, false, false, 0, null);
-
-    touch.target.dispatchEvent(simulatedEvent);
-}
-
-function init() {
-    document.addEventListener("touchstart", touchHandler, true);
-    document.addEventListener("touchmove", touchHandler, true);
-    document.addEventListener("touchend", touchHandler, true);
-    document.addEventListener("touchcancel", touchHandler, true);
-}
-*/
-
+//Setup variables
 var containerImage = "Images/Dice/container.png";
 
 $(document).ready(function(){
     var screenwidth =  (window.innerWidth > 0) ? window.innerWidth : screen.width;
-    //init();
     if(screenwidth <= 980 ){
+        //Set roll dice button to use the mobile functions
         $("#rollDiceButton").attr("onclick","mobileRollCharacter()");
         $("#rollDiceButton").attr("draggable","false");
+        //Initialize class to allow for touch-drop of containers
         $("#strCon").attr("class","drop-target");
         $("#dexCon").attr("class","drop-target");
         $("#conCon").attr("class","drop-target");
@@ -155,7 +132,9 @@ $(document).ready(function(){
         $("#chaCon").attr("ondragstart","");
     }
 });
+//Set the positions for the statDieButtons to allow for reset on re-roll
 $(".statDieButton").data("left", $(".statDieButton").position().left).data("top", $(".statDieButton").position().top);
+//Roll some dice and get some numbers for the statDieButtons
 function mobileRollCharacter(){
     var rollVal = rollStat();
     $("#stat1").attr("src", getImage(rollVal));
@@ -183,6 +162,7 @@ function mobileRollCharacter(){
     mobileReset();
 }
 
+//Reset the draggables and droppables to a clean state
 function mobileReset(){
     $("#stat1, #stat2, #stat3, #stat4, #stat5, #stat6").animate({
        "left": $("#stat1").data("left"),
@@ -200,5 +180,4 @@ function mobileReset(){
     $("#wisCon").attr("alt","container");
     $("#chaCon").attr("class","drop-target");
     $("#chaCon").attr("alt","container");
-    //$('.pep').pep().data('plugin_pep').revert();
 }
