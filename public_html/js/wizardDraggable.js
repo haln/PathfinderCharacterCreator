@@ -1,4 +1,5 @@
 function mobileReset(){
+    resetting = true;
     $("#strCon").attr("class","drop-target");
     $("#strCon").attr("alt","container");
     $("#dexCon").attr("class","drop-target");
@@ -44,6 +45,8 @@ function mobileRollCharacter(){
 
 $(document).ready(function(){
     var screenwidth =  (window.innerWidth > 0) ? window.innerWidth : screen.width;
+    var resetting = false;
+    var constrainedID = "";
     if(screenwidth <= 980 ){
         //Dice roller
         $("#rollDiceButton").attr("onclick","mobileRollCharacter()");
@@ -61,15 +64,25 @@ $(document).ready(function(){
         $("#intCon").attr("class","drop-target");
         $("#wisCon").attr("class","drop-target");
         $("#chaCon").attr("class","drop-target");
-        //start pep for touch systems
-        $('.pep').pep();
-        
+        //start pep for touch systems        
         $(".pep").pep({
+            constrainTo: function(){
+                return constrainedID;
+            },
             droppable: ".drop-target",
             stop: function(ev,obj){
                 var altValue = ev.dataTransfer.getData("alt");
+                constrainedID = ev.target.id;
                 ev.target.setAttribute("alt", altValue);
                 ev.preventDefault();
+            },
+            revert: true,
+            revertIf: function(){
+                if(resetting){
+                    resetting = !resetting;
+                    return true;
+                }
+                else return false;
             }
         });
     }

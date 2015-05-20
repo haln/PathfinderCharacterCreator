@@ -717,6 +717,11 @@ input[type="submit"] {
 }
 /* for 980px or less*/
 @media screen and (max-width:980px){
+    .drop-target{
+        height: 30px;
+        width: 30px;
+    }
+    
     .panel{
 
         display: none;
