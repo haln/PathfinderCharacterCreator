@@ -13,7 +13,7 @@ if($methodType == "POST"){
             && isset($_POST["alignment"])    && isset($_POST["desc"])      && isset($_POST["fclass"])
             && isset($_POST["fclass2"])      && isset($_POST["hp"])        && isset($_POST["bab"])
             && isset($_POST["fort"])         && isset($_POST["reflex"])    && isset($_POST["will"])
-            && isset($_POST["speed"])        && isset($_POST["picture"])
+            && isset($_POST["speed"])        && isset($_POST["picture"])   && isset($_POST["userID"])
             ){ 
         if(!isset($_SERVER['HTTP_X_REQUESTED_WITH']) AND strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) != 'xmlhttprequest') {
             die();
@@ -57,6 +57,7 @@ if($methodType == "POST"){
             $will         = $_POST["will"];
             $speed        = $_POST["speed"];
             $picture      = $_POST["picture"]; 
+            $userID       = $_POST["userID"];
 
             $statement = $conn->prepare('INSERT INTO CHARACTERS VALUES (:char_ID, :strength, :dexterity, :constitution, '
                     . ':intelligence, :wisdom, :charisma, :selectedRace, :barb_lvl, :bard_lvl, :cler_lvl, :drui_lvl, '
@@ -98,6 +99,14 @@ if($methodType == "POST"){
                 ':speed'        => $speed,
                 ':picture'      => $picture
             ));
+            
+            $statement2 = $conn->prepare('INSERT INTO USER_CHAR VALUES (:charID, userID)');
+            
+            $statement2->execute(array(
+                ':charID' => $rowCount,
+                ':userID' => $userID
+            ));
+            
             die(true); 
         } catch (PDOException $e) {
             error_log($e->getMessage());

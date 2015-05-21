@@ -279,14 +279,15 @@ function saveCharacter(){
     var will         = document.getElementById('result_will').innerHTML;
     var speed        = document.getElementById('result_speed').innerHTML;
     var picture      = document.getElementById('result_image').getAttribute("src");
+    var userID       = localStorage.getItem("UserID");
     saveToDB(strength, dexterity, constitution, intelligence, wisdom, charisma, selectedRace, barb_lvl,
     bard_lvl, cler_lvl, drui_lvl, figh_lvl, monk_lvl, pala_lvl, rang_lvl, rogu_lvl, sorc_lvl, wiza_lvl, char_lvl,
-    name, gender, alignment, desc, fclass, fclass2, hp, bab, fort, reflex, will, speed, picture);
+    name, gender, alignment, desc, fclass, fclass2, hp, bab, fort, reflex, will, speed, picture, userID);
 }
 
 function saveToDB(strength, dexterity, constitution, intelligence, wisdom, charisma, selectedRace, barb_lvl,
  bard_lvl, cler_lvl, drui_lvl, figh_lvl, monk_lvl, pala_lvl, rang_lvl, rogu_lvl, sorc_lvl, wiza_lvl, char_lvl,
- name, gender, alignment, desc, fclass, fclass2, hp, bab, fort, reflex, will, speed, picture){
+ name, gender, alignment, desc, fclass, fclass2, hp, bab, fort, reflex, will, speed, picture, userID){
     $.ajax({
         url: "php/results_save_character.php",
         dataType: "json",
@@ -296,7 +297,7 @@ function saveToDB(strength, dexterity, constitution, intelligence, wisdom, chari
                cler_lvl: cler_lvl, drui_lvl: drui_lvl, figh_lvl: figh_lvl, monk_lvl: monk_lvl, pala_lvl: pala_lvl,
                rang_lvl: rang_lvl, rogu_lvl: rogu_lvl, sorc_lvl: sorc_lvl, wiza_lvl: wiza_lvl, char_lvl: char_lvl,
                name: name, gender: gender, alignment: alignment, desc: desc, fclass: fclass, fclass2: fclass2,
-               hp: hp, bab: bab, fort: fort, reflex: reflex, will: will, speed: speed, picture: picture},
+               hp: hp, bab: bab, fort: fort, reflex: reflex, will: will, speed: speed, picture: picture, userID: userID},
         success: function (saveCharacterData) {
             console.log("save char\; "+saveCharacterData);
         },
