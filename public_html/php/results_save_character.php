@@ -100,7 +100,7 @@ if($methodType == "POST"){
                 ':picture'      => $picture
             ));
             
-            $statement2 = $conn->prepare('INSERT INTO USER_CHAR VALUES (:charID, userID)');
+            $statement2 = $conn->prepare('INSERT INTO USER_CHAR VALUES (:charID, :userID)');
             
             $statement2->execute(array(
                 ':charID' => $rowCount,
