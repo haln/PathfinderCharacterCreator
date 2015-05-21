@@ -754,6 +754,9 @@ input[type="submit"] {
         background-color: #b1e583;
     }
 
+	#welcomeMessage{
+		display: none;
+	}
 
 
     fieldset input[type="text"], fieldset input[type="password"] {
